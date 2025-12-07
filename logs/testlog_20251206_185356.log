@@ -1,0 +1,18 @@
+2025-12-06 18:53:56 INFO  LoginTest:100 - Logger initialized. Logs will be saved in: logs/testlog_20251206_185356.log
+2025-12-06 18:53:56 INFO  LoginTest:100 - Logger initialized. Logs will be saved in: logs/testlog_20251206_185356.log
+2025-12-06 18:53:56 INFO  LoginTest:30 - ===== Starting Test: LoginTest =====
+2025-12-06 18:53:56 INFO  LoginTest:100 - Logger initialized. Logs will be saved in: logs/testlog_20251206_185356.log
+2025-12-06 18:53:56 INFO  LoginTest:30 - ===== Starting Test: LoginTest =====
+2025-12-06 18:53:56 INFO  LoginTest:30 - ===== Starting Test: LoginTest =====
+2025-12-06 18:53:59 INFO  LoginTest:35 - edge driver initialized.
+2025-12-06 18:53:59 INFO  LoginTest:35 - chrome driver initialized.
+2025-12-06 18:54:01 INFO  LoginTest:40 - Navigated to URL: https://rahulshettyacademy.com/client/#/auth/login
+2025-12-06 18:54:02 INFO  LoginTest:35 - firefox driver initialized.
+2025-12-06 18:54:02 INFO  LoginTest:40 - Navigated to URL: https://rahulshettyacademy.com/client/#/auth/login
+2025-12-06 18:54:03 INFO  LoginTest:40 - Navigated to URL: https://rahulshettyacademy.com/client/#/auth/login
+2025-12-06 18:54:08 INFO  LoginTest:51 - ===== Ending Test: LoginTest =====
+2025-12-06 18:54:09 INFO  LoginTest:51 - ===== Ending Test: LoginTest =====
+2025-12-06 18:54:09 INFO  LoginTest:54 - Driver closed successfully.
+2025-12-06 18:54:10 INFO  LoginTest:51 - ===== Ending Test: LoginTest =====
+2025-12-06 18:54:10 INFO  LoginTest:54 - Driver closed successfully.
+2025-12-06 18:54:15 INFO  LoginTest:54 - Driver closed successfully.

@@ -1,0 +1,6 @@
+2025-12-06 21:35:33 INFO  LoginTest:100 - Logger initialized. Logs will be saved in: logs/testlog_20251206_213533.log
+2025-12-06 21:35:33 INFO  LoginTest:30 - ===== Starting Test: LoginTest =====
+2025-12-06 21:35:39 INFO  LoginTest:35 - chrome driver initialized.
+2025-12-06 21:35:42 INFO  LoginTest:40 - Navigated to URL: https://rahulshettyacademy.com/client/#/auth/login
+2025-12-06 21:35:49 INFO  LoginTest:51 - ===== Ending Test: LoginTest =====
+2025-12-06 21:35:51 INFO  LoginTest:54 - Driver closed successfully.

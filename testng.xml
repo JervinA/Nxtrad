@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="RegressionSuite" parallel="tests" thread-count="3">
+
+    <!-- Extent Report Listener -->
+    <listeners>
+        <listener class-name="Listeners.ExtentTestNGListener"/>
+    </listeners>
+
+    <!-- ===== Chrome Tests ===== -->
+    <test name="ChromeTests">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="Tests.LoginTest"/>
+            <!-- Add other test classes here -->
+        </classes>
+    </test>
+
+    
+</suite>

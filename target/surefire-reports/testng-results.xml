@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-12-07T14:23:50 IST" name="RegressionSuite" finished-at="2025-12-07T14:24:02 IST" duration-ms="12704">
+    <groups>
+    </groups>
+    <test started-at="2025-12-07T14:23:50 IST" name="ChromeTests" finished-at="2025-12-07T14:24:02 IST" duration-ms="12704">
+      <class name="Tests.LoginTest">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:Tests.LoginTest@1f9f6368]" started-at="2025-12-07T14:23:50 IST" name="setUp" finished-at="2025-12-07T14:23:55 IST" duration-ms="4808" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="validLoginTest()[pri:1, instance:Tests.LoginTest@1f9f6368]" started-at="2025-12-07T14:23:55 IST" name="validLoginTest" finished-at="2025-12-07T14:23:55 IST" duration-ms="293" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validLoginTest -->
+        <test-method is-config="true" signature="afterEachTest()[pri:0, instance:Tests.LoginTest@1f9f6368]" started-at="2025-12-07T14:23:55 IST" name="afterEachTest" finished-at="2025-12-07T14:23:57 IST" duration-ms="2002" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterEachTest -->
+        <test-method signature="validateHomepagetext()[pri:2, instance:Tests.LoginTest@1f9f6368]" started-at="2025-12-07T14:23:57 IST" name="validateHomepagetext" finished-at="2025-12-07T14:23:57 IST" duration-ms="133" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateHomepagetext -->
+        <test-method is-config="true" signature="afterEachTest()[pri:0, instance:Tests.LoginTest@1f9f6368]" started-at="2025-12-07T14:23:57 IST" name="afterEachTest" finished-at="2025-12-07T14:23:59 IST" duration-ms="2014" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterEachTest -->
+        <test-method signature="validateAddtoCart()[pri:3, instance:Tests.LoginTest@1f9f6368]" started-at="2025-12-07T14:23:59 IST" name="validateAddtoCart" finished-at="2025-12-07T14:23:59 IST" duration-ms="132" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateAddtoCart -->
+        <test-method is-config="true" signature="afterEachTest()[pri:0, instance:Tests.LoginTest@1f9f6368]" started-at="2025-12-07T14:23:59 IST" name="afterEachTest" finished-at="2025-12-07T14:24:01 IST" duration-ms="2005" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterEachTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Tests.LoginTest@1f9f6368]" started-at="2025-12-07T14:24:01 IST" name="tearDown" finished-at="2025-12-07T14:24:02 IST" duration-ms="1280" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- Tests.LoginTest -->
+    </test> <!-- ChromeTests -->
+  </suite> <!-- RegressionSuite -->
+</testng-results>
