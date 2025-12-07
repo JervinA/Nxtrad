@@ -1,2 +1,2 @@
-cd C:\Users\Jervin\eclipse-workspace\JavaAutomation
+cd C:\Users\Jervin\eclipse-workspace\Nxtrad
 mvn test

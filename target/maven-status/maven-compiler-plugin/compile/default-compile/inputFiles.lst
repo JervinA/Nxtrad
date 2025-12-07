@@ -1,8 +1,9 @@
-C:\Users\Jervin\eclipse-workspace\JavaAutomation\src\main\java\Config\ConfigReader.java
-C:\Users\Jervin\eclipse-workspace\JavaAutomation\src\main\java\Driver\DriverFactory.java
-C:\Users\Jervin\eclipse-workspace\JavaAutomation\src\main\java\Listeners\DriverListener.java
-C:\Users\Jervin\eclipse-workspace\JavaAutomation\src\main\java\Pages\AddToCart.java
-C:\Users\Jervin\eclipse-workspace\JavaAutomation\src\main\java\Pages\HomePage.java
-C:\Users\Jervin\eclipse-workspace\JavaAutomation\src\main\java\Pages\LoginPage.java
-C:\Users\Jervin\eclipse-workspace\JavaAutomation\src\main\java\Reports\ExtentManager.java
-C:\Users\Jervin\eclipse-workspace\JavaAutomation\src\main\java\Utils\ScreenshotUtil.java
+C:\Users\Jervin\eclipse-workspace\Nxtrad\src\main\java\Config\ConfigReader.java
+C:\Users\Jervin\eclipse-workspace\Nxtrad\src\main\java\Driver\DriverFactory.java
+C:\Users\Jervin\eclipse-workspace\Nxtrad\src\main\java\Listeners\DriverListener.java
+C:\Users\Jervin\eclipse-workspace\Nxtrad\src\main\java\Nxtrad\Nxtrad\App.java
+C:\Users\Jervin\eclipse-workspace\Nxtrad\src\main\java\Pages\AddToCart.java
+C:\Users\Jervin\eclipse-workspace\Nxtrad\src\main\java\Pages\SignUpPage.java
+C:\Users\Jervin\eclipse-workspace\Nxtrad\src\main\java\Pages\TraditionalLogin.java
+C:\Users\Jervin\eclipse-workspace\Nxtrad\src\main\java\Reports\ExtentManager.java
+C:\Users\Jervin\eclipse-workspace\Nxtrad\src\main\java\Utils\ScreenshotUtil.java
