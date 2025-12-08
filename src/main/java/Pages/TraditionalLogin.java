@@ -13,7 +13,7 @@ public class TraditionalLogin {
 	
 	// Global wait method
     private void waitOneSecond() throws InterruptedException {
-        Thread.sleep(1000);
+        Thread.sleep(2000);
     }
 
     // Locators
@@ -41,6 +41,30 @@ public class TraditionalLogin {
     
     public By getOtp() {
     	return Otp;
+    }
+    
+    public By getselectId() {
+    	return selectId;
+    }
+    
+    public By getokBtn() {
+    	return okBtn;
+    }
+    
+    public By getPin() {
+    	return Pin;
+    }
+    
+    public By getcontinueBtn2() {
+    	return continueBtn2;
+    }
+    
+    public By getSkiptour() {
+    	return Skiptour;
+    }
+    
+    public By getRiskclosure() {
+    	return Riskclosure;
     }
 
     // Constructor

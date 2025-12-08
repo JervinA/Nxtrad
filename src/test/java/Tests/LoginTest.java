@@ -2,7 +2,7 @@ package Tests;
 
 import org.testng.annotations.Test;
 
-import Pages.AddToCart;
+import Pages.RiskDisclosure;
 import Pages.SignUpPage;
 import Pages.TraditionalLogin;
 
@@ -12,7 +12,7 @@ public class LoginTest extends BaseTest {
 	@Test(priority = 1)
 	    public void validTraditionalLoginTest() throws InterruptedException {
 		TraditionalLogin lp = new TraditionalLogin(driver);
-	        lp.login("6380885750", "123456", "2025");
+	        lp.login("6380885750", "123456", "1234");
 	        // assertions using TestNG
 	    }
 	 
@@ -23,11 +23,13 @@ public class LoginTest extends BaseTest {
 		 SignUpPage sp = new SignUpPage(driver);
 	       sp.signup(tl, "6385734750", "123456");  
 	    }
-//	 
-//	 @Test(priority = 3) 
-//	 public void validateAddtoCart() {
-//		AddToCart ac = new AddToCart(driver);
-//		ac.cart();	
-//		
-//	 }
+	 
+	 @Test(priority = 3) 
+	 public void validateRiskDisclosure() throws InterruptedException {
+		 TraditionalLogin tl = new TraditionalLogin(driver);
+		 RiskDisclosure rd = new RiskDisclosure(driver);
+			rd.riskdisclosure(tl, "6380885750", "123456", "1234");
+		
+	 }
+	 
 }

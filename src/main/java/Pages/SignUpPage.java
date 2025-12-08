@@ -10,7 +10,7 @@ public class SignUpPage {
 	
 	// Global wait method
     private void waitOneSecond() throws InterruptedException {
-        Thread.sleep(1000);
+        Thread.sleep(2000);
     }
 
     // Locators
@@ -18,6 +18,8 @@ public class SignUpPage {
     private By logout = By.cssSelector("div[data-cy='logout-btn']");
     private By OkBtn = By.cssSelector("button[data-cy='dialog-confirm-btn']");
     private By switchacc = By.xpath("//*[contains(text(),' Switch account')]");
+    private By createacc = By.xpath("//*[contains(text(),'Create Account ')]");
+    private By tryotherno = By.xpath("//*[contains(text(),'Try with new number?')]");
     
     
 
@@ -49,6 +51,34 @@ public class SignUpPage {
         
         waitOneSecond();
         driver.findElement(tl.getOtp()).sendKeys(otp);
+        
+        waitOneSecond();
+        driver.findElement(createacc).click();
+        
+     // Get current window
+        String currentWindow = driver.getWindowHandle();
+        
+     // Switch to new window
+        for (String window : driver.getWindowHandles()) {
+            if (!window.equals(currentWindow)) {
+                driver.switchTo().window(window);
+                break;
+            }
+        }
+        
+        Thread.sleep(3000);
+        
+//        driver.close();
+        
+     // Switch back to original tab
+        driver.switchTo().window(currentWindow);
+        
+//        waitOneSecond();
+//        driver.findElement(tryotherno).click();
+        
+//        waitOneSecond();
+//        driver.findElement(tl.getmobileno()).clear();
+        
         
     }
 	
