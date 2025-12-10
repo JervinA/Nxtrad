@@ -13,7 +13,7 @@ public class LoginTest extends BaseTest {
 	@Test(priority = 1)
 	    public void validTraditionalLoginTest() throws InterruptedException {
 		TraditionalLogin lp = new TraditionalLogin(driver);
-	        lp.login("6380885750", "123456", "1234");
+	        lp.login("6380885750", "123456", "2025");
 	        // assertions using TestNG
 	    }
 	 
@@ -29,14 +29,14 @@ public class LoginTest extends BaseTest {
 //	 public void validateRiskDisclosure() throws InterruptedException {
 //		 TraditionalLogin tl = new TraditionalLogin(driver);
 //		 RiskDisclosure rd = new RiskDisclosure(driver);
-//			rd.riskdisclosure(tl, "6380885750", "123456", "1234");
+//			rd.riskdisclosure(tl, "6380885750", "123456", "2025");
 //		
 //	 }
 	 
 	 @Test(priority = 4)
 	 public void validateSearchStocks() throws InterruptedException {
 		 SearchStocks ss = new SearchStocks(driver);
-		 ss.SearchStocks("vodafone idea limited nse", "vodafone idea limited bse", "asianpaint ce");
+		 ss.SearchStocks("vodafone idea limited nse", "vodafone idea limited bse", "asianpaint ce", "sensex fut");
 	 }
 	 
 }
