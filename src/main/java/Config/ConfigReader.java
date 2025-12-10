@@ -16,5 +16,9 @@ public class ConfigReader {
     public static String get(String key) {
         return props.getProperty(key);
     }
+	public static String getProperty(String string) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

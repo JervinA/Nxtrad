@@ -13,7 +13,7 @@ public class TraditionalLogin {
 	
 	// Global wait method
     private void waitOneSecond() throws InterruptedException {
-        Thread.sleep(2000);
+        Thread.sleep(1000);
     }
 
     // Locators

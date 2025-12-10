@@ -11,8 +11,8 @@
         <methods>
           <include name="afterEachTest"/>
           <include name="setUp"/>
+          <include name="validateSearchStocks"/>
           <include name="tearDown"/>
-          <include name="validateRiskDisclosure"/>
         </methods>
       </class> <!-- Tests.LoginTest -->
     </classes>

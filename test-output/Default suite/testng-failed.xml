@@ -7,8 +7,9 @@
         <methods>
           <include name="afterEachTest"/>
           <include name="setUp"/>
+          <include name="validateSearchStocks"/>
           <include name="tearDown"/>
-          <include name="validLoginTest"/>
+          <include name="validTraditionalLoginTest"/>
         </methods>
       </class> <!-- Tests.LoginTest -->
     </classes>

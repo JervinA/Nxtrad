@@ -2,6 +2,7 @@ package Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
 public class RiskDisclosure {
 	
@@ -9,7 +10,7 @@ public class RiskDisclosure {
 	
 	// Global wait method
     private void waitOneSecond() throws InterruptedException {
-        Thread.sleep(2000);
+        Thread.sleep(1000);
     }
 	
 	private By riskdisclosuretitle = By.xpath("//span[@class='eula-title']");
@@ -51,7 +52,11 @@ public class RiskDisclosure {
     	driver.findElement(tl.getcontinueBtn2()).click();
     	
     	waitOneSecond();
-    	driver.findElement(riskdisclosuretitle).equals(text);
+    	
+    	String actualText = driver.findElement(riskdisclosuretitle).getText();
+    	Assert.assertEquals(actualText, text, "Risk Disclosure text mismatch!");
+    	System.out.println("Verified Riskdisclosure");
+
     	
     	waitOneSecond();
         driver.findElement(tl.getRiskclosure()).click();

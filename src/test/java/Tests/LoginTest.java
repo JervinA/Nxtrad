@@ -3,6 +3,7 @@ package Tests;
 import org.testng.annotations.Test;
 
 import Pages.RiskDisclosure;
+import Pages.SearchStocks;
 import Pages.SignUpPage;
 import Pages.TraditionalLogin;
 
@@ -17,19 +18,25 @@ public class LoginTest extends BaseTest {
 	    }
 	 
 	
-	 @Test(priority = 2)
-	    public void validateSignUpPage() throws InterruptedException {
-		 TraditionalLogin tl = new TraditionalLogin(driver);
-		 SignUpPage sp = new SignUpPage(driver);
-	       sp.signup(tl, "6385734750", "123456");  
-	    }
+//	 @Test(priority = 2)
+//	    public void validateSignUpPage() throws InterruptedException {
+//		 TraditionalLogin tl = new TraditionalLogin(driver);
+//		 SignUpPage sp = new SignUpPage(driver);
+//	       sp.signup(tl, "6385734750", "123456");  
+//	    }
+//	 
+//	 @Test(priority = 3) 
+//	 public void validateRiskDisclosure() throws InterruptedException {
+//		 TraditionalLogin tl = new TraditionalLogin(driver);
+//		 RiskDisclosure rd = new RiskDisclosure(driver);
+//			rd.riskdisclosure(tl, "6380885750", "123456", "1234");
+//		
+//	 }
 	 
-	 @Test(priority = 3) 
-	 public void validateRiskDisclosure() throws InterruptedException {
-		 TraditionalLogin tl = new TraditionalLogin(driver);
-		 RiskDisclosure rd = new RiskDisclosure(driver);
-			rd.riskdisclosure(tl, "6380885750", "123456", "1234");
-		
+	 @Test(priority = 4)
+	 public void validateSearchStocks() throws InterruptedException {
+		 SearchStocks ss = new SearchStocks(driver);
+		 ss.SearchStocks("vodafone idea limited nse", "vodafone idea limited bse", "asianpaint ce");
 	 }
 	 
 }
