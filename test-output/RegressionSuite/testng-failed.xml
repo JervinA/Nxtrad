@@ -9,13 +9,10 @@
     <classes>
       <class name="Tests.LoginTest">
         <methods>
+          <include name="ValidateChartOpening"/>
           <include name="afterEachTest"/>
           <include name="setUp"/>
-          <include name="validateSearchStocks"/>
           <include name="tearDown"/>
-          <include name="validTraditionalLoginTest"/>
-          <include name="validateRiskDisclosure"/>
-          <include name="validateSignUpPage"/>
         </methods>
       </class> <!-- Tests.LoginTest -->
     </classes>

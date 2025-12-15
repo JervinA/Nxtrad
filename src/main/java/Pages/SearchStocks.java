@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-
 import Config.ConfigReader;
 
 public class SearchStocks {
@@ -28,6 +27,12 @@ private WebDriver driver;
     private By ValidateBfoExchange = By.xpath("(//*[contains(text(),'BFO')])[1]");
     private By ValidateMcxName = By.cssSelector("div[data-cy='search-row-0']");
     private By ValidateMcxExchange = By.xpath("(//*[contains(text(),'MCX')])[1]");
+    
+    
+  //Reuse xpath
+    public By getSearchfield() {
+    	return Searchfield;
+    }
     
     
     

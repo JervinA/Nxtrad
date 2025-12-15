@@ -3,7 +3,9 @@ package Tests;
 import org.testng.annotations.Test;
 
 import Config.ConfigReader;
+import Pages.ChartNavigation;
 import Pages.RiskDisclosure;
+import Pages.SearchIndicesSpots;
 import Pages.SearchStocks;
 import Pages.SignUpPage;
 import Pages.TraditionalLogin;
@@ -20,35 +22,50 @@ public class LoginTest extends BaseTest {
      String nfo = ConfigReader.getProperty("nfo");
      String bfo = ConfigReader.getProperty("bfo");
      String mcx = ConfigReader.getProperty("mcx");
+     
+     String indices = ConfigReader.getProperty("indices");
+     String spots = ConfigReader.getProperty("spots");
 	
 
 	@Test(priority = 1)
 	    public void validTraditionalLoginTest() throws InterruptedException {
 		TraditionalLogin lp = new TraditionalLogin(driver);
 	        lp.login(mobileno_1, otp, pin);
-	        // assertions using TestNG
+	 
 	    }
 	 
 	
-	 @Test(priority = 2)
-	    public void validateSignUpPage() throws InterruptedException {
-		 TraditionalLogin tl = new TraditionalLogin(driver);
-		 SignUpPage sp = new SignUpPage(driver);
-	       sp.signup(tl, mobileno_2, otp);  
-	    }
+//	 @Test(priority = 2)
+//	    public void validateSignUpPage() throws InterruptedException {
+//		 TraditionalLogin tl = new TraditionalLogin(driver);
+//		 SignUpPage sp = new SignUpPage(driver);
+//	       sp.signup(tl, mobileno_2, otp);  
+//	    }
+//	 
+//	 @Test(priority = 3) 
+//	 public void validateRiskDisclosure() throws InterruptedException {
+//		 TraditionalLogin tl = new TraditionalLogin(driver);
+//		 RiskDisclosure rd = new RiskDisclosure(driver);
+//			rd.riskdisclosure(tl, mobileno_1, otp, pin);
+//		
+//	 }
+//	 
+//	 @Test(priority = 4)
+//	 public void validateSearchStocks() throws InterruptedException {
+//		 SearchStocks ss = new SearchStocks(driver);
+//		 ss.SearchStocks(nse, bse, nfo, bfo, mcx);
+//	 }
+//	 
+//	 @Test(priority = 5)
+//	 public void ValidateSearchIndicesAndSpots() throws InterruptedException {
+//		 SearchStocks ss = new SearchStocks(driver);
+//		 SearchIndicesSpots is = new SearchIndicesSpots(driver);
+//		 is.SearchIndicesSpots(ss, indices, spots);
+//	 }
 	 
-	 @Test(priority = 3) 
-	 public void validateRiskDisclosure() throws InterruptedException {
-		 TraditionalLogin tl = new TraditionalLogin(driver);
-		 RiskDisclosure rd = new RiskDisclosure(driver);
-			rd.riskdisclosure(tl, mobileno_1, otp, pin);
-		
+	 @Test(priority = 6)
+	 public void ValidateChartOpening() throws InterruptedException {
+		 ChartNavigation cn = new ChartNavigation(driver);
+		 cn.chartnavigation();
 	 }
-	 
-	 @Test(priority = 4)
-	 public void validateSearchStocks() throws InterruptedException {
-		 SearchStocks ss = new SearchStocks(driver);
-		 ss.SearchStocks(nse, bse, nfo, bfo, mcx);
-	 }
-	 
 }
