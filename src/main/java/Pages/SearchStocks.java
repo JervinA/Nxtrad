@@ -5,6 +5,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
+import Config.ConfigReader;
+
 public class SearchStocks {
 	
 private WebDriver driver;
@@ -20,25 +22,46 @@ private WebDriver driver;
     private By ValidateNseExchange = By.xpath("//*[contains(text(),'NSE')]");
     private By ValidateBseName = By.xpath("//*[contains(text(),'IDEA')]");
     private By ValidateBseExchange = By.xpath("//*[contains(text(),'BSE')]");
-    private By ValidateNfoName = By.xpath("//*[contains(text(),'ASIANPAINT')]");
-    private By ValidateNfoExchange = By.xpath("//*[contains(text(),'NFO')]");
-    private By ValidateBfoName = By.xpath("//*[contains(text(),'SENSEX 24DEC')]");
+    private By ValidateNfoName = By.xpath("(//*[contains(text(),'ASIANPAINT')])[1]");
+    private By ValidateNfoExchange = By.xpath("(//*[contains(text(),'NFO')])[1]");
+    private By ValidateBfoName = By.xpath("//div[@id='search-results']/div[1]");
     private By ValidateBfoExchange = By.xpath("(//*[contains(text(),'BFO')])[1]");
+    private By ValidateMcxName = By.cssSelector("div[data-cy='search-row-0']");
+    private By ValidateMcxExchange = By.xpath("(//*[contains(text(),'MCX')])[1]");
     
     
     
-    String NseSymbolName = "IDEA";
-    String NseExchange = "NSE";
+//    String NseSymbolName = "IDEA";
+//    String NseExchange = "NSE";
+//    
+//    
+//    String BseSymbolName = "IDEA";
+//    String BseExchange = "BSE";
+//    
+//    String NfoSymbolName = "ASIANPAINT";
+//    String NfoExchange = "NFO";
+//    
+//    String BfoSymbolName = "SENSEX";
+//    String BfoExchange = "BFO";
+//    
+//    String McxSymbolName = "";
+//    String McxExchange = "";
     
+    String NseSymbolName = ConfigReader.getProperty("NseSymbolName");
+    String NseExchange = ConfigReader.getProperty("NseExchange");
     
-    String BseSymbolName = "IDEA";
-    String BseExchange = "BSE";
+    String BseSymbolName = ConfigReader.getProperty("BseSymbolName");
+    String BseExchange = ConfigReader.getProperty("BseExchange");
     
-    String NfoSymbolName = "ASIANPAINT";
-    String NfoExchange = "NFO";
+    String NfoSymbolName = ConfigReader.getProperty("NfoSymbolName");
+    String NfoExchange = ConfigReader.getProperty("NfoExchange");
     
-    String BfoSymbolName = "SENSEX";
-    String BfoExchange = "BFO";
+    String BfoSymbolName = ConfigReader.getProperty("BfoSymbolName");
+    String BfoExchange = ConfigReader.getProperty("BfoExchange");
+    
+    String McxSymbolName = ConfigReader.getProperty("McxSymbolName");
+    String McxExchange = ConfigReader.getProperty("McxExchange");
+    
     
     
     // Constructor
@@ -48,7 +71,7 @@ private WebDriver driver;
     }
     
     //Actions
-    public void SearchStocks(String nse, String bse, String nfo, String bfo) throws InterruptedException {
+    public void SearchStocks(String nse, String bse, String nfo, String bfo, String mcx) throws InterruptedException {
     	
     	waitOneSecond();
     	driver.findElement(SelectTab).click();
@@ -136,6 +159,30 @@ private WebDriver driver;
     	System.out.println("Verified BFO Symbol Exchange");
     	
     	System.out.println("Searching and Verifying BFO symbol completed");
+    	
+    	
+    	//Searching and Verifying MCX symbol
+    	
+    	waitOneSecond();
+    	driver.findElement(Searchfield).sendKeys(Keys.CONTROL + "a");
+    	driver.findElement(Searchfield).sendKeys(Keys.DELETE);
+    	
+    	waitOneSecond();
+    	driver.findElement(Searchfield).sendKeys(mcx);
+    	
+    	waitOneSecond();
+    	String actualText_9 = driver.findElement(ValidateMcxName).getText();
+    	if (actualText_9.length() > 9) {
+    	    actualText_9 = actualText_9.substring(0, actualText_9.length() - 10);
+    	}
+    	Assert.assertEquals(actualText_9, McxSymbolName, "MCX Symbol Name Mismatch");
+    	System.out.println("Verified MCX Symbol Name");
+    	
+    	String actualText_10 = driver.findElement(ValidateMcxExchange).getText();
+    	Assert.assertEquals(actualText_10, McxExchange, "MCX Symbol Exchange Mismatch");
+    	System.out.println("Verified MCX Symbol Exchange");
+    	
+    	System.out.println("Searching and Verifying MCX symbol completed");
     	
     }
     
