@@ -20,7 +20,7 @@ private Actions actions;
     private By MarketScan = By.xpath("//*[contains(text(),'Market Scan')]");
     private By Equity = By.xpath("//*[contains(text(),'Equity')]");
     private By NseChartHover = By.cssSelector("tr[data-cy='market_movers-row-0']");
-    private By NseChartOpen = By.xpath("(//button[contains(@class,'chart-btn')])[4]");
+    private By NseChartOpen = By.xpath("//button[@aria-labelledby='mui-139']");
     private By NseChartValidation = By.xpath("//div[@class='title-l31H9iuA']");
     
     
