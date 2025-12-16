@@ -1,0 +1,3 @@
+2025-12-16 22:25:50 INFO  LoginTest:100 - Logger initialized. Logs will be saved in: logs/testlog_20251216_222550.log
+2025-12-16 22:25:50 INFO  LoginTest:30 - ===== Starting Test: LoginTest =====
+2025-12-16 22:25:57 INFO  LoginTest:35 - chrome driver initialized.

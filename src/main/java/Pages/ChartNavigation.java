@@ -20,11 +20,13 @@ private Actions actions;
     private By MarketScan = By.xpath("//*[contains(text(),'Market Scan')]");
     private By Equity = By.xpath("//*[contains(text(),'Equity')]");
     private By NseChartHover = By.cssSelector("tr[data-cy='market_movers-row-0']");
-    private By NseChartOpen = By.xpath("//button[@aria-labelledby='mui-139']");
+    private By NseChartOpen = By.xpath("(//button[contains(@class,'chart-btn')])[4]");
+    private By SwitchIframe = By.xpath("//*[@title='Financial Chart']");
     private By NseChartValidation = By.xpath("//div[@class='title-l31H9iuA']");
     
     
     String NseChart = ConfigReader.getProperty("NseChart");
+    String IframeName = "iframeWebView";
 	
     
     
@@ -54,7 +56,11 @@ private Actions actions;
     	
     	waitOneSecond();
     	driver.findElement(NseChartOpen).click();
-    	Thread.sleep(10000);
+    	Thread.sleep(5000);
+    	
+    	waitOneSecond();
+    	driver.switchTo().frame(0);
+    	System.out.println("iframe changed");
     	
     	waitOneSecond();
     	String actualText_1 = driver.findElement(NseChartValidation).getText();
