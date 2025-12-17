@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-12-16T23:17:03 IST" name="RegressionSuite" finished-at="2025-12-16T23:17:49 IST" duration-ms="46045">
+  <suite started-at="2025-12-17T12:34:15 IST" name="RegressionSuite" finished-at="2025-12-17T12:35:12 IST" duration-ms="57585">
     <groups>
     </groups>
-    <test started-at="2025-12-16T23:17:03 IST" name="ChromeTests" finished-at="2025-12-16T23:17:49 IST" duration-ms="46045">
+    <test started-at="2025-12-17T12:34:15 IST" name="ChromeTests" finished-at="2025-12-17T12:35:12 IST" duration-ms="57585">
       <class name="Tests.LoginTest">
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:Tests.LoginTest@7486b455]" started-at="2025-12-16T23:17:03 IST" name="setUp" finished-at="2025-12-16T23:17:07 IST" duration-ms="4752" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:Tests.LoginTest@7486b455]" started-at="2025-12-17T12:34:15 IST" name="setUp" finished-at="2025-12-17T12:34:32 IST" duration-ms="17472" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,37 +18,37 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="validTraditionalLoginTest()[pri:1, instance:Tests.LoginTest@7486b455]" started-at="2025-12-16T23:17:07 IST" name="validTraditionalLoginTest" finished-at="2025-12-16T23:17:19 IST" duration-ms="11693" status="PASS">
+        <test-method signature="validTraditionalLoginTest()[pri:1, instance:Tests.LoginTest@7486b455]" started-at="2025-12-17T12:34:32 IST" name="validTraditionalLoginTest" finished-at="2025-12-17T12:34:46 IST" duration-ms="13412" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validTraditionalLoginTest -->
-        <test-method is-config="true" signature="afterEachTest()[pri:0, instance:Tests.LoginTest@7486b455]" started-at="2025-12-16T23:17:19 IST" name="afterEachTest" finished-at="2025-12-16T23:17:21 IST" duration-ms="2013" status="PASS">
+        <test-method is-config="true" signature="afterEachTest()[pri:0, instance:Tests.LoginTest@7486b455]" started-at="2025-12-17T12:34:46 IST" name="afterEachTest" finished-at="2025-12-17T12:34:48 IST" duration-ms="2005" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterEachTest -->
-        <test-method signature="ValidateChartOpening()[pri:6, instance:Tests.LoginTest@7486b455]" started-at="2025-12-16T23:17:21 IST" name="ValidateChartOpening" finished-at="2025-12-16T23:17:45 IST" duration-ms="23713" status="FAIL">
+        <test-method signature="ValidateChartOpening()[pri:6, instance:Tests.LoginTest@7486b455]" started-at="2025-12-17T12:34:48 IST" name="ValidateChartOpening" finished-at="2025-12-17T12:35:07 IST" duration-ms="18964" status="FAIL">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@title='Scalper Terminal']"}
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"(//button[contains(@class,'chart-btn')])[4]"}
   (Session info: chrome=142.0.7444.176)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
 Build info: version: '4.38.0', revision: '6b412e825c*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a60941d7f4380e8c014b56ad211d619d, findElement {value=//div[@title='Scalper Terminal'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\Jervin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61943}, goog:processID: 13236, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61943/devtoo..., se:cdpVersion: 142.0.7444.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a60941d7f4380e8c014b56ad211d619d]]>
+Command: [6654e0d8db2c2870b2b76dd3517c3d55, findElement {value=(//button[contains(@class,'chart-btn')])[4], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\Jervin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51225}, goog:processID: 15964, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51225/devtoo..., se:cdpVersion: 142.0.7444.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6654e0d8db2c2870b2b76dd3517c3d55]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@title='Scalper Terminal']"}
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//button[contains(@class,'chart-btn')])[4]"}
   (Session info: chrome=142.0.7444.176)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
 Build info: version: '4.38.0', revision: '6b412e825c*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a60941d7f4380e8c014b56ad211d619d, findElement {value=//div[@title='Scalper Terminal'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\Jervin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61943}, goog:processID: 13236, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61943/devtoo..., se:cdpVersion: 142.0.7444.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a60941d7f4380e8c014b56ad211d619d
+Command: [6654e0d8db2c2870b2b76dd3517c3d55, findElement {value=(//button[contains(@class,'chart-btn')])[4], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\Jervin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51225}, goog:processID: 15964, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51225/devtoo..., se:cdpVersion: 142.0.7444.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6654e0d8db2c2870b2b76dd3517c3d55
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -68,8 +68,8 @@ at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.openqa.selenium.support.decorators.WebDriverDecorator.call(WebDriverDecorator.java:315)
 at org.openqa.selenium.support.decorators.DefaultDecorated.call(DefaultDecorated.java:48)
 at org.openqa.selenium.support.decorators.WebDriverDecorator.lambda$createProxyFactory$3(WebDriverDecorator.java:405)
-at net.bytebuddy.renamed.java.lang.Object$ByteBuddy$tzVcrNp6.findElement(Unknown Source)
-at Pages.ChartNavigation.chartnavigation(ChartNavigation.java:98)
+at net.bytebuddy.renamed.java.lang.Object$ByteBuddy$mZPHTvYB.findElement(Unknown Source)
+at Pages.ChartNavigation.chartnavigation(ChartNavigation.java:59)
 at Tests.LoginTest.ValidateChartOpening(LoginTest.java:69)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
@@ -98,11 +98,11 @@ at java.base/java.lang.Thread.run(Thread.java:1583)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ValidateChartOpening -->
-        <test-method is-config="true" signature="afterEachTest()[pri:0, instance:Tests.LoginTest@7486b455]" started-at="2025-12-16T23:17:45 IST" name="afterEachTest" finished-at="2025-12-16T23:17:47 IST" duration-ms="2005" status="PASS">
+        <test-method is-config="true" signature="afterEachTest()[pri:0, instance:Tests.LoginTest@7486b455]" started-at="2025-12-17T12:35:07 IST" name="afterEachTest" finished-at="2025-12-17T12:35:09 IST" duration-ms="2004" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterEachTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Tests.LoginTest@7486b455]" started-at="2025-12-16T23:17:47 IST" name="tearDown" finished-at="2025-12-16T23:17:49 IST" duration-ms="1688" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Tests.LoginTest@7486b455]" started-at="2025-12-17T12:35:09 IST" name="tearDown" finished-at="2025-12-17T12:35:12 IST" duration-ms="3234" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

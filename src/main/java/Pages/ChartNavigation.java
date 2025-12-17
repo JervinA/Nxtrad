@@ -59,36 +59,15 @@ private Actions actions;
     	driver.findElement(NseChartOpen).click();
     	Thread.sleep(5000);
     	
-    	boolean foundInMainPage;
-
-    	try {
-    	    driver.findElement(sample);
-    	    foundInMainPage = true;
-    	} catch (Exception e) {
-    	    foundInMainPage = false;
-    	}
-
-    	System.out.println("Found in main page: " + foundInMainPage);
+    	
 
     	
+    	waitOneSecond();
     	driver.switchTo().frame(0);
-
-    	boolean foundInIframe;
-
-    	try {
-    	    driver.findElement(sample);
-    	    foundInIframe = true;
-    	} catch (Exception e) {
-    	    foundInIframe = false;
-    	}
-
-    	System.out.println("Found in iframe: " + foundInIframe);
-
-    	
-//    	waitOneSecond();
-//    	driver.switchTo().frame(0);
-//    	System.out.println("iframe changed");
-//    	Thread.sleep(5000);
+    	System.out.println("iframe changed");
+    	driver.switchTo().frame(1);
+    	System.out.println("iframe changed_2");
+    	Thread.sleep(5000);
     	
 //    	waitOneSecond();
 //    	String actualText_1 = driver.findElement(NseChartValidation).getText();
