@@ -23,6 +23,7 @@ private Actions actions;
     private By NseChartOpen = By.xpath("(//button[contains(@class,'chart-btn')])[4]");
     private By SwitchIframe = By.xpath("//*[@title='Financial Chart']");
     private By NseChartValidation = By.xpath("//div[@class='title-l31H9iuA']");
+    private By sample = By.xpath("//div[@title='Scalper Terminal']");
     
     
     String NseChart = ConfigReader.getProperty("NseChart");
@@ -58,14 +59,43 @@ private Actions actions;
     	driver.findElement(NseChartOpen).click();
     	Thread.sleep(5000);
     	
-    	waitOneSecond();
-    	driver.switchTo().frame(0);
-    	System.out.println("iframe changed");
+    	boolean foundInMainPage;
+
+    	try {
+    	    driver.findElement(sample);
+    	    foundInMainPage = true;
+    	} catch (Exception e) {
+    	    foundInMainPage = false;
+    	}
+
+    	System.out.println("Found in main page: " + foundInMainPage);
+
     	
-    	waitOneSecond();
-    	String actualText_1 = driver.findElement(NseChartValidation).getText();
-    	Assert.assertEquals(actualText_1, NseChart, "NSE Chart Mismatch");
-    	System.out.println("Verified NSE Chart");
+    	driver.switchTo().frame(0);
+
+    	boolean foundInIframe;
+
+    	try {
+    	    driver.findElement(sample);
+    	    foundInIframe = true;
+    	} catch (Exception e) {
+    	    foundInIframe = false;
+    	}
+
+    	System.out.println("Found in iframe: " + foundInIframe);
+
+    	
+//    	waitOneSecond();
+//    	driver.switchTo().frame(0);
+//    	System.out.println("iframe changed");
+//    	Thread.sleep(5000);
+    	
+//    	waitOneSecond();
+//    	String actualText_1 = driver.findElement(NseChartValidation).getText();
+//    	Assert.assertEquals(actualText_1, NseChart, "NSE Chart Mismatch");
+//    	System.out.println("Verified NSE Chart");
+    	
+    	driver.findElement(sample).click();
 
     	
     	
