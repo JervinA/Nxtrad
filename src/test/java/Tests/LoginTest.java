@@ -41,7 +41,8 @@ public class LoginTest extends BaseTest {
 //		 SignUpPage sp = new SignUpPage(driver);
 //	       sp.signup(tl, mobileno_2, otp);  
 //	    }
-//	 
+	 
+
 //	 @Test(priority = 3) 
 //	 public void validateRiskDisclosure() throws InterruptedException {
 //		 TraditionalLogin tl = new TraditionalLogin(driver);
@@ -49,19 +50,23 @@ public class LoginTest extends BaseTest {
 //			rd.riskdisclosure(tl, mobileno_1, otp, pin);
 //		
 //	 }
-//	 
+	 
+	 
+ 
 //	 @Test(priority = 4)
 //	 public void validateSearchStocks() throws InterruptedException {
 //		 SearchStocks ss = new SearchStocks(driver);
 //		 ss.SearchStocks(nse, bse, nfo, bfo, mcx);
 //	 }
-//	 
+	
+	 
 //	 @Test(priority = 5)
 //	 public void ValidateSearchIndicesAndSpots() throws InterruptedException {
 //		 SearchStocks ss = new SearchStocks(driver);
 //		 SearchIndicesSpots is = new SearchIndicesSpots(driver);
 //		 is.SearchIndicesSpots(ss, indices, spots);
 //	 }
+	
 	 
 	 @Test(priority = 6)
 	 public void ValidateChartOpening() throws InterruptedException {

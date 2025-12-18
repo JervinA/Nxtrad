@@ -27,6 +27,7 @@ public class TraditionalLogin {
     private By Skiptour = By.xpath("//*[contains(text(),'Skip tour')]");
     private By Riskclosure = By.xpath("//button[contains(text(),'I Understand')]");
     private By Verifylogin = By.xpath("//*[contains(text(),'Trading Terminals')]");
+    private By CloseTOTP = By.xpath("(//div[@class='MuiAlert-action css-1mzcepu'])[2]");
     String VerifyLogins = "Trading Terminals";
     
     
@@ -65,6 +66,10 @@ public class TraditionalLogin {
     
     public By getRiskclosure() {
     	return Riskclosure;
+    }
+    
+    public By getCloseTOTP() {
+    	return CloseTOTP;
     }
 
     // Constructor
@@ -108,6 +113,12 @@ public class TraditionalLogin {
         
         waitOneSecond();
         driver.findElement(Riskclosure).click();
+        
+        try {
+        	driver.findElement(CloseTOTP).click();
+        } catch (Exception e) {
+        	System.out.println("Register TOTP not found");
+        }
         
         waitOneSecond();
         driver.findElement(Verifylogin).equals(VerifyLogins);

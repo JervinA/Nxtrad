@@ -60,6 +60,12 @@ public class RiskDisclosure {
     	
     	waitOneSecond();
         driver.findElement(tl.getRiskclosure()).click();
+        
+        try {
+        	driver.findElement(tl.getCloseTOTP()).click();
+        } catch (Exception e) {
+        	System.out.println("Register TOTP not found");
+        }
     }
 
 }
