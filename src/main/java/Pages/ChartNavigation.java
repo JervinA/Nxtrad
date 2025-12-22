@@ -67,267 +67,267 @@ private Actions actions;
     	waitOneSecond();
     	driver.findElement(MarketScan).click();
     	
-//    	waitOneSecond();
-//    	driver.findElement(Equity).click();
+    	waitOneSecond();
+    	driver.findElement(Equity).click();
     	
     	
     	//validating NSE Chart
     	
-//    	waitOneSecond();
-//    	actions.moveToElement(driver.findElement(ChartHover)).perform();
-//    	Thread.sleep(1000);
-//    	
-//    	waitOneSecond();
-//    	driver.findElement(ChartOpen).click();
-//    	Thread.sleep(5000);    	    	
-//    	
-//    	waitOneSecond();   	
-//    	driver.switchTo().frame(driver.findElement(SwitchIframe));
-//    	System.out.println("iframe changed");
-//    	
-//    	driver.switchTo().frame(driver.findElement(SwitchInnerFrame));
-//    	System.out.println("inneriframe changed");
-//    	
-//    	waitOneSecond();
-//    	String actualText_1 = driver.findElement(ChartValidation).getText();
-//    	Assert.assertEquals(actualText_1, NseChart, "NSE Chart Mismatch");
-//    	System.out.println("Verified NSE Chart");
-//    	
-//    	waitOneSecond();
-//    	actions.moveToElement(driver.findElement(HoverChartRevamp)).perform();
-//    	Thread.sleep(1000);
-//    	
-//    	driver.findElement(ChartScroll).click();
-//    	
-//    	driver.findElement(CloseChart).click();
-//    	
-//    	driver.switchTo().defaultContent();
+    	waitOneSecond();
+    	actions.moveToElement(driver.findElement(ChartHover)).perform();
+    	Thread.sleep(1000);
+    	
+    	waitOneSecond();
+    	driver.findElement(ChartOpen).click();
+    	Thread.sleep(5000);    	    	
+    	
+    	waitOneSecond();   	
+    	driver.switchTo().frame(driver.findElement(SwitchIframe));
+    	System.out.println("iframe changed");
+    	
+    	driver.switchTo().frame(driver.findElement(SwitchInnerFrame));
+    	System.out.println("inneriframe changed");
+    	
+    	waitOneSecond();
+    	String actualText_1 = driver.findElement(ChartValidation).getText();
+    	Assert.assertEquals(actualText_1, NseChart, "NSE Chart Mismatch");
+    	System.out.println("Verified NSE Chart");
+    	
+    	waitOneSecond();
+    	actions.moveToElement(driver.findElement(HoverChartRevamp)).perform();
+    	Thread.sleep(1000);
+    	
+    	driver.findElement(ChartScroll).click();
+    	
+    	driver.findElement(CloseChart).click();
+    	
+    	driver.switchTo().defaultContent();
     	
     	
     	// Validating BSE chart
     	
-//    	waitOneSecond();
-//    	driver.findElement(NiftyDropdown).click();
-//    	
-//    	driver.findElement(ChangeBse).click();
-//    	
-//    	driver.findElement(CloseNifty).click();
-//    	
-//    	waitOneSecond();
-//    	actions.moveToElement(driver.findElement(ChartHover)).perform();
-//    	Thread.sleep(1000);
-//    	
-//    	waitOneSecond();
-//    	driver.findElement(ChartOpen).click();
-//    	Thread.sleep(5000);
-//    	
-//    	waitOneSecond();   	
-//    	driver.switchTo().frame(driver.findElement(SwitchIframe));
-//    	System.out.println("iframe changed");
-//    	
-//    	driver.switchTo().frame(driver.findElement(SwitchInnerFrame));
-//    	System.out.println("inneriframe changed");
-//    	
-//    	waitOneSecond();
-//    	String actualText_2 = driver.findElement(ChartValidation).getText();
-//    	Assert.assertEquals(actualText_2, BseChart, "BSE Chart Mismatch");
-//    	System.out.println("Verified BSE Chart");
-//    	
-//    	waitOneSecond();
-//    	actions.moveToElement(driver.findElement(HoverChartRevamp)).perform();
-//    	Thread.sleep(1000);
-//    	
-//    	driver.findElement(ChartScroll).click();
-//    	
-//    	driver.findElement(CloseChart).click();
-//    	
-//    	driver.switchTo().defaultContent();
+    	waitOneSecond();
+    	driver.findElement(NiftyDropdown).click();
+    	
+    	driver.findElement(ChangeBse).click();
+    	
+    	driver.findElement(CloseNifty).click();
+    	
+    	waitOneSecond();
+    	actions.moveToElement(driver.findElement(ChartHover)).perform();
+    	Thread.sleep(1000);
+    	
+    	waitOneSecond();
+    	driver.findElement(ChartOpen).click();
+    	Thread.sleep(5000);
+    	
+    	waitOneSecond();   	
+    	driver.switchTo().frame(driver.findElement(SwitchIframe));
+    	System.out.println("iframe changed");
+    	
+    	driver.switchTo().frame(driver.findElement(SwitchInnerFrame));
+    	System.out.println("inneriframe changed");
+    	
+    	waitOneSecond();
+    	String actualText_2 = driver.findElement(ChartValidation).getText();
+    	Assert.assertEquals(actualText_2, BseChart, "BSE Chart Mismatch");
+    	System.out.println("Verified BSE Chart");
+    	
+    	waitOneSecond();
+    	actions.moveToElement(driver.findElement(HoverChartRevamp)).perform();
+    	Thread.sleep(1000);
+    	
+    	driver.findElement(ChartScroll).click();
+    	
+    	driver.findElement(CloseChart).click();
+    	
+    	driver.switchTo().defaultContent();
     	
     	
     	// Validating NFO OPTIONS chart
     	
-//    	waitOneSecond();
-//    	driver.findElement(Options).click();
-//    	
-//    	waitOneSecond();
-//    	actions.moveToElement(driver.findElement(ChartHover)).perform();
-//    	Thread.sleep(1000);
-//    	
-//    	waitOneSecond();
-//    	driver.findElement(ChartOpen).click();
-//    	Thread.sleep(5000);
-//    	
-//    	waitOneSecond();   	
-//    	driver.switchTo().frame(driver.findElement(SwitchIframe));
-//    	System.out.println("iframe changed");
-//    	
-//    	driver.switchTo().frame(driver.findElement(SwitchInnerFrame));
-//    	System.out.println("inneriframe changed");
-//    	
-//    	waitOneSecond();
-//    	String actualText_3 = driver.findElement(ChartValidation).getText();
-//    	Assert.assertEquals(actualText_3, NfoOptionChart, "NFO OPTION Chart Mismatch");
-//    	System.out.println("Verified NFO OPTION Chart");
-//    	
-//    	waitOneSecond();
-//    	actions.moveToElement(driver.findElement(HoverChartRevamp)).perform();
-//    	Thread.sleep(1000);
-//    	
-//    	driver.findElement(ChartScroll).click();
-//    	
-//    	driver.findElement(CloseChart).click();
-//    	
-//    	driver.switchTo().defaultContent();
+    	waitOneSecond();
+    	driver.findElement(Options).click();
+    	
+    	waitOneSecond();
+    	actions.moveToElement(driver.findElement(ChartHover)).perform();
+    	Thread.sleep(1000);
+    	
+    	waitOneSecond();
+    	driver.findElement(ChartOpen).click();
+    	Thread.sleep(5000);
+    	
+    	waitOneSecond();   	
+    	driver.switchTo().frame(driver.findElement(SwitchIframe));
+    	System.out.println("iframe changed");
+    	
+    	driver.switchTo().frame(driver.findElement(SwitchInnerFrame));
+    	System.out.println("inneriframe changed");
+    	
+    	waitOneSecond();
+    	String actualText_3 = driver.findElement(ChartValidation).getText();
+    	Assert.assertEquals(actualText_3, NfoOptionChart, "NFO OPTION Chart Mismatch");
+    	System.out.println("Verified NFO OPTION Chart");
+    	
+    	waitOneSecond();
+    	actions.moveToElement(driver.findElement(HoverChartRevamp)).perform();
+    	Thread.sleep(1000);
+    	
+    	driver.findElement(ChartScroll).click();
+    	
+    	driver.findElement(CloseChart).click();
+    	
+    	driver.switchTo().defaultContent();
     	
     	
     	// Validating BFO OPTIONS chart
     	
     	
-//    	waitOneSecond();
-//    	driver.findElement(NfoDropdown).click();
-//    	
-//    	driver.findElement(ChangeOptionBfo).click();
-//    	
-//    	driver.findElement(CloseNifty).click();
-//    	
-//    	waitOneSecond();
-//    	actions.moveToElement(driver.findElement(ChartHover)).perform();
-//    	Thread.sleep(1000);
-//    	
-//    	waitOneSecond();
-//    	driver.findElement(ChartOpen).click();
-//    	Thread.sleep(5000);
-//    	
-//    	waitOneSecond();   	
-//    	driver.switchTo().frame(driver.findElement(SwitchIframe));
-//    	System.out.println("iframe changed");
-//    	
-//    	driver.switchTo().frame(driver.findElement(SwitchInnerFrame));
-//    	System.out.println("inneriframe changed");
-//    	
-//    	waitOneSecond();
-//    	String actualText_4 = driver.findElement(ChartValidation).getText();
-//    	Assert.assertEquals(actualText_4, BfoOptionChart, "BFO OPTION Chart Mismatch");
-//    	System.out.println("Verified BFO OPTION Chart");
-//    	
-//    	waitOneSecond();
-//    	actions.moveToElement(driver.findElement(HoverChartRevamp)).perform();
-//    	Thread.sleep(1000);
-//    	
-//    	driver.findElement(ChartScroll).click();
-//    	
-//    	driver.findElement(CloseChart).click();
-//    	
-//    	driver.switchTo().defaultContent();
+    	waitOneSecond();
+    	driver.findElement(NfoDropdown).click();
+    	
+    	driver.findElement(ChangeOptionBfo).click();
+    	
+    	driver.findElement(CloseNifty).click();
+    	
+    	waitOneSecond();
+    	actions.moveToElement(driver.findElement(ChartHover)).perform();
+    	Thread.sleep(1000);
+    	
+    	waitOneSecond();
+    	driver.findElement(ChartOpen).click();
+    	Thread.sleep(5000);
+    	
+    	waitOneSecond();   	
+    	driver.switchTo().frame(driver.findElement(SwitchIframe));
+    	System.out.println("iframe changed");
+    	
+    	driver.switchTo().frame(driver.findElement(SwitchInnerFrame));
+    	System.out.println("inneriframe changed");
+    	
+    	waitOneSecond();
+    	String actualText_4 = driver.findElement(ChartValidation).getText();
+    	Assert.assertEquals(actualText_4, BfoOptionChart, "BFO OPTION Chart Mismatch");
+    	System.out.println("Verified BFO OPTION Chart");
+    	
+    	waitOneSecond();
+    	actions.moveToElement(driver.findElement(HoverChartRevamp)).perform();
+    	Thread.sleep(1000);
+    	
+    	driver.findElement(ChartScroll).click();
+    	
+    	driver.findElement(CloseChart).click();
+    	
+    	driver.switchTo().defaultContent();
     	
     	
     	// Validating BFO FUTURE chart
     	
-//    	waitOneSecond();
-//    	driver.findElement(Futures).click();
-//    	
-//    	waitOneSecond();
-//    	actions.moveToElement(driver.findElement(ChartHover)).perform();
-//    	Thread.sleep(1000);
-//    	
-//    	waitOneSecond();
-//    	driver.findElement(ChartOpen).click();
-//    	Thread.sleep(5000);
-//    	
-//    	waitOneSecond();   	
-//    	driver.switchTo().frame(driver.findElement(SwitchIframe));
-//    	System.out.println("iframe changed");
-//    	
-//    	driver.switchTo().frame(driver.findElement(SwitchInnerFrame));
-//    	System.out.println("inneriframe changed");
-//    	
-//    	waitOneSecond();
-//    	String actualText_5 = driver.findElement(ChartValidation).getText();
-//    	Assert.assertEquals(actualText_5, BfoFutureChart, "BFO FUTURE Chart Mismatch");
-//    	System.out.println("Verified BFO FUTURE Chart");
-//    	
-//    	waitOneSecond();
-//    	actions.moveToElement(driver.findElement(HoverChartRevamp)).perform();
-//    	Thread.sleep(1000);
-//    	
-//    	driver.findElement(ChartScroll).click();
-//    	
-//    	driver.findElement(CloseChart).click();
-//    	
-//    	driver.switchTo().defaultContent();
+    	waitOneSecond();
+    	driver.findElement(Futures).click();
+    	
+    	waitOneSecond();
+    	actions.moveToElement(driver.findElement(ChartHover)).perform();
+    	Thread.sleep(1000);
+    	
+    	waitOneSecond();
+    	driver.findElement(ChartOpen).click();
+    	Thread.sleep(5000);
+    	
+    	waitOneSecond();   	
+    	driver.switchTo().frame(driver.findElement(SwitchIframe));
+    	System.out.println("iframe changed");
+    	
+    	driver.switchTo().frame(driver.findElement(SwitchInnerFrame));
+    	System.out.println("inneriframe changed");
+    	
+    	waitOneSecond();
+    	String actualText_5 = driver.findElement(ChartValidation).getText();
+    	Assert.assertEquals(actualText_5, BfoFutureChart, "BFO FUTURE Chart Mismatch");
+    	System.out.println("Verified BFO FUTURE Chart");
+    	
+    	waitOneSecond();
+    	actions.moveToElement(driver.findElement(HoverChartRevamp)).perform();
+    	Thread.sleep(1000);
+    	
+    	driver.findElement(ChartScroll).click();
+    	
+    	driver.findElement(CloseChart).click();
+    	
+    	driver.switchTo().defaultContent();
     	
     	
     	// Validating NFO FUTURE chart
     	
-//    	waitOneSecond();
-//    	driver.findElement(BfoDropdown).click();
-//    	
-//    	driver.findElement(ChangeFutureNfo).click();
-//    	
-//    	waitOneSecond();
-//    	actions.moveToElement(driver.findElement(ChartHover)).perform();
-//    	Thread.sleep(1000);
-//    	
-//    	waitOneSecond();
-//    	driver.findElement(ChartOpen).click();
-//    	Thread.sleep(5000);
-//    	
-//    	waitOneSecond();   	
-//    	driver.switchTo().frame(driver.findElement(SwitchIframe));
-//    	System.out.println("iframe changed");
-//    	
-//    	driver.switchTo().frame(driver.findElement(SwitchInnerFrame));
-//    	System.out.println("inneriframe changed");
-//    	
-//    	waitOneSecond();
-//    	String actualText_6 = driver.findElement(ChartValidation).getText();
-//    	Assert.assertEquals(actualText_6, NfoFutureChart, "NFO FUTURE Chart Mismatch");
-//    	System.out.println("Verified NFO FUTURE Chart");
-//    	
-//    	waitOneSecond();
-//    	actions.moveToElement(driver.findElement(HoverChartRevamp)).perform();
-//    	Thread.sleep(1000);
-//    	
-//    	driver.findElement(ChartScroll).click();
-//    	
-//    	driver.findElement(CloseChart).click();
-//    	
-//    	driver.switchTo().defaultContent();
+    	waitOneSecond();
+    	driver.findElement(BfoDropdown).click();
+    	
+    	driver.findElement(ChangeFutureNfo).click();
+    	
+    	waitOneSecond();
+    	actions.moveToElement(driver.findElement(ChartHover)).perform();
+    	Thread.sleep(1000);
+    	
+    	waitOneSecond();
+    	driver.findElement(ChartOpen).click();
+    	Thread.sleep(5000);
+    	
+    	waitOneSecond();   	
+    	driver.switchTo().frame(driver.findElement(SwitchIframe));
+    	System.out.println("iframe changed");
+    	
+    	driver.switchTo().frame(driver.findElement(SwitchInnerFrame));
+    	System.out.println("inneriframe changed");
+    	
+    	waitOneSecond();
+    	String actualText_6 = driver.findElement(ChartValidation).getText();
+    	Assert.assertEquals(actualText_6, NfoFutureChart, "NFO FUTURE Chart Mismatch");
+    	System.out.println("Verified NFO FUTURE Chart");
+    	
+    	waitOneSecond();
+    	actions.moveToElement(driver.findElement(HoverChartRevamp)).perform();
+    	Thread.sleep(1000);
+    	
+    	driver.findElement(ChartScroll).click();
+    	
+    	driver.findElement(CloseChart).click();
+    	
+    	driver.switchTo().defaultContent();
     	
     	
     	// Validating MCX FUTURE chart
     	
-//    	driver.findElement(Commodity).click();
-//    	
-//    	waitOneSecond();
-//    	actions.moveToElement(driver.findElement(ChartHover)).perform();
-//    	Thread.sleep(1000);
-//    	
-//    	waitOneSecond();
-//    	driver.findElement(ChartOpen).click();
-//    	Thread.sleep(5000);
-//    	
-//    	waitOneSecond();   	
-//    	driver.switchTo().frame(driver.findElement(SwitchIframe));
-//    	System.out.println("iframe changed");
-//    	
-//    	driver.switchTo().frame(driver.findElement(SwitchInnerFrame));
-//    	System.out.println("inneriframe changed");
-//    	
-//    	waitOneSecond();
-//    	String actualText_7 = driver.findElement(ChartValidation).getText();
-//    	Assert.assertEquals(actualText_7, McxFutureChart, "MCX FUTURE Chart Mismatch");
-//    	System.out.println("Verified MCX FUTURE Chart");
-//    	
-//    	waitOneSecond();
-//    	actions.moveToElement(driver.findElement(HoverChartRevamp)).perform();
-//    	Thread.sleep(1000);
-//    	
-//    	driver.findElement(ChartScroll).click();
-//    	
-//    	driver.findElement(CloseChart).click();
-//    	
-//    	driver.switchTo().defaultContent();
+    	driver.findElement(Commodity).click();
+    	
+    	waitOneSecond();
+    	actions.moveToElement(driver.findElement(ChartHover)).perform();
+    	Thread.sleep(1000);
+    	
+    	waitOneSecond();
+    	driver.findElement(ChartOpen).click();
+    	Thread.sleep(5000);
+    	
+    	waitOneSecond();   	
+    	driver.switchTo().frame(driver.findElement(SwitchIframe));
+    	System.out.println("iframe changed");
+    	
+    	driver.switchTo().frame(driver.findElement(SwitchInnerFrame));
+    	System.out.println("inneriframe changed");
+    	
+    	waitOneSecond();
+    	String actualText_7 = driver.findElement(ChartValidation).getText();
+    	Assert.assertEquals(actualText_7, McxFutureChart, "MCX FUTURE Chart Mismatch");
+    	System.out.println("Verified MCX FUTURE Chart");
+    	
+    	waitOneSecond();
+    	actions.moveToElement(driver.findElement(HoverChartRevamp)).perform();
+    	Thread.sleep(1000);
+    	
+    	driver.findElement(ChartScroll).click();
+    	
+    	driver.findElement(CloseChart).click();
+    	
+    	driver.switchTo().defaultContent();
     	
     	
     	// Validating MCX OPTION chart

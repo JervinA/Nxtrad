@@ -34,6 +34,10 @@ private WebDriver driver;
     	return Searchfield;
     }
     
+    public By getSelectTab() {
+    	return SelectTab;
+    }
+    
     
     
 //    String NseSymbolName = "IDEA";
