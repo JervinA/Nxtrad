@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 
 import Config.ConfigReader;
 import Pages.ChartNavigation;
+import Pages.OrderCancellation;
 import Pages.OrderEquity;
 import Pages.OrderModification;
 import Pages.RiskDisclosure;
@@ -31,7 +32,9 @@ public class LoginTest extends BaseTest {
      String NseOrder = ConfigReader.getProperty("NseOrder");
      String BseOrder = ConfigReader.getProperty("BseOrder");
      
-     String SearcOpenOrder = ConfigReader.getProperty("SearcOpenOrder");
+     String SearcOpenNseOrder = ConfigReader.getProperty("SearcOpenNseOrder");
+     String SearcOpenBseOrder = ConfigReader.getProperty("SearcOpenBseOrder");
+     
 	
 
 	@Test(priority = 1)
@@ -95,6 +98,14 @@ public class LoginTest extends BaseTest {
 		 SearchStocks ss = new SearchStocks(driver);
 		 OrderEquity oe = new OrderEquity(driver);
 		 OrderModification om = new OrderModification(driver);
-		 om.OrderModification(ss, oe, SearcOpenOrder);
+		 om.OrderModification(ss, oe, SearcOpenNseOrder, SearcOpenBseOrder);
+	 }
+	 
+	 
+	 @Test(priority = 9)
+	 public void ValidateOrderCancellation() throws InterruptedException {
+		 OrderModification om = new OrderModification(driver);
+		 OrderCancellation oc = new OrderCancellation(driver);
+		 oc.OrderCancellation(om, SearcOpenNseOrder, SearcOpenBseOrder);
 	 }
 }

@@ -1,10 +1,7 @@
 package Pages;
 
 import java.time.Duration;
-import java.util.List;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -25,7 +22,7 @@ public class OrderModification {
     }
     
     
-    private By VerifyEmptyWatchlist = By.xpath("//*[@class='empty-table-img']");
+    
     private By OrdersTab = By.xpath("//*[contains(text(),'Orders')]");
     private By SearchField = By.xpath("(//input[@placeholder='Search'])[1]");
     private By HoverEquityOrder = By.xpath("(//div[@class='side-circle pointer buy-circle'])[1]");
@@ -33,12 +30,18 @@ public class OrderModification {
     private By EquityModify = By.xpath("(//span[contains(text(),'Modify')])[1]");
     private By EquityModifyPrice = By.cssSelector("div[data-cy='orderpad-down-arrow-price']");
     private By EquityOrderModifyToast = By.xpath("//div[contains(text(),'Modification request submitted')]");
-    private By ClearSearchField = By.xpath("(//span[@class='MuiTouchRipple-root custom-ripple css-w0pj6f'])[28]");
+    
     
     String NseOrder = ConfigReader.getProperty("NseOrder");
     String SearcOpenNseOrder = ConfigReader.getProperty("SearcOpenNseOrder");
     String ModifyToastMessage = ConfigReader.getProperty("ModifyToastMessage");
     String SearcOpenBseOrder = ConfigReader.getProperty("SearcOpenBseOrder");
+    
+    
+  //Reuse xpath
+    public By getSearchField() {
+    	return SearchField;
+    }
     
     
  // Constructor
@@ -49,7 +52,7 @@ public class OrderModification {
     
     
   //Actions
-    public void OrderModification(SearchStocks ss, OrderEquity oe, String SearcOpenOrder ) throws InterruptedException {
+    public void OrderModification(SearchStocks ss, OrderEquity oe, String SearcOpenNseOrder, String SearcOpenBseOrder ) throws InterruptedException {
     	
     	
     	driver.findElement(ss.getSelectTab()).click();
@@ -100,12 +103,11 @@ public class OrderModification {
     	
     	driver.findElement(oe.getBuyButton()).click();
     	
-//    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     	WebElement toastElement_2 = wait.until(ExpectedConditions.presenceOfElementLocated(EquityOrderModifyToast));        
     	String actualText_2 = toastElement_2.getText().trim();
     	String expectedText_2 = ModifyToastMessage.trim();
     	Assert.assertEquals(actualText_2,expectedText_2,"Modify Toast message mismatch. Actual Toast: " + actualText_2);
-    	System.out.println("Verified NSE Symbol Modify Order");
+    	System.out.println("Verified BSE Symbol Modify Order");
     	
     	
     	
