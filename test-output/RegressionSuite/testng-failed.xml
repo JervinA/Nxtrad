@@ -9,10 +9,10 @@
     <classes>
       <class name="Tests.LoginTest">
         <methods>
-          <include name="ValidateChartOpening"/>
           <include name="afterEachTest"/>
           <include name="setUp"/>
           <include name="tearDown"/>
+          <include name="ValidateOrderPlacement"/>
         </methods>
       </class> <!-- Tests.LoginTest -->
     </classes>

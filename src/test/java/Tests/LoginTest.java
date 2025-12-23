@@ -28,6 +28,7 @@ public class LoginTest extends BaseTest {
      String spots = ConfigReader.getProperty("spots");
      
      String NseOrder = ConfigReader.getProperty("NseOrder");
+     String BseOrder = ConfigReader.getProperty("BseOrder");
 	
 
 	@Test(priority = 1)
@@ -82,7 +83,7 @@ public class LoginTest extends BaseTest {
 	 public void ValidateOrderPlacement() throws InterruptedException {
 		 SearchStocks ss = new SearchStocks(driver);
 		 OrderEquity oe = new OrderEquity(driver);
-		 oe.OrderEquity(ss, NseOrder);
+		 oe.OrderEquity(ss, NseOrder, BseOrder);
 		 
 	 }
 }

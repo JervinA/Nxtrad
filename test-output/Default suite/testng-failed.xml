@@ -5,10 +5,14 @@
     <classes>
       <class name="Tests.LoginTest">
         <methods>
+          <include name="ValidateChartOpening"/>
           <include name="afterEachTest"/>
           <include name="setUp"/>
+          <include name="validateSearchStocks"/>
           <include name="tearDown"/>
+          <include name="ValidateOrderPlacement"/>
           <include name="validTraditionalLoginTest"/>
+          <include name="validateRiskDisclosure"/>
           <include name="ValidateSearchIndicesAndSpots"/>
         </methods>
       </class> <!-- Tests.LoginTest -->
