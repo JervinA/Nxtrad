@@ -10,9 +10,9 @@
       <class name="Tests.LoginTest">
         <methods>
           <include name="afterEachTest"/>
+          <include name="ValidateOrderModification"/>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="ValidateOrderPlacement"/>
         </methods>
       </class> <!-- Tests.LoginTest -->
     </classes>

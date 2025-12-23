@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import Config.ConfigReader;
 import Pages.ChartNavigation;
 import Pages.OrderEquity;
+import Pages.OrderModification;
 import Pages.RiskDisclosure;
 import Pages.SearchIndicesSpots;
 import Pages.SearchStocks;
@@ -29,6 +30,8 @@ public class LoginTest extends BaseTest {
      
      String NseOrder = ConfigReader.getProperty("NseOrder");
      String BseOrder = ConfigReader.getProperty("BseOrder");
+     
+     String SearcOpenOrder = ConfigReader.getProperty("SearcOpenOrder");
 	
 
 	@Test(priority = 1)
@@ -79,11 +82,19 @@ public class LoginTest extends BaseTest {
 //	 }
 	
 	 
-	 @Test(priority = 7)
-	 public void ValidateOrderPlacement() throws InterruptedException {
+//	 @Test(priority = 7)
+//	 public void ValidateOrderPlacement() throws InterruptedException {
+//		 SearchStocks ss = new SearchStocks(driver);
+//		 OrderEquity oe = new OrderEquity(driver);
+//		 oe.OrderEquity(ss, NseOrder, BseOrder);	 
+//	 }
+	 
+	 
+	 @Test(priority = 8)
+	 public void ValidateOrderModification() throws InterruptedException {
 		 SearchStocks ss = new SearchStocks(driver);
 		 OrderEquity oe = new OrderEquity(driver);
-		 oe.OrderEquity(ss, NseOrder, BseOrder);
-		 
+		 OrderModification om = new OrderModification(driver);
+		 om.OrderModification(ss, oe, SearcOpenOrder);
 	 }
 }

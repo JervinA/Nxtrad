@@ -39,6 +39,12 @@ public class OrderEquity {
     String BseOrder = ConfigReader.getProperty("BseOrder");
     
     
+  //Reuse xpath
+    public By getBuyButton() {
+    	return BuyButton;
+    }
+    
+    
  // Constructor
     public OrderEquity(WebDriver driver) {
         this.driver = driver;
