@@ -10,8 +10,8 @@
       <class name="Tests.LoginTest">
         <methods>
           <include name="afterEachTest"/>
-          <include name="ValidateOrderCancellation"/>
           <include name="setUp"/>
+          <include name="validateSearchStocks"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- Tests.LoginTest -->

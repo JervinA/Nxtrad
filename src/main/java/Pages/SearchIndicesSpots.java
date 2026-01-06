@@ -38,6 +38,10 @@ private WebDriver driver;
     	//Verifying INDEX
     	
     	waitOneSecond();
+    	driver.findElement(ss.getSearchfield()).sendKeys(Keys.CONTROL + "a");
+    	driver.findElement(ss.getSearchfield()).sendKeys(Keys.DELETE);
+    	
+    	waitOneSecond();
     	driver.findElement(ss.getSearchfield()).sendKeys(indices);
     	
     	waitOneSecond();

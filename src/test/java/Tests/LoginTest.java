@@ -45,29 +45,29 @@ public class LoginTest extends BaseTest {
 	    }
 	 
 	
-//	 @Test(priority = 2)
-//	    public void validateSignUpPage() throws InterruptedException {
-//		 TraditionalLogin tl = new TraditionalLogin(driver);
-//		 SignUpPage sp = new SignUpPage(driver);
-//	       sp.signup(tl, mobileno_2, otp);  
-//	    }
+	 @Test(priority = 2)
+	    public void validateSignUpPage() throws InterruptedException {
+		 TraditionalLogin tl = new TraditionalLogin(driver);
+		 SignUpPage sp = new SignUpPage(driver);
+	       sp.signup(tl, mobileno_2, otp);  
+	    }
 	 
 
-//	 @Test(priority = 3) 
-//	 public void validateRiskDisclosure() throws InterruptedException {
-//		 TraditionalLogin tl = new TraditionalLogin(driver);
-//		 RiskDisclosure rd = new RiskDisclosure(driver);
-//			rd.riskdisclosure(tl, mobileno_1, otp, pin);
-//		
-//	 }
+	 @Test(priority = 3) 
+	 public void validateRiskDisclosure() throws InterruptedException {
+		 TraditionalLogin tl = new TraditionalLogin(driver);
+		 RiskDisclosure rd = new RiskDisclosure(driver);
+			rd.riskdisclosure(tl, mobileno_1, otp, pin);
+		
+	 }
 	 
 	 
  
-//	 @Test(priority = 4)
-//	 public void validateSearchStocks() throws InterruptedException {
-//		 SearchStocks ss = new SearchStocks(driver);
-//		 ss.SearchStocks(nse, bse, nfo, bfo, mcx);
-//	 }
+	 @Test(priority = 4)
+	 public void validateSearchStocks() throws InterruptedException {
+		 SearchStocks ss = new SearchStocks(driver);
+		 ss.SearchStocks(nse, bse, nfo, bfo, mcx);
+	 }
 	
 	 
 //	 @Test(priority = 5)
@@ -93,19 +93,19 @@ public class LoginTest extends BaseTest {
 //	 }
 	 
 	 
-	 @Test(priority = 8)
-	 public void ValidateOrderModification() throws InterruptedException {
-		 SearchStocks ss = new SearchStocks(driver);
-		 OrderEquity oe = new OrderEquity(driver);
-		 OrderModification om = new OrderModification(driver);
-		 om.OrderModification(ss, oe, SearcOpenNseOrder, SearcOpenBseOrder);
-	 }
+//	 @Test(priority = 8)
+//	 public void ValidateOrderModification() throws InterruptedException {
+//		 SearchStocks ss = new SearchStocks(driver);
+//		 OrderEquity oe = new OrderEquity(driver);
+//		 OrderModification om = new OrderModification(driver);
+//		 om.OrderModification(ss, oe, SearcOpenNseOrder, SearcOpenBseOrder);
+//	 }
 	 
 	 
-	 @Test(priority = 9)
-	 public void ValidateOrderCancellation() throws InterruptedException {
-		 OrderModification om = new OrderModification(driver);
-		 OrderCancellation oc = new OrderCancellation(driver);
-		 oc.OrderCancellation(om, SearcOpenNseOrder, SearcOpenBseOrder);
-	 }
+//	 @Test(priority = 9)
+//	 public void ValidateOrderCancellation() throws InterruptedException {
+//		 OrderModification om = new OrderModification(driver);
+//		 OrderCancellation oc = new OrderCancellation(driver);
+//		 oc.OrderCancellation(om, SearcOpenNseOrder, SearcOpenBseOrder);
+//	 }
 }
