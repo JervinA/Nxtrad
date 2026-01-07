@@ -63,11 +63,11 @@ public class LoginTest extends BaseTest {
 	 
 	 
  
-	 @Test(priority = 4)
-	 public void validateSearchStocks() throws InterruptedException {
-		 SearchStocks ss = new SearchStocks(driver);
-		 ss.SearchStocks(nse, bse, nfo, bfo, mcx);
-	 }
+//	 @Test(priority = 4)
+//	 public void validateSearchStocks() throws InterruptedException {
+//		 SearchStocks ss = new SearchStocks(driver);
+//		 ss.SearchStocks(nse, bse, nfo, bfo, mcx);
+//	 }
 	
 	 
 //	 @Test(priority = 5)
@@ -78,11 +78,11 @@ public class LoginTest extends BaseTest {
 //	 }
 	
 	 
-//	 @Test(priority = 6)
-//	 public void ValidateChartOpening() throws InterruptedException {
-//		 ChartNavigation cn = new ChartNavigation(driver);
-//		 cn.chartnavigation();
-//	 }
+	 @Test(priority = 6)
+	 public void ValidateChartOpening() throws InterruptedException {
+		 ChartNavigation cn = new ChartNavigation(driver);
+		 cn.chartnavigation();
+	 }
 	
 	 
 //	 @Test(priority = 7)
