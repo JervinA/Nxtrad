@@ -1605,3 +1605,135 @@
 2026-01-07 12:45:05 INFO  LoginTest:40 - Navigated to URL: https://nxtrade-qa-api.iouring.in/webapp/auth/login
 2026-01-07 12:47:27 INFO  LoginTest:51 - ===== Ending Test: LoginTest =====
 2026-01-07 12:47:30 INFO  LoginTest:54 - Driver closed successfully.
+2026-01-08 22:36:08 INFO  LoginTest:100 - Logger initialized. Logs will be saved in: logs/testlog_20260108_223608.log
+2026-01-08 22:36:08 INFO  LoginTest:30 - ===== Starting Test: LoginTest =====
+2026-01-08 22:36:18 INFO  LoginTest:35 - chrome driver initialized.
+2026-01-08 22:36:20 INFO  LoginTest:40 - Navigated to URL: https://nxtrade-qa-api.iouring.in/webapp/auth/login
+2026-01-08 22:37:03 INFO  LoginTest:51 - ===== Ending Test: LoginTest =====
+2026-01-08 22:37:06 INFO  LoginTest:54 - Driver closed successfully.
+2026-01-08 22:37:56 INFO  LoginTest:100 - Logger initialized. Logs will be saved in: logs/testlog_20260108_223756.log
+2026-01-08 22:37:56 INFO  LoginTest:30 - ===== Starting Test: LoginTest =====
+2026-01-08 22:38:01 INFO  LoginTest:35 - chrome driver initialized.
+2026-01-08 22:38:04 INFO  LoginTest:40 - Navigated to URL: https://nxtrade-qa-api.iouring.in/webapp/auth/login
+2026-01-08 22:38:48 INFO  LoginTest:51 - ===== Ending Test: LoginTest =====
+2026-01-08 22:38:52 INFO  LoginTest:54 - Driver closed successfully.
+2026-01-08 22:41:53 INFO  LoginTest:100 - Logger initialized. Logs will be saved in: logs/testlog_20260108_224153.log
+2026-01-08 22:41:53 INFO  LoginTest:30 - ===== Starting Test: LoginTest =====
+2026-01-08 22:41:59 INFO  LoginTest:35 - chrome driver initialized.
+2026-01-08 22:42:01 INFO  LoginTest:40 - Navigated to URL: https://nxtrade-qa-api.iouring.in/webapp/auth/login
+2026-01-08 22:44:32 INFO  LoginTest:51 - ===== Ending Test: LoginTest =====
+2026-01-08 22:44:35 INFO  LoginTest:54 - Driver closed successfully.
+2026-01-08 22:45:40 INFO  LoginTest:100 - Logger initialized. Logs will be saved in: logs/testlog_20260108_224540.log
+2026-01-08 22:45:40 INFO  LoginTest:30 - ===== Starting Test: LoginTest =====
+2026-01-08 22:45:45 INFO  LoginTest:35 - chrome driver initialized.
+2026-01-08 22:45:47 INFO  LoginTest:40 - Navigated to URL: https://nxtrade-qa-api.iouring.in/webapp/auth/login
+2026-01-08 22:47:01 INFO  LoginTest:51 - ===== Ending Test: LoginTest =====
+2026-01-08 22:47:04 INFO  LoginTest:54 - Driver closed successfully.
+2026-01-08 22:51:03 INFO  LoginTest:100 - Logger initialized. Logs will be saved in: logs/testlog_20260108_225103.log
+2026-01-08 22:51:03 INFO  LoginTest:30 - ===== Starting Test: LoginTest =====
+2026-01-08 22:51:08 INFO  LoginTest:35 - chrome driver initialized.
+2026-01-08 22:51:10 INFO  LoginTest:40 - Navigated to URL: https://nxtrade-qa-api.iouring.in/webapp/auth/login
+2026-01-08 22:51:49 INFO  LoginTest:51 - ===== Ending Test: LoginTest =====
+2026-01-08 22:51:51 INFO  LoginTest:54 - Driver closed successfully.
+2026-01-08 22:53:05 INFO  LoginTest:100 - Logger initialized. Logs will be saved in: logs/testlog_20260108_225305.log
+2026-01-08 22:53:05 INFO  LoginTest:30 - ===== Starting Test: LoginTest =====
+2026-01-08 22:53:09 INFO  LoginTest:35 - chrome driver initialized.
+2026-01-08 22:53:26 INFO  LoginTest:100 - Logger initialized. Logs will be saved in: logs/testlog_20260108_225326.log
+2026-01-08 22:53:26 INFO  LoginTest:30 - ===== Starting Test: LoginTest =====
+2026-01-08 22:53:31 INFO  LoginTest:35 - chrome driver initialized.
+2026-01-08 22:53:33 INFO  LoginTest:40 - Navigated to URL: https://nxtrade-qa-api.iouring.in/webapp/auth/login
+2026-01-08 22:54:04 INFO  LoginTest:51 - ===== Ending Test: LoginTest =====
+2026-01-08 22:54:06 INFO  LoginTest:54 - Driver closed successfully.
+2026-01-08 22:55:06 INFO  LoginTest:100 - Logger initialized. Logs will be saved in: logs/testlog_20260108_225506.log
+2026-01-08 22:55:06 INFO  LoginTest:30 - ===== Starting Test: LoginTest =====
+2026-01-08 22:55:11 INFO  LoginTest:35 - chrome driver initialized.
+2026-01-08 22:55:18 INFO  LoginTest:40 - Navigated to URL: https://nxtrade-qa-api.iouring.in/webapp/auth/login
+2026-01-08 22:55:40 INFO  LoginTest:51 - ===== Ending Test: LoginTest =====
+2026-01-08 22:55:42 INFO  LoginTest:54 - Driver closed successfully.
+2026-01-08 22:56:42 INFO  LoginTest:100 - Logger initialized. Logs will be saved in: logs/testlog_20260108_225642.log
+2026-01-08 22:56:42 INFO  LoginTest:30 - ===== Starting Test: LoginTest =====
+2026-01-08 22:56:47 INFO  LoginTest:35 - chrome driver initialized.
+2026-01-08 22:56:53 INFO  LoginTest:40 - Navigated to URL: https://nxtrade-qa-api.iouring.in/webapp/auth/login
+2026-01-08 22:57:17 INFO  LoginTest:51 - ===== Ending Test: LoginTest =====
+2026-01-08 22:57:19 INFO  LoginTest:54 - Driver closed successfully.
+2026-01-08 22:57:41 INFO  LoginTest:100 - Logger initialized. Logs will be saved in: logs/testlog_20260108_225741.log
+2026-01-08 22:57:41 INFO  LoginTest:30 - ===== Starting Test: LoginTest =====
+2026-01-08 22:57:46 INFO  LoginTest:35 - chrome driver initialized.
+2026-01-08 22:57:49 INFO  LoginTest:40 - Navigated to URL: https://nxtrade-qa-api.iouring.in/webapp/auth/login
+2026-01-08 22:58:41 INFO  LoginTest:51 - ===== Ending Test: LoginTest =====
+2026-01-08 22:58:43 INFO  LoginTest:54 - Driver closed successfully.
+2026-01-08 22:59:23 INFO  LoginTest:100 - Logger initialized. Logs will be saved in: logs/testlog_20260108_225923.log
+2026-01-08 22:59:23 INFO  LoginTest:30 - ===== Starting Test: LoginTest =====
+2026-01-08 22:59:28 INFO  LoginTest:35 - chrome driver initialized.
+2026-01-08 22:59:34 INFO  LoginTest:40 - Navigated to URL: https://nxtrade-qa-api.iouring.in/webapp/auth/login
+2026-01-08 23:00:24 INFO  LoginTest:51 - ===== Ending Test: LoginTest =====
+2026-01-08 23:00:27 INFO  LoginTest:54 - Driver closed successfully.
+2026-01-08 23:10:39 INFO  LoginTest:100 - Logger initialized. Logs will be saved in: logs/testlog_20260108_231039.log
+2026-01-08 23:10:39 INFO  LoginTest:30 - ===== Starting Test: LoginTest =====
+2026-01-08 23:10:44 INFO  LoginTest:35 - chrome driver initialized.
+2026-01-08 23:14:21 INFO  LoginTest:100 - Logger initialized. Logs will be saved in: logs/testlog_20260108_231421.log
+2026-01-08 23:14:21 INFO  LoginTest:30 - ===== Starting Test: LoginTest =====
+2026-01-08 23:14:27 INFO  LoginTest:35 - chrome driver initialized.
+2026-01-08 23:14:33 INFO  LoginTest:40 - Navigated to URL: https://nxtrade-qa-api.iouring.in/webapp/auth/login
+2026-01-08 23:14:50 INFO  LoginTest:51 - ===== Ending Test: LoginTest =====
+2026-01-08 23:14:52 INFO  LoginTest:54 - Driver closed successfully.
+2026-01-08 23:14:58 INFO  LoginTest:100 - Logger initialized. Logs will be saved in: logs/testlog_20260108_231458.log
+2026-01-08 23:14:58 INFO  LoginTest:30 - ===== Starting Test: LoginTest =====
+2026-01-08 23:15:03 INFO  LoginTest:35 - chrome driver initialized.
+2026-01-08 23:15:09 INFO  LoginTest:40 - Navigated to URL: https://nxtrade-qa-api.iouring.in/webapp/auth/login
+2026-01-08 23:15:26 INFO  LoginTest:51 - ===== Ending Test: LoginTest =====
+2026-01-08 23:15:28 INFO  LoginTest:54 - Driver closed successfully.
+2026-01-08 23:16:49 INFO  LoginTest:100 - Logger initialized. Logs will be saved in: logs/testlog_20260108_231649.log
+2026-01-08 23:16:49 INFO  LoginTest:30 - ===== Starting Test: LoginTest =====
+2026-01-08 23:16:54 INFO  LoginTest:35 - chrome driver initialized.
+2026-01-08 23:17:01 INFO  LoginTest:40 - Navigated to URL: https://nxtrade-qa-api.iouring.in/webapp/auth/login
+2026-01-08 23:17:18 INFO  LoginTest:51 - ===== Ending Test: LoginTest =====
+2026-01-08 23:17:19 INFO  LoginTest:54 - Driver closed successfully.
+2026-01-08 23:17:27 INFO  LoginTest:100 - Logger initialized. Logs will be saved in: logs/testlog_20260108_231727.log
+2026-01-08 23:17:27 INFO  LoginTest:30 - ===== Starting Test: LoginTest =====
+2026-01-08 23:17:32 INFO  LoginTest:35 - chrome driver initialized.
+2026-01-08 23:17:35 INFO  LoginTest:40 - Navigated to URL: https://nxtrade-qa-api.iouring.in/webapp/auth/login
+2026-01-08 23:17:54 INFO  LoginTest:51 - ===== Ending Test: LoginTest =====
+2026-01-08 23:17:56 INFO  LoginTest:54 - Driver closed successfully.
+2026-01-08 23:17:59 INFO  LoginTest:100 - Logger initialized. Logs will be saved in: logs/testlog_20260108_231759.log
+2026-01-08 23:17:59 INFO  LoginTest:30 - ===== Starting Test: LoginTest =====
+2026-01-08 23:18:04 INFO  LoginTest:35 - chrome driver initialized.
+2026-01-08 23:18:10 INFO  LoginTest:40 - Navigated to URL: https://nxtrade-qa-api.iouring.in/webapp/auth/login
+2026-01-08 23:18:27 INFO  LoginTest:51 - ===== Ending Test: LoginTest =====
+2026-01-08 23:18:29 INFO  LoginTest:54 - Driver closed successfully.
+2026-01-08 23:19:14 INFO  LoginTest:100 - Logger initialized. Logs will be saved in: logs/testlog_20260108_231914.log
+2026-01-08 23:19:14 INFO  LoginTest:30 - ===== Starting Test: LoginTest =====
+2026-01-08 23:19:19 INFO  LoginTest:35 - chrome driver initialized.
+2026-01-08 23:19:22 INFO  LoginTest:40 - Navigated to URL: https://nxtrade-qa-api.iouring.in/webapp/auth/login
+2026-01-08 23:19:42 INFO  LoginTest:51 - ===== Ending Test: LoginTest =====
+2026-01-08 23:19:44 INFO  LoginTest:54 - Driver closed successfully.
+2026-01-08 23:22:43 INFO  LoginTest:100 - Logger initialized. Logs will be saved in: logs/testlog_20260108_232243.log
+2026-01-08 23:22:43 INFO  LoginTest:30 - ===== Starting Test: LoginTest =====
+2026-01-08 23:22:48 INFO  LoginTest:35 - chrome driver initialized.
+2026-01-08 23:23:06 INFO  LoginTest:40 - Navigated to URL: https://nxtrade-qa-api.iouring.in/webapp/auth/login
+2026-01-08 23:23:22 INFO  LoginTest:51 - ===== Ending Test: LoginTest =====
+2026-01-08 23:23:24 INFO  LoginTest:54 - Driver closed successfully.
+2026-01-08 23:26:16 INFO  LoginTest:100 - Logger initialized. Logs will be saved in: logs/testlog_20260108_232616.log
+2026-01-08 23:26:16 INFO  LoginTest:30 - ===== Starting Test: LoginTest =====
+2026-01-08 23:26:21 INFO  LoginTest:35 - chrome driver initialized.
+2026-01-08 23:26:28 INFO  LoginTest:40 - Navigated to URL: https://nxtrade-qa-api.iouring.in/webapp/auth/login
+2026-01-08 23:26:46 INFO  LoginTest:51 - ===== Ending Test: LoginTest =====
+2026-01-08 23:26:48 INFO  LoginTest:54 - Driver closed successfully.
+2026-01-08 23:29:32 INFO  LoginTest:100 - Logger initialized. Logs will be saved in: logs/testlog_20260108_232932.log
+2026-01-08 23:29:32 INFO  LoginTest:30 - ===== Starting Test: LoginTest =====
+2026-01-08 23:29:37 INFO  LoginTest:35 - chrome driver initialized.
+2026-01-08 23:29:44 INFO  LoginTest:40 - Navigated to URL: https://nxtrade-qa-api.iouring.in/webapp/auth/login
+2026-01-08 23:30:02 INFO  LoginTest:51 - ===== Ending Test: LoginTest =====
+2026-01-08 23:30:03 INFO  LoginTest:54 - Driver closed successfully.
+2026-01-08 23:39:29 INFO  LoginTest:100 - Logger initialized. Logs will be saved in: logs/testlog_20260108_233929.log
+2026-01-08 23:39:29 INFO  LoginTest:30 - ===== Starting Test: LoginTest =====
+2026-01-08 23:39:36 INFO  LoginTest:35 - chrome driver initialized.
+2026-01-08 23:39:42 INFO  LoginTest:40 - Navigated to URL: https://nxtrade-qa-api.iouring.in/webapp/auth/login
+2026-01-08 23:40:00 INFO  LoginTest:51 - ===== Ending Test: LoginTest =====
+2026-01-08 23:40:02 INFO  LoginTest:54 - Driver closed successfully.
+2026-01-08 23:40:23 INFO  LoginTest:100 - Logger initialized. Logs will be saved in: logs/testlog_20260108_234023.log
+2026-01-08 23:40:23 INFO  LoginTest:30 - ===== Starting Test: LoginTest =====
+2026-01-08 23:40:28 INFO  LoginTest:35 - chrome driver initialized.
+2026-01-08 23:40:34 INFO  LoginTest:40 - Navigated to URL: https://nxtrade-qa-api.iouring.in/webapp/auth/login
+2026-01-09 00:01:06 INFO  LoginTest:51 - ===== Ending Test: LoginTest =====
+2026-01-09 05:14:36 INFO  LoginTest:54 - Driver closed successfully.

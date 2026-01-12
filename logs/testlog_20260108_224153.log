@@ -1,0 +1,6 @@
+2026-01-08 22:41:53 INFO  LoginTest:100 - Logger initialized. Logs will be saved in: logs/testlog_20260108_224153.log
+2026-01-08 22:41:53 INFO  LoginTest:30 - ===== Starting Test: LoginTest =====
+2026-01-08 22:41:59 INFO  LoginTest:35 - chrome driver initialized.
+2026-01-08 22:42:01 INFO  LoginTest:40 - Navigated to URL: https://nxtrade-qa-api.iouring.in/webapp/auth/login
+2026-01-08 22:44:32 INFO  LoginTest:51 - ===== Ending Test: LoginTest =====
+2026-01-08 22:44:35 INFO  LoginTest:54 - Driver closed successfully.

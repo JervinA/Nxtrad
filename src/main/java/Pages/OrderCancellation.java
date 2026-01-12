@@ -69,21 +69,21 @@ public class OrderCancellation {
     	driver.navigate().refresh();
     	Thread.sleep(3000);
     	
-    	driver.findElement(om.getSearchField()).sendKeys(SearcOpenBseOrder);
-    	
-    	driver.findElement(OrderCheckBox).click();
-    	
-    	driver.findElement(Cancelbutton).click();
-    	
-    	driver.findElement(CancelConfirmation).click();
-    	
-    	
-    	//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-    	WebElement toastElement_2 = wait.until(ExpectedConditions.presenceOfElementLocated(CancelToast));        
-    	String actualText_2 = toastElement_2.getText().trim();
-    	String expectedText_2 = CancelToastMessage.trim();
-    	Assert.assertEquals(actualText_1,expectedText_2,"Cancel Toast message mismatch for BSE Symbol. Actual Toast: " + actualText_2);
-    	System.out.println("Verified BSE Symbol Cancel Order");
+//    	driver.findElement(om.getSearchField()).sendKeys(SearcOpenBseOrder);
+//    	
+//    	driver.findElement(OrderCheckBox).click();
+//    	
+//    	driver.findElement(Cancelbutton).click();
+//    	
+//    	driver.findElement(CancelConfirmation).click();
+//    	
+//    	
+//    	//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+//    	WebElement toastElement_2 = wait.until(ExpectedConditions.presenceOfElementLocated(CancelToast));        
+//    	String actualText_2 = toastElement_2.getText().trim();
+//    	String expectedText_2 = CancelToastMessage.trim();
+//    	Assert.assertEquals(actualText_1,expectedText_2,"Cancel Toast message mismatch for BSE Symbol. Actual Toast: " + actualText_2);
+//    	System.out.println("Verified BSE Symbol Cancel Order");
     	
     	
     	

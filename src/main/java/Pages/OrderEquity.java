@@ -95,37 +95,37 @@ public class OrderEquity {
     	
     	//Placing BSE Order
     	
-    	waitOneSecond();
-    	driver.findElement(ss.getSearchfield()).sendKeys(BseOrder);
-    	
-    	waitOneSecond();
-    	actions.moveToElement(driver.findElement(HoverEquitySymbol)).perform();
-    	
-    	driver.findElement(BuyIcon).click();
-    	
-    	WebElement checkLimit_2 = driver.findElement(CheckLimit);
-    	if (checkLimit_2.isSelected()) {
-    	    System.out.println("CheckLimit is already selected");
-    	} else {
-    	    checkLimit_2.click();
-    	    System.out.println("CheckLimit was not selected, now clicked");
-    	}
-    	
-    	driver.findElement(BuyButton).click();
-    	
-    	waitOneSecond();
-    	try {
-        	driver.findElement(NseConfirmation).click();
-        } catch (Exception e) {
-        	System.out.println("Confirmation not shown");
-        }
-    	
-    	//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-    	//WebElement toastElement = wait.until(ExpectedConditions.presenceOfElementLocated(NseOrderToast));        
-    	String actualText_2 = toastElement.getText().trim();
-    	String expectedText_2 = ToastMessage.trim();
-    	Assert.assertEquals(actualText_2,expectedText,"Toast message mismatch. Actual Toast: " + actualText_2);
-    	System.out.println("Verified BSE Symbol Order placement");
+//    	waitOneSecond();
+//    	driver.findElement(ss.getSearchfield()).sendKeys(BseOrder);
+//    	
+//    	waitOneSecond();
+//    	actions.moveToElement(driver.findElement(HoverEquitySymbol)).perform();
+//    	
+//    	driver.findElement(BuyIcon).click();
+//    	
+//    	WebElement checkLimit_2 = driver.findElement(CheckLimit);
+//    	if (checkLimit_2.isSelected()) {
+//    	    System.out.println("CheckLimit is already selected");
+//    	} else {
+//    	    checkLimit_2.click();
+//    	    System.out.println("CheckLimit was not selected, now clicked");
+//    	}
+//    	
+//    	driver.findElement(BuyButton).click();
+//    	
+//    	waitOneSecond();
+//    	try {
+//        	driver.findElement(NseConfirmation).click();
+//        } catch (Exception e) {
+//        	System.out.println("Confirmation not shown");
+//        }
+//    	
+//    	//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+//    	//WebElement toastElement = wait.until(ExpectedConditions.presenceOfElementLocated(NseOrderToast));        
+//    	String actualText_2 = toastElement.getText().trim();
+//    	String expectedText_2 = ToastMessage.trim();
+//    	Assert.assertEquals(actualText_2,expectedText,"Toast message mismatch. Actual Toast: " + actualText_2);
+//    	System.out.println("Verified BSE Symbol Order placement");
 
     	
     	

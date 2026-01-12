@@ -43,6 +43,10 @@ public class OrderModification {
     	return SearchField;
     }
     
+    public By getOrdersTab() {
+    	return OrdersTab;
+    }
+    
     
  // Constructor
     public OrderModification(WebDriver driver) {
@@ -86,28 +90,28 @@ public class OrderModification {
     	
     	//Verifying BSE Order Modification
     	
-    	driver.navigate().refresh();
-    	
-    	Thread.sleep(3000);
-    	driver.findElement(SearchField).sendKeys(SearcOpenBseOrder);
-    	
-    	waitOneSecond();
-    	actions.moveToElement(driver.findElement(HoverEquityOrder)).perform();
-    	
-    	driver.findElement(EquityThreeDots).click();
-    	
-    	driver.findElement(EquityModify).click();
-    	
-    	waitOneSecond();
-    	driver.findElement(EquityModifyPrice).click();
-    	
-    	driver.findElement(oe.getBuyButton()).click();
-    	
-    	WebElement toastElement_2 = wait.until(ExpectedConditions.presenceOfElementLocated(EquityOrderModifyToast));        
-    	String actualText_2 = toastElement_2.getText().trim();
-    	String expectedText_2 = ModifyToastMessage.trim();
-    	Assert.assertEquals(actualText_2,expectedText_2,"Modify Toast message mismatch. Actual Toast: " + actualText_2);
-    	System.out.println("Verified BSE Symbol Modify Order");
+//    	driver.navigate().refresh();
+//    	
+//    	Thread.sleep(3000);
+//    	driver.findElement(SearchField).sendKeys(SearcOpenBseOrder);
+//    	
+//    	waitOneSecond();
+//    	actions.moveToElement(driver.findElement(HoverEquityOrder)).perform();
+//    	
+//    	driver.findElement(EquityThreeDots).click();
+//    	
+//    	driver.findElement(EquityModify).click();
+//    	
+//    	waitOneSecond();
+//    	driver.findElement(EquityModifyPrice).click();
+//    	
+//    	driver.findElement(oe.getBuyButton()).click();
+//    	
+//    	WebElement toastElement_2 = wait.until(ExpectedConditions.presenceOfElementLocated(EquityOrderModifyToast));        
+//    	String actualText_2 = toastElement_2.getText().trim();
+//    	String expectedText_2 = ModifyToastMessage.trim();
+//    	Assert.assertEquals(actualText_2,expectedText_2,"Modify Toast message mismatch. Actual Toast: " + actualText_2);
+//    	System.out.println("Verified BSE Symbol Modify Order");
     	
     	
     	

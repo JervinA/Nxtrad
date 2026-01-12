@@ -17,7 +17,7 @@ public class SignUpPage {
     private By profile = By.cssSelector("div[data-cy='profile-btn']");
     private By logout = By.cssSelector("div[data-cy='logout-btn']");
     private By OkBtn = By.cssSelector("button[data-cy='dialog-confirm-btn']");
-    private By switchacc = By.xpath("//*[contains(text(),' Switch account')]");
+    private By switchacc = By.xpath("//span[@class='switch-acc']");
     private By createacc = By.xpath("//*[contains(text(),'Create Account ')]");
     private By tryotherno = By.xpath("//*[contains(text(),'Try with new number?')]");
     

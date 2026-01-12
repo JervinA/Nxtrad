@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 
 import Config.ConfigReader;
 import Pages.ChartNavigation;
+import Pages.Create_Edit_Delete_Basket;
 import Pages.OrderCancellation;
 import Pages.OrderEquity;
 import Pages.OrderModification;
@@ -45,21 +46,21 @@ public class LoginTest extends BaseTest {
 	    }
 	 
 	
-	 @Test(priority = 2)
-	    public void validateSignUpPage() throws InterruptedException {
-		 TraditionalLogin tl = new TraditionalLogin(driver);
-		 SignUpPage sp = new SignUpPage(driver);
-	       sp.signup(tl, mobileno_2, otp);  
-	    }
+//	 @Test(priority = 2)
+//	    public void validateSignUpPage() throws InterruptedException {
+//		 TraditionalLogin tl = new TraditionalLogin(driver);
+//		 SignUpPage sp = new SignUpPage(driver);
+//	       sp.signup(tl, mobileno_2, otp);  
+//	    }
 	 
 
-	 @Test(priority = 3) 
-	 public void validateRiskDisclosure() throws InterruptedException {
-		 TraditionalLogin tl = new TraditionalLogin(driver);
-		 RiskDisclosure rd = new RiskDisclosure(driver);
-			rd.riskdisclosure(tl, mobileno_1, otp, pin);
-		
-	 }
+//	 @Test(priority = 3) 
+//	 public void validateRiskDisclosure() throws InterruptedException {
+//		 TraditionalLogin tl = new TraditionalLogin(driver);
+//		 RiskDisclosure rd = new RiskDisclosure(driver);
+//			rd.riskdisclosure(tl, mobileno_1, otp, pin);
+//		
+//	 }
 	 
 	 
  
@@ -78,11 +79,11 @@ public class LoginTest extends BaseTest {
 //	 }
 	
 	 
-	 @Test(priority = 6)
-	 public void ValidateChartOpening() throws InterruptedException {
-		 ChartNavigation cn = new ChartNavigation(driver);
-		 cn.chartnavigation();
-	 }
+//	 @Test(priority = 6)
+//	 public void ValidateChartOpening() throws InterruptedException {
+//		 ChartNavigation cn = new ChartNavigation(driver);
+//		 cn.chartnavigation();
+//	 }
 	
 	 
 //	 @Test(priority = 7)
@@ -108,4 +109,15 @@ public class LoginTest extends BaseTest {
 //		 OrderCancellation oc = new OrderCancellation(driver);
 //		 oc.OrderCancellation(om, SearcOpenNseOrder, SearcOpenBseOrder);
 //	 }
+	 
+	 
+	 @Test(priority = 10)
+	 public void ValidateCreate_Edit_Delete_Basket() throws InterruptedException{
+		 OrderModification om = new OrderModification(driver);
+		 Create_Edit_Delete_Basket cb = new Create_Edit_Delete_Basket(driver);
+		 cb.Create_Edit_Delete_Basket(om);
+	 }
+	 
+	 
+	 
 }

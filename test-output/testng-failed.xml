@@ -9,10 +9,11 @@
     <classes>
       <class name="Tests.LoginTest">
         <methods>
-          <include name="ValidateChartOpening"/>
           <include name="afterEachTest"/>
+          <include name="ValidateCreate_Edit_Delete_Basket"/>
           <include name="setUp"/>
           <include name="tearDown"/>
+          <include name="validTraditionalLoginTest"/>
         </methods>
       </class> <!-- Tests.LoginTest -->
     </classes>
