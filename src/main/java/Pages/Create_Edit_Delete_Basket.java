@@ -1,8 +1,14 @@
 package Pages;
 
+import java.time.Duration;
+import java.util.NoSuchElementException;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Config.ConfigReader;
 
@@ -21,6 +27,7 @@ public class Create_Edit_Delete_Basket {
     private By AllCheckbox = By.xpath("//input[@class='PrivateSwitchBase-input css-1m9pwf3']");
     private By DeleteBasket = By.xpath("//*[contains(text(),'Delete')]");
     private By DeleteConfirmation = By.xpath("(//button[contains(text(),'Yes')])[2]");
+    private By Createbasket = By.xpath("//*[contains(text(),'Add New Basket')]");
     
     
     String NseOrder = ConfigReader.getProperty("NseOrder");
@@ -46,12 +53,24 @@ public class Create_Edit_Delete_Basket {
     	
     	System.out.println("Checking basket screen is empty");
     	
-    	if(driver.findElement(AllCheckbox).isDisplayed()) {
-    		driver.findElement(AllCheckbox).click();
-    		driver.findElement(DeleteBasket).click();
-    		driver.findElement(DeleteConfirmation).click();
+    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+    	boolean isCheckboxPresent;
+
+    	try {
+    	    wait.until(ExpectedConditions.presenceOfElementLocated(AllCheckbox));
+    	    isCheckboxPresent = true;
+    	} catch (TimeoutException e) {
+    	    isCheckboxPresent = false;
     	}
-    	
+
+    	if (isCheckboxPresent) {
+    	    wait.until(ExpectedConditions.elementToBeClickable(AllCheckbox)).click();
+    	    wait.until(ExpectedConditions.elementToBeClickable(DeleteBasket)).click();
+    	    wait.until(ExpectedConditions.elementToBeClickable(DeleteConfirmation)).click();
+    	} else {
+    	    wait.until(ExpectedConditions.elementToBeClickable(Createbasket)).click();
+    	}
     	
     	
     	
