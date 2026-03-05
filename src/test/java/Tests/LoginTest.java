@@ -39,6 +39,8 @@ public class LoginTest extends BaseTest {
      String basketname = ConfigReader.getProperty("basketname");
      String BasketCreation = ConfigReader.getProperty("BasketCreation");
      String Editname = ConfigReader.getProperty("Editname");
+     String BasketModification = ConfigReader.getProperty("BasketModification");
+     String BasketDeletion = ConfigReader.getProperty("BasketDeletion");
 	
 
 	@Test(priority = 1)
@@ -118,7 +120,7 @@ public class LoginTest extends BaseTest {
 	 public void ValidateCreate_Edit_Delete_Basket() throws InterruptedException{
 		 OrderModification om = new OrderModification(driver);
 		 Create_Edit_Delete_Basket cb = new Create_Edit_Delete_Basket(driver);
-		 cb.Create_Edit_Delete_Basket(om, basketname, BasketCreation, Editname);
+		 cb.Create_Edit_Delete_Basket(om, basketname, BasketCreation, Editname, BasketModification, BasketDeletion);
 	 }
 	 
 	 

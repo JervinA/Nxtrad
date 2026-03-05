@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,6 +19,8 @@ import Config.ConfigReader;
 public class Create_Edit_Delete_Basket {
 	
 	private WebDriver driver;
+	private Actions actions;
+	
 	
 	// Global wait method
     private void waitOneSecond() throws InterruptedException {
@@ -37,20 +40,26 @@ public class Create_Edit_Delete_Basket {
     private By OpenBasket = By.xpath("//span[normalize-space()='Automation']");
     private By EditIcon = By.xpath("//span[normalize-space()='Automation']/parent::div//button");
     private By EditField = By.xpath("//input[@placeholder='Basket name']");
+    private By ModifyMessage = By.xpath("//*[contains(text(),'Basket name updated successfully.')]");
+    private By CloseBasket = By.xpath("//span[@class='basket-btn-container']//button");
+    private By DeleteMessage = By.xpath("//div[contains(text(),'Basket deleted successfully.')]");
     
     
     String BasketCreation = ConfigReader.getProperty("BasketCreation");
+    String BasketModification = ConfigReader.getProperty("BasketModification");
+    String BasketDeletion = ConfigReader.getProperty("BasketDeletion");
     
     
     // Constructor
     public Create_Edit_Delete_Basket(WebDriver driver) {
         this.driver = driver;
+        actions = new Actions(driver);
         
     }
     
     
   //Actions
-    public void Create_Edit_Delete_Basket(OrderModification om, String basketname, String BasketCreation, String Editname) throws InterruptedException {
+    public void Create_Edit_Delete_Basket(OrderModification om, String basketname, String BasketCreation, String Editname, String BasketModification, String BasketDeletion) throws InterruptedException {
     	
     	driver.findElement(Dashboard).click();
     	
@@ -101,6 +110,36 @@ public class Create_Edit_Delete_Basket {
     	wait.until(ExpectedConditions.elementToBeClickable(EditIcon)).click();
     	
     	wait.until(ExpectedConditions.elementToBeClickable(EditField)).sendKeys(Editname);
+    	
+    	actions.sendKeys(Keys.TAB).sendKeys(Keys.ENTER).perform();
+    	
+    	WebElement toastElement_2 = wait.until(ExpectedConditions.presenceOfElementLocated(ModifyMessage));        
+    	String actualText_2 = toastElement_2.getText().trim();
+    	String expectedText_2 = BasketModification.trim();
+    	Thread.sleep(2000);
+    	Assert.assertEquals(actualText_2,expectedText_2,"Modification Toast message not match. Actual Toast: " + actualText_2);
+    	System.out.println("Verified basket modification");
+    	
+    	driver.findElement(CloseBasket).click();
+    	
+    	//Deleting basket
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(AllCheckbox)).click();
+	    wait.until(ExpectedConditions.elementToBeClickable(DeleteBasket)).click();
+	    wait.until(ExpectedConditions.elementToBeClickable(DeleteConfirmation)).click();
+	    
+	    WebElement toastElement_3 = wait.until(ExpectedConditions.presenceOfElementLocated(DeleteMessage));        
+    	String actualText_3 = toastElement_3.getText().trim();
+    	String expectedText_3 = BasketDeletion.trim();
+    	Thread.sleep(2000);
+    	Assert.assertEquals(actualText_3,expectedText_3,"Deletion Toast message not match. Actual Toast: " + actualText_3);
+    	System.out.println("Verified basket Deletion");
+    	
+    	
+	    
+	    
+    	
+    	
+    	
     	
     	
     	
