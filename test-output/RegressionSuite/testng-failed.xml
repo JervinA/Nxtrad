@@ -13,6 +13,7 @@
           <include name="ValidateCreate_Edit_Delete_Basket"/>
           <include name="setUp"/>
           <include name="tearDown"/>
+          <include name="validTraditionalLoginTest"/>
         </methods>
       </class> <!-- Tests.LoginTest -->
     </classes>
