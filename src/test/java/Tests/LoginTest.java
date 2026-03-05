@@ -36,6 +36,9 @@ public class LoginTest extends BaseTest {
      String SearcOpenNseOrder = ConfigReader.getProperty("SearcOpenNseOrder");
      String SearcOpenBseOrder = ConfigReader.getProperty("SearcOpenBseOrder");
      
+     String basketname = ConfigReader.getProperty("basketname");
+     String BasketCreation = ConfigReader.getProperty("BasketCreation");
+     
 	
 
 	@Test(priority = 1)
@@ -115,7 +118,7 @@ public class LoginTest extends BaseTest {
 	 public void ValidateCreate_Edit_Delete_Basket() throws InterruptedException{
 		 OrderModification om = new OrderModification(driver);
 		 Create_Edit_Delete_Basket cb = new Create_Edit_Delete_Basket(driver);
-		 cb.Create_Edit_Delete_Basket(om);
+		 cb.Create_Edit_Delete_Basket(om, basketname, BasketCreation);
 	 }
 	 
 	 

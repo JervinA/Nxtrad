@@ -158,7 +158,7 @@ private WebDriver driver;
     	waitOneSecond();
     	String actualText_7 = driver.findElement(ValidateBfoName).getText();
     	if (actualText_7.length() > 9) {
-    	    actualText_7 = actualText_7.substring(0, actualText_7.length() - 10);
+    	    actualText_7 = actualText_7.substring(0, actualText_7.length() - 13);
     	}
     	Assert.assertEquals(actualText_7, BfoSymbolName, "BFO Symbol Name Mismatch");
     	System.out.println("Verified BFO Symbol Name");
@@ -182,7 +182,7 @@ private WebDriver driver;
     	waitOneSecond();
     	String actualText_9 = driver.findElement(ValidateMcxName).getText();
     	if (actualText_9.length() > 9) {
-    	    actualText_9 = actualText_9.substring(0, actualText_9.length() - 10);
+    	    actualText_9 = actualText_9.substring(0, actualText_9.length() - 13);
     	}
     	Assert.assertEquals(actualText_9, McxSymbolName, "MCX Symbol Name Mismatch");
     	System.out.println("Verified MCX Symbol Name");
