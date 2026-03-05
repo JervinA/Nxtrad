@@ -3,6 +3,7 @@ package Tests;
 import org.testng.annotations.Test;
 
 import Config.ConfigReader;
+import Pages.Add_Delete_Reaarange_Invert_symbols;
 import Pages.ChartNavigation;
 import Pages.Create_Edit_Delete_Basket;
 import Pages.OrderCancellation;
@@ -41,6 +42,7 @@ public class LoginTest extends BaseTest {
      String Editname = ConfigReader.getProperty("Editname");
      String BasketModification = ConfigReader.getProperty("BasketModification");
      String BasketDeletion = ConfigReader.getProperty("BasketDeletion");
+     String SearchNSESymbol = ConfigReader.getProperty("SearchNSESymbol");
 	
 
 	@Test(priority = 1)
@@ -124,5 +126,11 @@ public class LoginTest extends BaseTest {
 	 }
 	 
 	 
+	 @Test(priority = 11)
+	 public void ValidateAdd_Delete_Rearrange_Invert_Symbols() {
+		 Create_Edit_Delete_Basket cb = new Create_Edit_Delete_Basket(driver);
+		 Add_Delete_Reaarange_Invert_symbols ad = new Add_Delete_Reaarange_Invert_symbols(driver);
+		 ad.Add_Delete_Reaarange_Invert_symbols(cb, basketname, SearchNSESymbol);
+	 }
 	 
 }

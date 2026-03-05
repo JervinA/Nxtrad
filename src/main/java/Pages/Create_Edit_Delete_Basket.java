@@ -44,6 +44,23 @@ public class Create_Edit_Delete_Basket {
     private By CloseBasket = By.xpath("//span[@class='basket-btn-container']//button");
     private By DeleteMessage = By.xpath("//div[contains(text(),'Basket deleted successfully.')]");
     
+    //Resue Xpath
+    
+    public By getCreatebasket() {
+        return Createbasket;
+    }
+    
+    public By getBasketNameField() {
+        return BasketNameField;
+    }
+    
+    public By getCreateButton() {
+    	return CreateButton;
+    }
+    
+    public By getOpenBasket() {
+    	return OpenBasket;
+    }
     
     String BasketCreation = ConfigReader.getProperty("BasketCreation");
     String BasketModification = ConfigReader.getProperty("BasketModification");
