@@ -23,7 +23,7 @@ public class Add_Delete_Reaarange_Invert_symbols {
     }
     
     private By SearchSymbol = By.xpath("(//input[@placeholder='Search by Stock Name'])[2]");
-    
+    private By SelectNSEsymbol = By.xpath("(//div[@class='search-row search-row-selected'])[2]");
     
     
     String SearchNSESymbol = ConfigReader.getProperty("SearchNSESymbol");
@@ -52,6 +52,8 @@ public class Add_Delete_Reaarange_Invert_symbols {
     	
     	//Adding NSE symbols
     	wait.until(ExpectedConditions.visibilityOfElementLocated(SearchSymbol)).sendKeys(SearchNSESymbol);
+    	
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(SelectNSEsymbol)).click();
     	
     	
     	
