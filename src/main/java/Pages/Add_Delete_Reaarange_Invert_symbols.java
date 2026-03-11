@@ -3,6 +3,7 @@ package Pages;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -24,6 +25,11 @@ public class Add_Delete_Reaarange_Invert_symbols {
     
     private By SearchSymbol = By.xpath("(//input[@placeholder='Search by Stock Name'])[2]");
     private By SelectNSEsymbol = By.xpath("(//div[@class='search-row search-row-selected'])[2]");
+    private By ClickAdd = By.id("place-order");
+    private By TringConfirmation = By.xpath("//div[@class='cancel-order-title cancel-sip-title']");
+    private By HoverSymbol = By.xpath("//div[@class='side-circle pointer buy-circle']");
+    private By DeleteSymbol = By.xpath("//button[contains(@class,'delete-icon')]");
+    
     
     
     String SearchNSESymbol = ConfigReader.getProperty("SearchNSESymbol");
@@ -50,13 +56,59 @@ public class Add_Delete_Reaarange_Invert_symbols {
     	
     	wait.until(ExpectedConditions.visibilityOfElementLocated(cb.getOpenBasket())).click();
     	
-    	//Adding NSE symbols
+    	//NSE symbols
+    	
+    	//Adding symbols
     	wait.until(ExpectedConditions.visibilityOfElementLocated(SearchSymbol)).sendKeys(SearchNSESymbol);
     	
     	wait.until(ExpectedConditions.visibilityOfElementLocated(SelectNSEsymbol)).click();
     	
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(ClickAdd)).click();
+    	
+    	if(wait.until(ExpectedConditions.visibilityOfElementLocated(TringConfirmation)).isDisplayed()) {
+    	    actions.sendKeys(Keys.ENTER).perform();
+    	} else {
+    	    System.out.println("No confirmation is shown");
+    	}
+    	
+    	System.out.println("Added NSE symbol to basket");
+    	
+    	//Deleting symbols
+    	actions.moveToElement(driver.findElement(HoverSymbol)).perform();
+    	
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(DeleteSymbol)).click();
+    	
+    	System.out.println("Deleted NSE symbol to basket");
+    	
+    	//Rearranging symbols
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(SearchSymbol)).sendKeys(SearchNSESymbol);
+    	
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(SelectNSEsymbol)).click();
+    	
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(ClickAdd)).click();
+    	
+    	if(wait.until(ExpectedConditions.visibilityOfElementLocated(TringConfirmation)).isDisplayed()) {
+    	    actions.sendKeys(Keys.ENTER).perform();
+    	} else {
+    	    System.out.println("No confirmation is shown");
+    	}
+    	
+    	System.out.println("Added NSE symbol to basket");
     	
     	
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(SearchSymbol)).sendKeys(SearchNSESymbol);
+    	
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(SelectNSEsymbol)).click();
+    	
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(ClickAdd)).click();
+    	
+    	if(wait.until(ExpectedConditions.visibilityOfElementLocated(TringConfirmation)).isDisplayed()) {
+    	    actions.sendKeys(Keys.ENTER).perform();
+    	} else {
+    	    System.out.println("No confirmation is shown");
+    	}
+    	
+    	System.out.println("Added NSE symbol to basket");
     	
     	
     }
