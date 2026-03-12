@@ -128,7 +128,7 @@ public class LoginTest extends BaseTest {
 	 
 	 
 	 @Test(priority = 11)
-	 public void ValidateAdd_Delete_Rearrange_Invert_Symbols() {
+	 public void ValidateAdd_Delete_Rearrange_Invert_Symbols() throws InterruptedException {
 		 Create_Edit_Delete_Basket cb = new Create_Edit_Delete_Basket(driver);
 		 Add_Delete_Reaarange_Invert_symbols ad = new Add_Delete_Reaarange_Invert_symbols(driver);
 		 ad.Add_Delete_Reaarange_Invert_symbols(cb, basketname, SearchNSESymbol, BasketSearch);

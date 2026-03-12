@@ -47,7 +47,9 @@ public class Add_Delete_Reaarange_Invert_symbols {
     
     
     //Actions 
-    public void Add_Delete_Reaarange_Invert_symbols(Create_Edit_Delete_Basket cb, String basketname, String SearchNSESymbol, String BasketSearch) {
+    public void Add_Delete_Reaarange_Invert_symbols(Create_Edit_Delete_Basket cb, String basketname, String SearchNSESymbol, String BasketSearch) throws InterruptedException {
+    	
+    	Thread.sleep(2000);
     	
     	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     	
@@ -73,7 +75,6 @@ public class Add_Delete_Reaarange_Invert_symbols {
     	
     	//Deleting symbols
     	actions.moveToElement(driver.findElement(HoverSymbol)).perform();
-    	
     	wait.until(ExpectedConditions.visibilityOfElementLocated(DeleteSymbol)).click();
     	
     	System.out.println("Deleted IDEA NSE symbol to basket");
@@ -104,11 +105,24 @@ public class Add_Delete_Reaarange_Invert_symbols {
     	
     	System.out.println("Added TCS NSE symbol to basket for rearranging");
     	
-    	Actions actions = new Actions(driver);
+    	WebElement source = wait.until(ExpectedConditions.visibilityOfElementLocated(HoverSymbol));
 
-    	WebElement source = driver.findElement(HoverSymbol);
-    	WebElement target = driver.findElement(HoverSymbol2);
-    	actions.dragAndDrop(source, target).perform();
+    	actions.clickAndHold(source)
+    	       .pause(Duration.ofMillis(500))
+    	       .moveByOffset(0,100)
+    	       .release()
+    	       .perform();
+    	
+    	System.out.println("Rearranging for NSE completed");
+    	
+    	
+    	//Invert Actions
+    	
+    	actions.moveToElement(driver.findElement(HoverSymbol)).perform();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(DeleteSymbol)).click();
+    	
+    	
+    	
     	
     }
     
