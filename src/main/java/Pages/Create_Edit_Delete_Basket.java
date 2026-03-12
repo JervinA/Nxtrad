@@ -144,6 +144,8 @@ public class Create_Edit_Delete_Basket {
 	    wait.until(ExpectedConditions.elementToBeClickable(DeleteBasket)).click();
 	    wait.until(ExpectedConditions.elementToBeClickable(DeleteConfirmation)).click();
 	    
+	    Thread.sleep(2000);
+	    
 	    WebElement toastElement_3 = wait.until(ExpectedConditions.presenceOfElementLocated(DeleteMessage));        
     	String actualText_3 = toastElement_3.getText().trim();
     	String expectedText_3 = BasketDeletion.trim();
@@ -151,7 +153,7 @@ public class Create_Edit_Delete_Basket {
     	Assert.assertEquals(actualText_3,expectedText_3,"Deletion Toast message not match. Actual Toast: " + actualText_3);
     	System.out.println("Verified basket Deletion");
     	
-    	
+    	Thread.sleep(2000);
 	    
 	    
     	

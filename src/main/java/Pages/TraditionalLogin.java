@@ -80,6 +80,8 @@ public class TraditionalLogin {
     // Actions
     public void login(String mobile, String otp, String pin) throws InterruptedException {
     	
+    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    	
     	waitOneSecond();
         driver.findElement(mobileno).sendKeys(mobile);
         
@@ -103,8 +105,8 @@ public class TraditionalLogin {
         
         waitOneSecond();
         try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            wait.until(ExpectedConditions.visibilityOfElementLocated(Skiptour));
+            WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10));
+            wait1.until(ExpectedConditions.visibilityOfElementLocated(Skiptour));
             driver.findElement(Skiptour).click();
         } catch (Exception e) {
             // Element not found or not visible even after 10 sec — safely ignore
