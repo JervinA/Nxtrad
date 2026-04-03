@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-03-12T17:27:25 IST" name="RegressionSuite" finished-at="2026-03-12T17:28:19 IST" duration-ms="53934">
+  <suite started-at="2026-04-03T23:44:19 IST" name="RegressionSuite" finished-at="2026-04-03T23:45:27 IST" duration-ms="68052">
     <groups>
     </groups>
-    <test started-at="2026-03-12T17:27:25 IST" name="ChromeTests" finished-at="2026-03-12T17:28:19 IST" duration-ms="53934">
+    <test started-at="2026-04-03T23:44:19 IST" name="ChromeTests" finished-at="2026-04-03T23:45:27 IST" duration-ms="68052">
       <class name="Tests.LoginTest">
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:Tests.LoginTest@660acfb]" started-at="2026-03-12T17:27:25 IST" name="setUp" finished-at="2026-03-12T17:27:31 IST" duration-ms="5641" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:Tests.LoginTest@660acfb]" started-at="2026-04-03T23:44:19 IST" name="setUp" finished-at="2026-04-03T23:44:31 IST" duration-ms="11539" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,31 +18,31 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="validTraditionalLoginTest()[pri:1, instance:Tests.LoginTest@660acfb]" started-at="2026-03-12T17:27:31 IST" name="validTraditionalLoginTest" finished-at="2026-03-12T17:27:43 IST" duration-ms="12312" status="PASS">
+        <test-method signature="validTraditionalLoginTest()[pri:1, instance:Tests.LoginTest@660acfb]" started-at="2026-04-03T23:44:31 IST" name="validTraditionalLoginTest" finished-at="2026-04-03T23:44:45 IST" duration-ms="13617" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validTraditionalLoginTest -->
-        <test-method is-config="true" signature="afterEachTest()[pri:0, instance:Tests.LoginTest@660acfb]" started-at="2026-03-12T17:27:43 IST" name="afterEachTest" finished-at="2026-03-12T17:27:45 IST" duration-ms="2003" status="PASS">
+        <test-method is-config="true" signature="afterEachTest()[pri:0, instance:Tests.LoginTest@660acfb]" started-at="2026-04-03T23:44:45 IST" name="afterEachTest" finished-at="2026-04-03T23:44:47 IST" duration-ms="2011" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterEachTest -->
-        <test-method signature="ValidateCreate_Edit_Delete_Basket()[pri:10, instance:Tests.LoginTest@660acfb]" started-at="2026-03-12T17:27:45 IST" name="ValidateCreate_Edit_Delete_Basket" finished-at="2026-03-12T17:28:04 IST" duration-ms="19033" status="PASS">
+        <test-method signature="ValidateCreate_Edit_Delete_Basket()[pri:10, instance:Tests.LoginTest@660acfb]" started-at="2026-04-03T23:44:47 IST" name="ValidateCreate_Edit_Delete_Basket" finished-at="2026-04-03T23:45:07 IST" duration-ms="20342" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ValidateCreate_Edit_Delete_Basket -->
-        <test-method is-config="true" signature="afterEachTest()[pri:0, instance:Tests.LoginTest@660acfb]" started-at="2026-03-12T17:28:04 IST" name="afterEachTest" finished-at="2026-03-12T17:28:06 IST" duration-ms="2014" status="PASS">
+        <test-method is-config="true" signature="afterEachTest()[pri:0, instance:Tests.LoginTest@660acfb]" started-at="2026-04-03T23:45:07 IST" name="afterEachTest" finished-at="2026-04-03T23:45:09 IST" duration-ms="2010" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterEachTest -->
-        <test-method signature="ValidateAdd_Delete_Rearrange_Invert_Symbols()[pri:11, instance:Tests.LoginTest@660acfb]" started-at="2026-03-12T17:28:06 IST" name="ValidateAdd_Delete_Rearrange_Invert_Symbols" finished-at="2026-03-12T17:28:15 IST" duration-ms="9039" status="PASS">
+        <test-method signature="ValidateAdd_Delete_Rearrange_Invert_Symbols()[pri:11, instance:Tests.LoginTest@660acfb]" started-at="2026-04-03T23:45:09 IST" name="ValidateAdd_Delete_Rearrange_Invert_Symbols" finished-at="2026-04-03T23:45:23 IST" duration-ms="14214" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ValidateAdd_Delete_Rearrange_Invert_Symbols -->
-        <test-method is-config="true" signature="afterEachTest()[pri:0, instance:Tests.LoginTest@660acfb]" started-at="2026-03-12T17:28:15 IST" name="afterEachTest" finished-at="2026-03-12T17:28:17 IST" duration-ms="2001" status="PASS">
+        <test-method is-config="true" signature="afterEachTest()[pri:0, instance:Tests.LoginTest@660acfb]" started-at="2026-04-03T23:45:23 IST" name="afterEachTest" finished-at="2026-04-03T23:45:25 IST" duration-ms="2004" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterEachTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Tests.LoginTest@660acfb]" started-at="2026-03-12T17:28:17 IST" name="tearDown" finished-at="2026-03-12T17:28:19 IST" duration-ms="1853" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Tests.LoginTest@660acfb]" started-at="2026-04-03T23:45:25 IST" name="tearDown" finished-at="2026-04-03T23:45:27 IST" duration-ms="2253" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

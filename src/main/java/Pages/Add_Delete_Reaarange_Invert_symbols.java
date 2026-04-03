@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import Config.ConfigReader;
 
@@ -31,12 +32,15 @@ public class Add_Delete_Reaarange_Invert_symbols {
     private By HoverSymbol = By.xpath("(//div[@class='side-circle pointer buy-circle'])[1]");
     private By HoverSymbol2 = By.xpath("(//div[@class='side-circle pointer buy-circle'])[2]");
     private By DeleteSymbol = By.xpath("//button[contains(@class,'delete-icon')]");
+    private By InvertSymbol = By.xpath("//span[@class='reverse-order']");
+    private By HoverSymbol3 = By.xpath("//div[@class='side-circle pointer sell-circle']");
     
     
     
     String SearchNSESymbol = ConfigReader.getProperty("SearchNSESymbol");
     String BasketSearch = ConfigReader.getProperty("BasketSearch");
-    
+    String BuyIcon = ConfigReader.getProperty("BuyIcon");
+    String SellIcon = ConfigReader.getProperty("SellIcon");
     
  // Constructor
     public Add_Delete_Reaarange_Invert_symbols(WebDriver driver) {
@@ -121,9 +125,22 @@ public class Add_Delete_Reaarange_Invert_symbols {
     	actions.moveToElement(driver.findElement(HoverSymbol)).perform();
     	wait.until(ExpectedConditions.visibilityOfElementLocated(DeleteSymbol)).click();
     	
+    	//Confirming Buy icon is there
+    	String actualText_1 = driver.findElement(HoverSymbol).getText();
+    	Assert.assertEquals(actualText_1, BuyIcon, "Buy icon mismatch");
+    	System.out.println(actualText_1);
     	
+    	//Inverting
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(InvertSymbol)).click();
     	
+    	//Confirming sell icon is there after invert
+    	Thread.sleep(2000);
+    	String actualText_2 = driver.findElement(HoverSymbol3).getText();
+    	Assert.assertEquals(actualText_2, SellIcon, "Sell icon mismatch");
+    	System.out.println(actualText_2);
     	
+    	//Comparing both actual text are different before and after conversion
+    	Assert.assertNotEquals(actualText_1, actualText_2, "Buy and Sell icons should not be the same");
     }
     
 	

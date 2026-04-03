@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-03-11T17:22:23 IST" name="RegressionSuite" finished-at="2026-03-11T17:26:37 IST" duration-ms="254477">
+  <suite started-at="2026-04-02T11:35:50 IST" name="RegressionSuite" finished-at="2026-04-02T11:37:06 IST" duration-ms="76075">
     <groups>
     </groups>
-    <test started-at="2026-03-11T17:22:23 IST" name="ChromeTests" finished-at="2026-03-11T17:26:37 IST" duration-ms="254477">
+    <test started-at="2026-04-02T11:35:50 IST" name="ChromeTests" finished-at="2026-04-02T11:37:06 IST" duration-ms="76075">
       <class name="Tests.LoginTest">
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:Tests.LoginTest@45385f75]" started-at="2026-03-11T17:22:23 IST" name="setUp" finished-at="2026-03-11T17:25:55 IST" duration-ms="212311" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:Tests.LoginTest@45385f75]" started-at="2026-04-02T11:35:50 IST" name="setUp" finished-at="2026-04-02T11:36:05 IST" duration-ms="15363" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,31 +18,74 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="validTraditionalLoginTest()[pri:1, instance:Tests.LoginTest@45385f75]" started-at="2026-03-11T17:25:55 IST" name="validTraditionalLoginTest" finished-at="2026-03-11T17:26:08 IST" duration-ms="13584" status="PASS">
+        <test-method signature="validTraditionalLoginTest()[pri:1, instance:Tests.LoginTest@45385f75]" started-at="2026-04-02T11:36:05 IST" name="validTraditionalLoginTest" finished-at="2026-04-02T11:36:16 IST" duration-ms="11170" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validTraditionalLoginTest -->
-        <test-method is-config="true" signature="afterEachTest()[pri:0, instance:Tests.LoginTest@45385f75]" started-at="2026-03-11T17:26:08 IST" name="afterEachTest" finished-at="2026-03-11T17:26:10 IST" duration-ms="2013" status="PASS">
+        <test-method is-config="true" signature="afterEachTest()[pri:0, instance:Tests.LoginTest@45385f75]" started-at="2026-04-02T11:36:16 IST" name="afterEachTest" finished-at="2026-04-02T11:36:18 IST" duration-ms="2014" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterEachTest -->
-        <test-method signature="ValidateCreate_Edit_Delete_Basket()[pri:10, instance:Tests.LoginTest@45385f75]" started-at="2026-03-11T17:26:10 IST" name="ValidateCreate_Edit_Delete_Basket" finished-at="2026-03-11T17:26:25 IST" duration-ms="15001" status="PASS">
+        <test-method signature="ValidateCreate_Edit_Delete_Basket()[pri:10, instance:Tests.LoginTest@45385f75]" started-at="2026-04-02T11:36:18 IST" name="ValidateCreate_Edit_Delete_Basket" finished-at="2026-04-02T11:36:51 IST" duration-ms="32490" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for element to be clickable: By.xpath: //*[contains(text(),'Delete')] (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: net.bytebuddy.renamed.java.lang.Object$ByteBuddy$WdqWptI9
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.165, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\Jervin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64863}, goog:processID: 25568, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64863/devtoo..., se:cdpVersion: 146.0.7680.165, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 71aa62f15f04ccb7d4f3c78246de3d7d]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //*[contains(text(),'Delete')] (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: net.bytebuddy.renamed.java.lang.Object$ByteBuddy$WdqWptI9
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.165, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\Jervin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64863}, goog:processID: 25568, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64863/devtoo..., se:cdpVersion: 146.0.7680.165, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 71aa62f15f04ccb7d4f3c78246de3d7d
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+at Pages.Create_Edit_Delete_Basket.Create_Edit_Delete_Basket(Create_Edit_Delete_Basket.java:144)
+at Tests.LoginTest.ValidateCreate_Edit_Delete_Basket(LoginTest.java:126)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ValidateCreate_Edit_Delete_Basket -->
-        <test-method is-config="true" signature="afterEachTest()[pri:0, instance:Tests.LoginTest@45385f75]" started-at="2026-03-11T17:26:25 IST" name="afterEachTest" finished-at="2026-03-11T17:26:27 IST" duration-ms="2012" status="PASS">
+        <test-method is-config="true" signature="afterEachTest()[pri:0, instance:Tests.LoginTest@45385f75]" started-at="2026-04-02T11:36:51 IST" name="afterEachTest" finished-at="2026-04-02T11:36:53 IST" duration-ms="2006" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterEachTest -->
-        <test-method signature="ValidateAdd_Delete_Rearrange_Invert_Symbols()[pri:11, instance:Tests.LoginTest@45385f75]" started-at="2026-03-11T17:26:27 IST" name="ValidateAdd_Delete_Rearrange_Invert_Symbols" finished-at="2026-03-11T17:26:33 IST" duration-ms="5446" status="PASS">
+        <test-method signature="ValidateAdd_Delete_Rearrange_Invert_Symbols()[pri:11, instance:Tests.LoginTest@45385f75]" started-at="2026-04-02T11:36:53 IST" name="ValidateAdd_Delete_Rearrange_Invert_Symbols" finished-at="2026-04-02T11:37:02 IST" duration-ms="9252" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ValidateAdd_Delete_Rearrange_Invert_Symbols -->
-        <test-method is-config="true" signature="afterEachTest()[pri:0, instance:Tests.LoginTest@45385f75]" started-at="2026-03-11T17:26:33 IST" name="afterEachTest" finished-at="2026-03-11T17:26:35 IST" duration-ms="2013" status="PASS">
+        <test-method is-config="true" signature="afterEachTest()[pri:0, instance:Tests.LoginTest@45385f75]" started-at="2026-04-02T11:37:02 IST" name="afterEachTest" finished-at="2026-04-02T11:37:04 IST" duration-ms="2003" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterEachTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Tests.LoginTest@45385f75]" started-at="2026-03-11T17:26:35 IST" name="tearDown" finished-at="2026-03-11T17:26:37 IST" duration-ms="2062" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Tests.LoginTest@45385f75]" started-at="2026-04-02T11:37:04 IST" name="tearDown" finished-at="2026-04-02T11:37:06 IST" duration-ms="1587" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

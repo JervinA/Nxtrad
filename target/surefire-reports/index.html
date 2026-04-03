@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-RegressionSuite" class="navigator-link">
-              <span class="suite-name border-passed">RegressionSuite</span>
+              <span class="suite-name border-failed">RegressionSuite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,7 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods,   3 passed</span>
+                    <span class="method-stats">3 methods, 1 failed,   2 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-RegressionSuite" class="hide-methods failed suite-RegressionSuite"> (hide)</a> <!-- hide-methods failed suite-RegressionSuite -->
+                      <a href="#" panel-name="suite-RegressionSuite" class="show-methods failed suite-RegressionSuite"> (show)</a> <!-- show-methods failed suite-RegressionSuite -->
+                    </span>
+                    <div class="method-list-content failed suite-RegressionSuite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-RegressionSuite" title="Tests.LoginTest" class="method navigator-link" hash-for-method="ValidateCreate_Edit_Delete_Basket">ValidateCreate_Edit_Delete_Basket</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-RegressionSuite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,11 +118,6 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-RegressionSuite" title="Tests.LoginTest" class="method navigator-link" hash-for-method="ValidateAdd_Delete_Rearrange_Invert_Symbols">ValidateAdd_Delete_Rearrange_Invert_Symbols</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-RegressionSuite" title="Tests.LoginTest" class="method navigator-link" hash-for-method="ValidateCreate_Edit_Delete_Basket">ValidateCreate_Edit_Delete_Basket</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -128,6 +137,38 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-RegressionSuite" class="panel RegressionSuite">
+          <div class="suite-RegressionSuite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">Tests.LoginTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="ValidateCreate_Edit_Delete_Basket">
+                  </a> <!-- ValidateCreate_Edit_Delete_Basket -->
+                  <span class="method-name">ValidateCreate_Edit_Delete_Basket</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //*[contains(text(),&apos;Delete&apos;)] (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.6&apos;
+Driver info: net.bytebuddy.renamed.java.lang.Object$ByteBuddy$WdqWptI9
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.165, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\Jervin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64863}, goog:processID: 25568, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64863/devtoo..., se:cdpVersion: 146.0.7680.165, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 71aa62f15f04ccb7d4f3c78246de3d7d
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at Pages.Create_Edit_Delete_Basket.Create_Edit_Delete_Basket(Create_Edit_Delete_Basket.java:144)
+	at Tests.LoginTest.ValidateCreate_Edit_Delete_Basket(LoginTest.java:126)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+... Removed 15 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-RegressionSuite-class-failed -->
           <div class="suite-RegressionSuite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -139,13 +180,6 @@
                   <a name="ValidateAdd_Delete_Rearrange_Invert_Symbols">
                   </a> <!-- ValidateAdd_Delete_Rearrange_Invert_Symbols -->
                   <span class="method-name">ValidateAdd_Delete_Rearrange_Invert_Symbols</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="ValidateCreate_Edit_Delete_Basket">
-                  </a> <!-- ValidateCreate_Edit_Delete_Basket -->
-                  <span class="method-name">ValidateCreate_Edit_Delete_Basket</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -217,20 +251,20 @@ data.addRows(3);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'ValidateCreate_Edit_Delete_Basket')
 data.setCell(0, 2, 'Tests.LoginTest')
-data.setCell(0, 3, 15001);
+data.setCell(0, 3, 32490);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'validTraditionalLoginTest')
 data.setCell(1, 2, 'Tests.LoginTest')
-data.setCell(1, 3, 13584);
+data.setCell(1, 3, 11170);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'ValidateAdd_Delete_Rearrange_Invert_Symbols')
 data.setCell(2, 2, 'Tests.LoginTest')
-data.setCell(2, 3, 5446);
+data.setCell(2, 3, 9252);
 window.suiteTableData['RegressionSuite']= { tableData: data, tableDiv: 'times-div-RegressionSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 4 minutes</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-RegressionSuite">
               </div> <!-- times-div-RegressionSuite -->
             </div> <!-- times-div -->
@@ -263,31 +297,33 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">validTraditionalLoginTest</span>
-                <span class="method-start">212320 ms</span>
+                <span class="method-start">15372 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterEachTest</span>
-                <span class="method-start">225908 ms</span>
+                <span class="method-start">26545 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">ValidateCreate_Edit_Delete_Basket</span>
-                <span class="method-start">227924 ms</span>
+                <span class="method-start">28562 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterEachTest</span>
-                <span class="method-start">242928 ms</span>
+                <span class="method-start">61209 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">ValidateAdd_Delete_Rearrange_Invert_Symbols</span>
-                <span class="method-start">244941 ms</span>
+                <span class="method-start">63217 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterEachTest</span>
-                <span class="method-start">250387 ms</span>
+                <span class="method-start">72469 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">252400 ms</span>
+                <span class="method-start">74472 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
