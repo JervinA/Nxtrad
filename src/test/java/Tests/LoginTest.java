@@ -13,6 +13,7 @@ import Pages.RiskDisclosure;
 import Pages.SearchIndicesSpots;
 import Pages.SearchStocks;
 import Pages.SignUpPage;
+import Pages.Symbol_modification_Basket;
 import Pages.TraditionalLogin;
 
 public class LoginTest extends BaseTest {
@@ -132,6 +133,13 @@ public class LoginTest extends BaseTest {
 		 Create_Edit_Delete_Basket cb = new Create_Edit_Delete_Basket(driver);
 		 Add_Delete_Reaarange_Invert_symbols ad = new Add_Delete_Reaarange_Invert_symbols(driver);
 		 ad.Add_Delete_Reaarange_Invert_symbols(cb, basketname, SearchNSESymbol, BasketSearch);
+	 }
+	 
+	 @Test(priority = 12)
+	 public void ValidateSymbol_modification_Basket() throws InterruptedException {
+		 Add_Delete_Reaarange_Invert_symbols ad = new Add_Delete_Reaarange_Invert_symbols(driver);
+		 Symbol_modification_Basket sm = new Symbol_modification_Basket(driver);
+		 sm.Symbol_modification_Basket(ad);
 	 }
 	 
 }

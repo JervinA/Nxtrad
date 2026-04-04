@@ -35,6 +35,12 @@ public class Add_Delete_Reaarange_Invert_symbols {
     private By InvertSymbol = By.xpath("//span[@class='reverse-order']");
     private By HoverSymbol3 = By.xpath("//div[@class='side-circle pointer sell-circle']");
     
+//Resue Xpath
+    
+    public By getHoverSymbol3() {
+        return HoverSymbol3;
+    }
+    
     
     
     String SearchNSESymbol = ConfigReader.getProperty("SearchNSESymbol");
