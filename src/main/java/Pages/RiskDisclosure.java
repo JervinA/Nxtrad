@@ -1,20 +1,21 @@
 package Pages;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+
+import Pages.Xpath.VerifyLoginText;
 
 public class RiskDisclosure {
 	
 	private WebDriver driver;
 	
-	// Global wait method
-    private void waitOneSecond() throws InterruptedException {
-        Thread.sleep(1000);
-    }
-	
-	private By riskdisclosuretitle = By.xpath("//span[@class='eula-title']");
-	String text = "RISK DISCLOSURES ON DERIVATIVES";
+//	private By riskdisclosuretitle = By.xpath("//span[@class='eula-title']");
+//	String text = "RISK DISCLOSURES ON DERIVATIVES";
 	
 	
 	 // Constructor
@@ -23,46 +24,35 @@ public class RiskDisclosure {
     }
     
  // Actions
-    public void riskdisclosure(TraditionalLogin tl, String mobileno, String Otp, String pin) throws InterruptedException {
+    public void riskdisclosure(Xpath xp, String mobileno, String Otp, String pin) throws InterruptedException {
     	
-    	waitOneSecond();
+    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+    	
     	driver.navigate().refresh();
     	
-    	Thread.sleep(5000);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getmobileno())).sendKeys(mobileno);
     	
-    	waitOneSecond();
-    	driver.findElement(tl.getmobileno()).sendKeys(mobileno);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getcontinueBtn1())).click();
     	
-    	waitOneSecond();
-    	driver.findElement(tl.getcontinueBtn1()).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getOtp())).sendKeys(Otp);
     	
-    	waitOneSecond();
-    	driver.findElement(tl.getOtp()).sendKeys(Otp);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getselectId())).click();
     	
-    	waitOneSecond();
-    	driver.findElement(tl.getselectId()).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getokBtn())).click();
     	
-    	waitOneSecond();
-    	driver.findElement(tl.getokBtn()).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getPin())).sendKeys(pin);
     	
-    	waitOneSecond();
-    	driver.findElement(tl.getPin()).sendKeys(pin);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getcontinueBtn2())).click();
     	
-    	waitOneSecond();
-    	driver.findElement(tl.getcontinueBtn2()).click();
-    	
-    	waitOneSecond();
-    	
-    	String actualText = driver.findElement(riskdisclosuretitle).getText();
-    	Assert.assertEquals(actualText, text, "Risk Disclosure text mismatch!");
+    	String actualText = driver.findElement(xp.getriskdisclosuretitle()).getText();
+    	Assert.assertEquals(actualText, VerifyLoginText.text, "Risk Disclosure text mismatch!");
     	System.out.println("Verified Riskdisclosure");
 
     	
-    	waitOneSecond();
-        driver.findElement(tl.getRiskclosure()).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getRiskclosure())).click();
         
         try {
-        	driver.findElement(tl.getCloseTOTP()).click();
+        	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getCloseTOTP())).click();
         } catch (Exception e) {
         	System.out.println("Register TOTP not found");
         }

@@ -1,8 +1,12 @@
 package Pages;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import Config.ConfigReader;
@@ -10,36 +14,6 @@ import Config.ConfigReader;
 public class ChartNavigation {
 private WebDriver driver;
 private Actions actions;
-
-	
-	// Global wait method
-    private void waitOneSecond() throws InterruptedException {
-        Thread.sleep(2000);
-    }
-    
-    private By MarketScan = By.xpath("//*[contains(text(),'Market Scan')]");
-    private By Equity = By.xpath("//*[contains(text(),'Equity')]");
-    private By ChartHover = By.cssSelector("tr[data-cy='market_movers-row-0']");
-    private By ChartOpen = By.xpath("(//button[contains(@class,'chart-btn')])[4]");
-    private By SwitchIframe = By.id("DEFAULT_CHART");
-    private By SwitchInnerFrame = By.xpath("//*[@title='Financial Chart']");
-    private By ChartValidation = By.xpath("//div[@class='title-l31H9iuA']");
-    private By HoverChartRevamp = By.xpath("(//div[@class='arrow-merBkM5y'])[3]");
-    private By ChartScroll = By.xpath("//div[@class='scrollRight-wXGVFOC9 isVisible-wXGVFOC9']");
-    private By CloseChart = By.id("close-chart-window");
-    private By NiftyDropdown = By.xpath("//button[contains(text(),'Nifty 50')]");
-    private By ChangeBse = By.xpath("//button[@value='BSE']");
-    private By CloseNifty = By.xpath("//button[contains(text(),'Top Gainers')]");
-    private By Options = By.xpath("//div[contains(text(),'Options')]");
-    private By NfoDropdown = By.xpath("//button[contains(text(),'NFO')]");
-    private By ChangeOptionBfo = By.xpath("//span[contains(text(),'BFO')]");
-    private By Futures = By.xpath("//*[contains(text(),'Futures')]");
-    private By BfoDropdown = By.xpath("//button[contains(text(),'BFO')]");
-    private By ChangeFutureNfo = By.xpath("//span[contains(text(),'NFO')]");
-    private By Commodity = By.xpath("//*[contains(text(),'Commodity')]");
-    private By McxDropdown = By.xpath("//button[contains(text(),'FUTURES')]");
-    private By ChangeOptionMcx = By.xpath("//span[contains(text(),'Options')]");
-    
     
     String NseChart = ConfigReader.getProperty("NseChart");
     String BseChart = ConfigReader.getProperty("BseChart");
@@ -50,9 +24,7 @@ private Actions actions;
     String McxFutureChart = ConfigReader.getProperty("McxFutureChart");
     String McxOptionChart = ConfigReader.getProperty("McxOptionChart");
     String IframeName = "iframeWebView";
-	
-    
-    
+
     
  // Constructor
     public ChartNavigation(WebDriver driver) {
@@ -62,309 +34,239 @@ private Actions actions;
     }
     
   //Actions
-    public void chartnavigation() throws InterruptedException {
+    public void chartnavigation(Xpath xp) throws InterruptedException {
     	
-    	waitOneSecond();
-    	driver.findElement(MarketScan).click();
+    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     	
-    	waitOneSecond();
-    	driver.findElement(Equity).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getMarketScan())).click();
+    	
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getEquity())).click();
     	
     	
     	//validating NSE Chart
     	
-    	waitOneSecond();
-    	actions.moveToElement(driver.findElement(ChartHover)).perform();
-    	Thread.sleep(1000);
+    	actions.moveToElement(wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartHover()))).perform();
     	
-    	waitOneSecond();
-    	driver.findElement(ChartOpen).click();
-    	Thread.sleep(5000);    	    	
-    	
-    	waitOneSecond();   	
-    	driver.switchTo().frame(driver.findElement(SwitchIframe));
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartOpen())).click();
+    	 	
+    	driver.switchTo().frame(driver.findElement(xp.getSwitchIframe()));
     	System.out.println("iframe changed");
     	
-    	driver.switchTo().frame(driver.findElement(SwitchInnerFrame));
+    	driver.switchTo().frame(driver.findElement(xp.getSwitchInnerFrame()));
     	System.out.println("inneriframe changed");
     	
-    	waitOneSecond();
-    	String actualText_1 = driver.findElement(ChartValidation).getText();
+    	String actualText_1 = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartValidation())).getText();
     	Assert.assertEquals(actualText_1, NseChart, "NSE Chart Mismatch");
     	System.out.println("Verified NSE Chart");
     	
-    	waitOneSecond();
-    	actions.moveToElement(driver.findElement(HoverChartRevamp)).perform();
-    	Thread.sleep(1000);
+    	actions.moveToElement(wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getHoverChartRevamp()))).perform();
     	
-    	driver.findElement(ChartScroll).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartScroll())).click();
     	
-    	driver.findElement(CloseChart).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getCloseChart())).click();
     	
     	driver.switchTo().defaultContent();
     	
     	
     	// Validating BSE chart
     	
-    	waitOneSecond();
-    	driver.findElement(NiftyDropdown).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getNiftyDropdown())).click();
     	
-    	driver.findElement(ChangeBse).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChangeBse())).click();
     	
-    	driver.findElement(CloseNifty).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getCloseNifty())).click();
     	
-    	waitOneSecond();
-    	actions.moveToElement(driver.findElement(ChartHover)).perform();
-    	Thread.sleep(1000);
+    	actions.moveToElement(wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartHover()))).perform();
     	
-    	waitOneSecond();
-    	driver.findElement(ChartOpen).click();
-    	Thread.sleep(5000);
-    	
-    	waitOneSecond();   	
-    	driver.switchTo().frame(driver.findElement(SwitchIframe));
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartOpen())).click();
+    	 	
+    	driver.switchTo().frame(driver.findElement(xp.getSwitchIframe()));
     	System.out.println("iframe changed");
     	
-    	driver.switchTo().frame(driver.findElement(SwitchInnerFrame));
+    	driver.switchTo().frame(driver.findElement(xp.getSwitchIframe()));
     	System.out.println("inneriframe changed");
     	
-    	waitOneSecond();
-    	String actualText_2 = driver.findElement(ChartValidation).getText();
+    	String actualText_2 = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartValidation())).getText();
     	Assert.assertEquals(actualText_2, BseChart, "BSE Chart Mismatch");
     	System.out.println("Verified BSE Chart");
     	
-    	waitOneSecond();
-    	actions.moveToElement(driver.findElement(HoverChartRevamp)).perform();
-    	Thread.sleep(1000);
+    	actions.moveToElement(wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getHoverChartRevamp()))).perform();
     	
-    	driver.findElement(ChartScroll).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartScroll())).click();
     	
-    	driver.findElement(CloseChart).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getCloseChart())).click();
     	
     	driver.switchTo().defaultContent();
     	
     	
     	// Validating NFO OPTIONS chart
     	
-    	waitOneSecond();
-    	driver.findElement(Options).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getOptions())).click();
     	
-    	waitOneSecond();
-    	actions.moveToElement(driver.findElement(ChartHover)).perform();
-    	Thread.sleep(1000);
-    	
-    	waitOneSecond();
-    	driver.findElement(ChartOpen).click();
-    	Thread.sleep(5000);
-    	
-    	waitOneSecond();   	
-    	driver.switchTo().frame(driver.findElement(SwitchIframe));
+    	actions.moveToElement(wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartHover()))).perform();
+    
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartOpen())).click();
+    		
+    	driver.switchTo().frame(driver.findElement(xp.getSwitchIframe()));
     	System.out.println("iframe changed");
     	
-    	driver.switchTo().frame(driver.findElement(SwitchInnerFrame));
+    	driver.switchTo().frame(driver.findElement(xp.getSwitchInnerFrame()));
     	System.out.println("inneriframe changed");
     	
-    	waitOneSecond();
-    	String actualText_3 = driver.findElement(ChartValidation).getText();
+    	String actualText_3 = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartValidation())).getText();
     	Assert.assertEquals(actualText_3, NfoOptionChart, "NFO OPTION Chart Mismatch");
     	System.out.println("Verified NFO OPTION Chart");
     	
-    	waitOneSecond();
-    	actions.moveToElement(driver.findElement(HoverChartRevamp)).perform();
-    	Thread.sleep(1000);
+    	actions.moveToElement(wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getHoverChartRevamp()))).perform();
     	
-    	driver.findElement(ChartScroll).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartScroll())).click();
     	
-    	driver.findElement(CloseChart).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getCloseChart())).click();
     	
     	driver.switchTo().defaultContent();
     	
     	
     	// Validating BFO OPTIONS chart
     	
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getNfoDropdown())).click();
     	
-    	waitOneSecond();
-    	driver.findElement(NfoDropdown).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChangeOptionBfo())).click();
     	
-    	driver.findElement(ChangeOptionBfo).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getCloseNifty())).click();
     	
-    	driver.findElement(CloseNifty).click();
+    	actions.moveToElement(wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartHover()))).perform();
     	
-    	waitOneSecond();
-    	actions.moveToElement(driver.findElement(ChartHover)).perform();
-    	Thread.sleep(1000);
-    	
-    	waitOneSecond();
-    	driver.findElement(ChartOpen).click();
-    	Thread.sleep(5000);
-    	
-    	waitOneSecond();   	
-    	driver.switchTo().frame(driver.findElement(SwitchIframe));
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartOpen())).click();
+    	  	
+    	driver.switchTo().frame(driver.findElement(xp.getSwitchIframe()));
     	System.out.println("iframe changed");
     	
-    	driver.switchTo().frame(driver.findElement(SwitchInnerFrame));
+    	driver.switchTo().frame(driver.findElement(xp.getSwitchInnerFrame()));
     	System.out.println("inneriframe changed");
     	
-    	waitOneSecond();
-    	String actualText_4 = driver.findElement(ChartValidation).getText();
+    	String actualText_4 = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartValidation())).getText();
     	Assert.assertEquals(actualText_4, BfoOptionChart, "BFO OPTION Chart Mismatch");
     	System.out.println("Verified BFO OPTION Chart");
     	
-    	waitOneSecond();
-    	actions.moveToElement(driver.findElement(HoverChartRevamp)).perform();
-    	Thread.sleep(1000);
+    	actions.moveToElement(wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getHoverChartRevamp()))).perform();
     	
-    	driver.findElement(ChartScroll).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartScroll())).click();
     	
-    	driver.findElement(CloseChart).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getCloseChart())).click();
     	
     	driver.switchTo().defaultContent();
     	
     	
     	// Validating BFO FUTURE chart
     	
-    	waitOneSecond();
-    	driver.findElement(Futures).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getFutures())).click();
     	
-    	waitOneSecond();
-    	actions.moveToElement(driver.findElement(ChartHover)).perform();
-    	Thread.sleep(1000);
+    	actions.moveToElement(wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartHover()))).perform();
     	
-    	waitOneSecond();
-    	driver.findElement(ChartOpen).click();
-    	Thread.sleep(5000);
-    	
-    	waitOneSecond();   	
-    	driver.switchTo().frame(driver.findElement(SwitchIframe));
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartOpen())).click();
+    	  	
+    	driver.switchTo().frame(driver.findElement(xp.getSwitchIframe()));
     	System.out.println("iframe changed");
     	
-    	driver.switchTo().frame(driver.findElement(SwitchInnerFrame));
+    	driver.switchTo().frame(driver.findElement(xp.getSwitchInnerFrame()));
     	System.out.println("inneriframe changed");
     	
-    	waitOneSecond();
-    	String actualText_5 = driver.findElement(ChartValidation).getText();
+    	String actualText_5 = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartValidation())).getText();
     	Assert.assertEquals(actualText_5, BfoFutureChart, "BFO FUTURE Chart Mismatch");
     	System.out.println("Verified BFO FUTURE Chart");
     	
-    	waitOneSecond();
-    	actions.moveToElement(driver.findElement(HoverChartRevamp)).perform();
-    	Thread.sleep(1000);
+    	actions.moveToElement(wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getHoverChartRevamp()))).perform();
     	
-    	driver.findElement(ChartScroll).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartScroll())).click();
     	
-    	driver.findElement(CloseChart).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getCloseChart())).click();
     	
     	driver.switchTo().defaultContent();
     	
     	
     	// Validating NFO FUTURE chart
     	
-    	waitOneSecond();
-    	driver.findElement(BfoDropdown).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getBfoDropdown())).click();
     	
-    	driver.findElement(ChangeFutureNfo).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChangeFutureNfo())).click();
     	
-    	waitOneSecond();
-    	actions.moveToElement(driver.findElement(ChartHover)).perform();
-    	Thread.sleep(1000);
+    	actions.moveToElement(wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartHover()))).perform();
     	
-    	waitOneSecond();
-    	driver.findElement(ChartOpen).click();
-    	Thread.sleep(5000);
-    	
-    	waitOneSecond();   	
-    	driver.switchTo().frame(driver.findElement(SwitchIframe));
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartOpen())).click();
+    	   	
+    	driver.switchTo().frame(driver.findElement(xp.getSwitchIframe()));
     	System.out.println("iframe changed");
     	
-    	driver.switchTo().frame(driver.findElement(SwitchInnerFrame));
+    	driver.switchTo().frame(driver.findElement(xp.getSwitchInnerFrame()));
     	System.out.println("inneriframe changed");
     	
-    	waitOneSecond();
-    	String actualText_6 = driver.findElement(ChartValidation).getText();
+    	String actualText_6 = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartValidation())).getText();
     	Assert.assertEquals(actualText_6, NfoFutureChart, "NFO FUTURE Chart Mismatch");
     	System.out.println("Verified NFO FUTURE Chart");
     	
-    	waitOneSecond();
-    	actions.moveToElement(driver.findElement(HoverChartRevamp)).perform();
-    	Thread.sleep(1000);
+    	actions.moveToElement(wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getHoverChartRevamp()))).perform();
     	
-    	driver.findElement(ChartScroll).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartScroll())).click();
     	
-    	driver.findElement(CloseChart).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getCloseChart())).click();
     	
     	driver.switchTo().defaultContent();
     	
     	
     	// Validating MCX FUTURE chart
     	
-    	driver.findElement(Commodity).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getCommodity())).click();
     	
-    	waitOneSecond();
-    	actions.moveToElement(driver.findElement(ChartHover)).perform();
-    	Thread.sleep(1000);
+    	actions.moveToElement(wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartHover()))).perform();
     	
-    	waitOneSecond();
-    	driver.findElement(ChartOpen).click();
-    	Thread.sleep(5000);
-    	
-    	waitOneSecond();   	
-    	driver.switchTo().frame(driver.findElement(SwitchIframe));
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartOpen())).click();
+    	 	
+    	driver.switchTo().frame(driver.findElement(xp.getSwitchIframe()));
     	System.out.println("iframe changed");
     	
-    	driver.switchTo().frame(driver.findElement(SwitchInnerFrame));
+    	driver.switchTo().frame(driver.findElement(xp.getSwitchInnerFrame()));
     	System.out.println("inneriframe changed");
     	
-    	waitOneSecond();
-    	String actualText_7 = driver.findElement(ChartValidation).getText();
+    	String actualText_7 = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartValidation())).getText();
     	Assert.assertEquals(actualText_7, McxFutureChart, "MCX FUTURE Chart Mismatch");
     	System.out.println("Verified MCX FUTURE Chart");
     	
-    	waitOneSecond();
-    	actions.moveToElement(driver.findElement(HoverChartRevamp)).perform();
-    	Thread.sleep(1000);
+    	actions.moveToElement(wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getHoverChartRevamp()))).perform();
     	
-    	driver.findElement(ChartScroll).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartScroll())).click();
     	
-    	driver.findElement(CloseChart).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getCloseChart())).click();
     	
     	driver.switchTo().defaultContent();
     	
     	
     	// Validating MCX OPTION chart
     	
-    	driver.findElement(Commodity).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getCommodity())).click();
     	
-    	driver.findElement(McxDropdown).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getMcxDropdown())).click();
     	
-    	driver.findElement(ChangeOptionMcx).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChangeOptionMcx())).click();
     	
-    	waitOneSecond();
-    	actions.moveToElement(driver.findElement(ChartHover)).perform();
-    	Thread.sleep(1000);
+    	actions.moveToElement(wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartHover()))).perform();
     	
-    	waitOneSecond();
-    	driver.findElement(ChartOpen).click();
-    	Thread.sleep(5000);
-    	
-    	waitOneSecond();   	
-    	driver.switchTo().frame(driver.findElement(SwitchIframe));
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartOpen())).click();
+    	 	
+    	driver.switchTo().frame(driver.findElement(xp.getSwitchIframe()));
     	System.out.println("iframe changed");
     	
-    	driver.switchTo().frame(driver.findElement(SwitchInnerFrame));
+    	driver.switchTo().frame(driver.findElement(xp.getSwitchInnerFrame()));
     	System.out.println("inneriframe changed");
     	
-    	waitOneSecond();
-    	String actualText_8 = driver.findElement(ChartValidation).getText();
+    	String actualText_8 = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartValidation())).getText();
     	Assert.assertEquals(actualText_8, McxOptionChart, "MCX OPTION Chart Mismatch");
     	System.out.println("Verified MCX OPTION Chart");
     	
-    	waitOneSecond();
-    	actions.moveToElement(driver.findElement(HoverChartRevamp)).perform();
-    	Thread.sleep(1000);
+    	actions.moveToElement(wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getHoverChartRevamp()))).perform();
     	
-    	driver.findElement(ChartScroll).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartScroll())).click();
     	
-    	driver.findElement(CloseChart).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getCloseChart())).click();
     	
     	driver.switchTo().defaultContent();
     	

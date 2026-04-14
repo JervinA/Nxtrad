@@ -1,27 +1,15 @@
 package Pages;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SignUpPage {
 
 	private WebDriver driver;
-	
-	
-	// Global wait method
-    private void waitOneSecond() throws InterruptedException {
-        Thread.sleep(1000);
-    }
-
-    // Locators
-    private By profile = By.cssSelector("div[data-cy='profile-btn']");
-    private By logout = By.cssSelector("div[data-cy='logout-btn']");
-    private By OkBtn = By.cssSelector("button[data-cy='dialog-confirm-btn']");
-    private By switchacc = By.xpath("//span[@class='switch-acc']");
-    private By createacc = By.xpath("//button[contains(text(),'Create Account')]");
-    private By tryotherno = By.xpath("//*[contains(text(),'Try with new number?')]");
-    
-    
 
  // Constructor
     public SignUpPage(WebDriver driver) {
@@ -29,31 +17,27 @@ public class SignUpPage {
     }
 
  // Actions
-    public void signup(TraditionalLogin tl, String mobileno, String otp) throws InterruptedException {
+    public void signup(Xpath xp, String mobileno, String otp) throws InterruptedException {
     	
-    	waitOneSecond();
-        driver.findElement(profile).click();
+    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+    	
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getprofile())).click();
         
-        waitOneSecond();
-        driver.findElement(logout).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getlogout())).click();
         
-        waitOneSecond();
-        driver.findElement(OkBtn).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getokBtn())).click();
         
-        waitOneSecond();
-        driver.findElement(switchacc).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getswitchacc())).click();
         
-        waitOneSecond();
-        driver.findElement(tl.getmobileno()).sendKeys(mobileno);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getLoginwithNo())).click();
         
-        waitOneSecond();
-        driver.findElement(tl.getcontinueBtn1()).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getmobileno())).sendKeys(mobileno);
         
-        waitOneSecond();
-        driver.findElement(tl.getOtp()).sendKeys(otp);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getcontinueBtn1())).click();
         
-        waitOneSecond();
-        driver.findElement(createacc).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getOtp())).sendKeys(otp);
+        
+        wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getcreateacc())).click();
         
      // Get current window
         String currentWindow = driver.getWindowHandle();

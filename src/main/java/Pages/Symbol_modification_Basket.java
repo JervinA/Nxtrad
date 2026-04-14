@@ -23,6 +23,7 @@ public class Symbol_modification_Basket {
     }
     
     private By EditIcon = By.xpath("(//button[contains(@class,'edit-icon')])[3]");
+    private By GetPrice = By.xpath("//*[@data-cy='BASKET_SCRIPS-body']/tr[1]/td[7]");
     
     
     String SearchNSESymbol = ConfigReader.getProperty("SearchNSESymbol");
@@ -43,8 +44,7 @@ public class Symbol_modification_Basket {
     	Thread.sleep(2000);
     	
     	//getting price before modification
-    	String actualText_1 = driver.findElement(HoverSymbol).getText();
-    	Assert.assertEquals(actualText_1, BuyIcon, "Buy icon mismatch");
+    	String actualText_1 = driver.findElement(GetPrice).getText();
     	System.out.println(actualText_1);
     	
     	actions.moveToElement(driver.findElement(ad.getHoverSymbol3())).perform();

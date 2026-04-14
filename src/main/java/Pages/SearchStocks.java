@@ -1,8 +1,12 @@
 package Pages;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import Config.ConfigReader;
 
@@ -10,35 +14,7 @@ public class SearchStocks {
 	
 private WebDriver driver;
 	
-	// Global wait method
-    private void waitOneSecond() throws InterruptedException {
-        Thread.sleep(1000);
-    }
-    
-    private By SelectTab = By.xpath("//div[@class='MuiTabs-scroller MuiTabs-hideScrollbar MuiTabs-scrollableX css-12qnib']//button[contains(.,'Automation')]");
-    private By Searchfield = By.id("search-input");
-    private By ValidateNseName = By.xpath("//*[contains(text(),'IDEA')]");
-    private By ValidateNseExchange = By.xpath("//*[contains(text(),'NSE')]");
-    private By ValidateBseName = By.xpath("//*[contains(text(),'IDEA')]");
-    private By ValidateBseExchange = By.xpath("//*[contains(text(),'BSE')]");
-    private By ValidateNfoName = By.xpath("(//*[contains(text(),'ASIANPAINT')])[1]");
-    private By ValidateNfoExchange = By.xpath("(//*[contains(text(),'NFO')])[1]");
-    private By ValidateBfoName = By.xpath("//div[@id='search-results']/div[1]");
-    private By ValidateBfoExchange = By.xpath("(//*[contains(text(),'BFO')])[1]");
-    private By ValidateMcxName = By.cssSelector("div[data-cy='search-row-0']");
-    private By ValidateMcxExchange = By.xpath("(//*[contains(text(),'MCX')])[1]");
-    
-    
-  //Reuse xpath
-    public By getSearchfield() {
-    	return Searchfield;
-    }
-    
-    public By getSelectTab() {
-    	return SelectTab;
-    }
-    
-    
+	
     
 //    String NseSymbolName = "IDEA";
 //    String NseExchange = "NSE";
@@ -80,21 +56,20 @@ private WebDriver driver;
     }
     
     //Actions
-    public void SearchStocks(String nse, String bse, String nfo, String bfo, String mcx) throws InterruptedException {
+    public void SearchStocks(Xpath xp, String nse, String bse, String nfo, String bfo, String mcx) throws InterruptedException {
     	
-    	waitOneSecond();
-    	driver.findElement(SelectTab).click();
+    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+    	
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getSelectTab())).click();
     	
     	//Searching and Verifying NSE symbol
-    	waitOneSecond();
-    	driver.findElement(Searchfield).sendKeys(nse);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getSearchfield())).sendKeys(nse);
     	
-    	waitOneSecond();
-    	String actualText_1 = driver.findElement(ValidateNseName).getText();
+    	String actualText_1 = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getValidateNseName())).getText();
     	Assert.assertEquals(actualText_1, NseSymbolName, "NSE Symbol Name Mismatch");
     	System.out.println("Verified NSE Symbol Name");
     	
-    	String actualText_2 = driver.findElement(ValidateNseExchange).getText();
+    	String actualText_2 = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getValidateNseExchange())).getText();
     	Assert.assertEquals(actualText_2, NseExchange, "NSE Symbol Exchange Mismatch");
     	System.out.println("Verified NSE Symbol Exchange");
     	
@@ -103,19 +78,16 @@ private WebDriver driver;
     	
     	//Searching and Verifying BSE symbol
     	
-    	waitOneSecond();
-    	driver.findElement(Searchfield).sendKeys(Keys.CONTROL + "a");
-    	driver.findElement(Searchfield).sendKeys(Keys.DELETE);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getSearchfield())).sendKeys(Keys.CONTROL + "a");
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getSearchfield())).sendKeys(Keys.DELETE);
     	
-    	waitOneSecond();
-    	driver.findElement(Searchfield).sendKeys(bse);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getSearchfield())).sendKeys(bse);
     	
-    	waitOneSecond();
-    	String actualText_3 = driver.findElement(ValidateBseName).getText();
+    	String actualText_3 = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getValidateBseName())).getText();
     	Assert.assertEquals(actualText_3, BseSymbolName, "BSE Symbol Name Mismatch");
     	System.out.println("Verified BSE Symbol Name");
     	
-    	String actualText_4 = driver.findElement(ValidateBseExchange).getText();
+    	String actualText_4 = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getValidateBseExchange())).getText();
     	Assert.assertEquals(actualText_4, BseExchange, "BSE Symbol Exchange Mismatch");
     	System.out.println("Verified BSE Symbol Exchange");
     	
@@ -124,22 +96,19 @@ private WebDriver driver;
     	
     	//Searching and Verifying NFO symbol
     	
-    	waitOneSecond();
-    	driver.findElement(Searchfield).sendKeys(Keys.CONTROL + "a");
-    	driver.findElement(Searchfield).sendKeys(Keys.DELETE);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getSearchfield())).sendKeys(Keys.CONTROL + "a");
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getSearchfield())).sendKeys(Keys.DELETE);
     	
-    	waitOneSecond();
-    	driver.findElement(Searchfield).sendKeys(nfo);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getSearchfield())).sendKeys(nfo);
     	
-    	waitOneSecond();
-    	String actualText_5 = driver.findElement(ValidateNfoName).getText();
+    	String actualText_5 = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getValidateNfoName())).getText();
     	if (actualText_5.length() > 14) {
     	    actualText_5 = actualText_5.substring(0, actualText_5.length() - 14);
     	}
     	Assert.assertEquals(actualText_5, NfoSymbolName, "NFO Symbol Name Mismatch");
     	System.out.println("Verified NFO Symbol Name");
     	
-    	String actualText_6 = driver.findElement(ValidateNfoExchange).getText();
+    	String actualText_6 = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getValidateNfoExchange())).getText();
     	Assert.assertEquals(actualText_6, NfoExchange, "NFO Symbol Exchange Mismatch");
     	System.out.println("Verified NFO Symbol Exchange");
     	
@@ -148,22 +117,19 @@ private WebDriver driver;
     	
     	//Searching and Verifying BFO symbol
     	
-    	waitOneSecond();
-    	driver.findElement(Searchfield).sendKeys(Keys.CONTROL + "a");
-    	driver.findElement(Searchfield).sendKeys(Keys.DELETE);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getSearchfield())).sendKeys(Keys.CONTROL + "a");
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getSearchfield())).sendKeys(Keys.DELETE);
     	
-    	waitOneSecond();
-    	driver.findElement(Searchfield).sendKeys(bfo);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getSearchfield())).sendKeys(bfo);
     	
-    	waitOneSecond();
-    	String actualText_7 = driver.findElement(ValidateBfoName).getText();
+    	String actualText_7 = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getValidateBfoName())).getText();
     	if (actualText_7.length() > 9) {
     	    actualText_7 = actualText_7.substring(0, actualText_7.length() - 13);
     	}
     	Assert.assertEquals(actualText_7, BfoSymbolName, "BFO Symbol Name Mismatch");
     	System.out.println("Verified BFO Symbol Name");
     	
-    	String actualText_8 = driver.findElement(ValidateBfoExchange).getText();
+    	String actualText_8 = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getValidateBfoExchange())).getText();
     	Assert.assertEquals(actualText_8, BfoExchange, "BFO Symbol Exchange Mismatch");
     	System.out.println("Verified BFO Symbol Exchange");
     	
@@ -172,22 +138,19 @@ private WebDriver driver;
     	
     	//Searching and Verifying MCX symbol
     	
-    	waitOneSecond();
-    	driver.findElement(Searchfield).sendKeys(Keys.CONTROL + "a");
-    	driver.findElement(Searchfield).sendKeys(Keys.DELETE);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getSearchfield())).sendKeys(Keys.CONTROL + "a");
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getSearchfield())).sendKeys(Keys.DELETE);
     	
-    	waitOneSecond();
-    	driver.findElement(Searchfield).sendKeys(mcx);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getSearchfield())).sendKeys(mcx);
     	
-    	waitOneSecond();
-    	String actualText_9 = driver.findElement(ValidateMcxName).getText();
+    	String actualText_9 = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getValidateMcxName())).getText();
     	if (actualText_9.length() > 9) {
     	    actualText_9 = actualText_9.substring(0, actualText_9.length() - 13);
     	}
     	Assert.assertEquals(actualText_9, McxSymbolName, "MCX Symbol Name Mismatch");
     	System.out.println("Verified MCX Symbol Name");
     	
-    	String actualText_10 = driver.findElement(ValidateMcxExchange).getText();
+    	String actualText_10 = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getValidateMcxExchange())).getText();
     	Assert.assertEquals(actualText_10, McxExchange, "MCX Symbol Exchange Mismatch");
     	System.out.println("Verified MCX Symbol Exchange");
     	
