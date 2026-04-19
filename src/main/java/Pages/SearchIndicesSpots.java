@@ -32,10 +32,9 @@ private WebDriver driver;
     	
     	//Verifying INDEX
     	
-    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getSearchfield())).sendKeys(Keys.CONTROL + "a");
-    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getSearchfield())).sendKeys(Keys.DELETE);
-    	
     	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getSearchfield())).sendKeys(indices);
+    	
+    	Thread.sleep(3000);
     	
     	String actualText_1 = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getValidateIndicesName())).getText();
     	Assert.assertEquals(actualText_1, IndexName, "INDEX Name Mismatch");
@@ -54,6 +53,8 @@ private WebDriver driver;
     	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getSearchfield())).sendKeys(Keys.DELETE);
     	
     	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getSearchfield())).sendKeys(spots);
+    	
+    	Thread.sleep(3000);
     	
     	String actualText_3 = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getValidateSpotExchange())).getText();
     	Assert.assertEquals(actualText_3, Spots, "SPOT Exchange Name Mismatch");

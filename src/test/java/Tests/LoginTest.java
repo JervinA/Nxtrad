@@ -59,46 +59,45 @@ public class LoginTest extends BaseTest {
 	    }
 	 
 	
-//	 @Test(priority = 2)
-//	    public void validateSignUpPage() throws InterruptedException {
-//		 Xpath xp = new Xpath(driver);
-//		 SignUpPage sp = new SignUpPage(driver);
-//	       sp.signup(xp, mobileno_2, otp);  
-//	    }
+	 @Test(priority = 2)
+	    public void validateSignUpPage() throws InterruptedException {
+		 Xpath xp = new Xpath(driver);
+		 SignUpPage sp = new SignUpPage(driver);
+	       sp.signup(xp, mobileno_2, otp);  
+	    }
 	 
 
-//	 @Test(priority = 3) 
-//	 public void validateRiskDisclosure() throws InterruptedException {
-//		 Xpath xp = new Xpath(driver);
-//		 RiskDisclosure rd = new RiskDisclosure(driver);
-//			rd.riskdisclosure(xp, mobileno_1, otp, pin);
-//		
-//	 }
+	 @Test(priority = 3) 
+	 public void validateRiskDisclosure() throws InterruptedException {
+		 Xpath xp = new Xpath(driver);
+		 RiskDisclosure rd = new RiskDisclosure(driver);
+			rd.riskdisclosure(xp, mobileno_1, otp, pin);
+		
+	 }
 	 
 	 
- 
-//	 @Test(priority = 4)
-//	 public void validateSearchStocks() throws InterruptedException {
-//		 Xpath xp = new Xpath(driver);
-//		 SearchStocks ss = new SearchStocks(driver);
-//		 ss.SearchStocks(xp, nse, bse, nfo, bfo, mcx);
-//	 }
+	 @Test(priority = 4)
+	 public void validateSearchStocks() throws InterruptedException {
+		 Xpath xp = new Xpath(driver);
+		 SearchStocks ss = new SearchStocks(driver);
+		 ss.SearchStocks(xp, nse, bse, nfo, bfo, mcx);
+	 }
 	
 	 
-//	 @Test(priority = 5)
-//	 public void ValidateSearchIndicesAndSpots() throws InterruptedException {
-//		 Xpath xp = new Xpath(driver);
-//		 SearchIndicesSpots is = new SearchIndicesSpots(driver);
-//		 is.SearchIndicesSpots(xp, indices, spots);
-//	 }
+	 @Test(priority = 5)
+	 public void ValidateSearchIndicesAndSpots() throws InterruptedException {
+		 Xpath xp = new Xpath(driver);
+		 SearchIndicesSpots is = new SearchIndicesSpots(driver);
+		 is.SearchIndicesSpots(xp, indices, spots);
+	 }
 	
 	 
-//	 @Test(priority = 6)
-//	 public void ValidateChartOpening() throws InterruptedException {
-//		 Xpath xp = new Xpath(driver);
-//		 ChartNavigation cn = new ChartNavigation(driver);
-//		 cn.chartnavigation(xp);
-//	 }
+	 @Test(priority = 6)
+	 public void ValidateChartOpening() throws InterruptedException {
+		 Xpath xp = new Xpath(driver);
+		 ChartNavigation cn = new ChartNavigation(driver);
+		 cn.chartnavigation(xp);
+	 }
 	
 	 
 //	 @Test(priority = 7)
@@ -125,20 +124,20 @@ public class LoginTest extends BaseTest {
 //	 }
 	 
 	 
-//	 @Test(priority = 10)
-//	 public void ValidateCreate_Edit_Delete_Basket() throws InterruptedException{
-//		 Xpath xp = new Xpath(driver);
-//		 Create_Edit_Delete_Basket cb = new Create_Edit_Delete_Basket(driver);
-//		 cb.Create_Edit_Delete_Basket(xp, basketname, BasketCreation, Editname, BasketModification, BasketDeletion);
-//	 }
+	 @Test(priority = 10)
+	 public void ValidateCreate_Edit_Delete_Basket() throws InterruptedException{
+		 Xpath xp = new Xpath(driver);
+		 Create_Edit_Delete_Basket cb = new Create_Edit_Delete_Basket(driver);
+		 cb.Create_Edit_Delete_Basket(xp, basketname, BasketCreation, Editname, BasketModification, BasketDeletion);
+	 }
 	 
 	 
-//	 @Test(priority = 11)
-//	 public void ValidateAdd_Delete_Rearrange_Invert_Symbols() throws InterruptedException {
-//		 Xpath xp = new Xpath(driver);
-//		 Add_Delete_Reaarange_Invert_symbols ad = new Add_Delete_Reaarange_Invert_symbols(driver);
-//		 ad.Add_Delete_Reaarange_Invert_symbols(xp, basketname, SearchNSESymbol, BasketSearch);
-//	 }
+	 @Test(priority = 11)
+	 public void ValidateAdd_Delete_Rearrange_Invert_Symbols() throws InterruptedException {
+		 Xpath xp = new Xpath(driver);
+		 Add_Delete_Reaarange_Invert_symbols ad = new Add_Delete_Reaarange_Invert_symbols(driver);
+		 ad.Add_Delete_Reaarange_Invert_symbols(xp, basketname, SearchNSESymbol, BasketSearch);
+	 }
 	 
 //	 @Test(priority = 12)
 //	 public void ValidateSymbol_modification_Basket() throws InterruptedException {

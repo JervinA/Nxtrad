@@ -61,6 +61,7 @@ public class TraditionalLogin {
     	Thread.sleep(6000);
     	
 //    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getselectId())).click();
+    	driver.findElement(xp.getselectId()).click();
     	
     	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getOkBtn())).click();
     	

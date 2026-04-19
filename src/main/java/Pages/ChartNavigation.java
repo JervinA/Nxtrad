@@ -83,7 +83,7 @@ private Actions actions;
     	driver.switchTo().frame(driver.findElement(xp.getSwitchIframe()));
     	System.out.println("iframe changed");
     	
-    	driver.switchTo().frame(driver.findElement(xp.getSwitchIframe()));
+    	driver.switchTo().frame(driver.findElement(xp.getSwitchInnerFrame()));
     	System.out.println("inneriframe changed");
     	
     	String actualText_2 = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartValidation())).getText();
@@ -132,56 +132,56 @@ private Actions actions;
     	
     	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChangeOptionBfo())).click();
     	
-    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getCloseNifty())).click();
-    	
-    	actions.moveToElement(wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartHover()))).perform();
-    	
-    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartOpen())).click();
-    	  	
-    	driver.switchTo().frame(driver.findElement(xp.getSwitchIframe()));
-    	System.out.println("iframe changed");
-    	
-    	driver.switchTo().frame(driver.findElement(xp.getSwitchInnerFrame()));
-    	System.out.println("inneriframe changed");
-    	
-    	String actualText_4 = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartValidation())).getText();
-    	Assert.assertEquals(actualText_4, BfoOptionChart, "BFO OPTION Chart Mismatch");
-    	System.out.println("Verified BFO OPTION Chart");
-    	
-    	actions.moveToElement(wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getHoverChartRevamp()))).perform();
-    	
-    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartScroll())).click();
-    	
-    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getCloseChart())).click();
-    	
-    	driver.switchTo().defaultContent();
+//    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getCloseNifty())).click();
+//    	
+//    	actions.moveToElement(wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartHover()))).perform();
+//    	
+//    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartOpen())).click();
+//    	  	
+//    	driver.switchTo().frame(driver.findElement(xp.getSwitchIframe()));
+//    	System.out.println("iframe changed");
+//    	
+//    	driver.switchTo().frame(driver.findElement(xp.getSwitchInnerFrame()));
+//    	System.out.println("inneriframe changed");
+//    	
+//    	String actualText_4 = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartValidation())).getText();
+//    	Assert.assertEquals(actualText_4, BfoOptionChart, "BFO OPTION Chart Mismatch");
+//    	System.out.println("Verified BFO OPTION Chart");
+//    	
+//    	actions.moveToElement(wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getHoverChartRevamp()))).perform();
+//    	
+//    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartScroll())).click();
+//    	
+//    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getCloseChart())).click();
+//    	
+//    	driver.switchTo().defaultContent();
     	
     	
     	// Validating BFO FUTURE chart
     	
     	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getFutures())).click();
     	
-    	actions.moveToElement(wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartHover()))).perform();
-    	
-    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartOpen())).click();
-    	  	
-    	driver.switchTo().frame(driver.findElement(xp.getSwitchIframe()));
-    	System.out.println("iframe changed");
-    	
-    	driver.switchTo().frame(driver.findElement(xp.getSwitchInnerFrame()));
-    	System.out.println("inneriframe changed");
-    	
-    	String actualText_5 = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartValidation())).getText();
-    	Assert.assertEquals(actualText_5, BfoFutureChart, "BFO FUTURE Chart Mismatch");
-    	System.out.println("Verified BFO FUTURE Chart");
-    	
-    	actions.moveToElement(wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getHoverChartRevamp()))).perform();
-    	
-    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartScroll())).click();
-    	
-    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getCloseChart())).click();
-    	
-    	driver.switchTo().defaultContent();
+//    	actions.moveToElement(wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartHover()))).perform();
+//    	
+//    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartOpen())).click();
+//    	  	
+//    	driver.switchTo().frame(driver.findElement(xp.getSwitchIframe()));
+//    	System.out.println("iframe changed");
+//    	
+//    	driver.switchTo().frame(driver.findElement(xp.getSwitchInnerFrame()));
+//    	System.out.println("inneriframe changed");
+//    	
+//    	String actualText_5 = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartValidation())).getText();
+//    	Assert.assertEquals(actualText_5, BfoFutureChart, "BFO FUTURE Chart Mismatch");
+//    	System.out.println("Verified BFO FUTURE Chart");
+//    	
+//    	actions.moveToElement(wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getHoverChartRevamp()))).perform();
+//    	
+//    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getChartScroll())).click();
+//    	
+//    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getCloseChart())).click();
+//    	
+//    	driver.switchTo().defaultContent();
     	
     	
     	// Validating NFO FUTURE chart

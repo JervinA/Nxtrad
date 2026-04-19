@@ -1,4 +1,4 @@
-package Pages;
+	package Pages;
 
 import java.time.Duration;
 
@@ -83,6 +83,8 @@ private WebDriver driver;
     	
     	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getSearchfield())).sendKeys(bse);
     	
+    	Thread.sleep(3000);
+    	
     	String actualText_3 = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getValidateBseName())).getText();
     	Assert.assertEquals(actualText_3, BseSymbolName, "BSE Symbol Name Mismatch");
     	System.out.println("Verified BSE Symbol Name");
@@ -100,6 +102,8 @@ private WebDriver driver;
     	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getSearchfield())).sendKeys(Keys.DELETE);
     	
     	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getSearchfield())).sendKeys(nfo);
+    	
+    	Thread.sleep(3000);
     	
     	String actualText_5 = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getValidateNfoName())).getText();
     	if (actualText_5.length() > 14) {
@@ -122,6 +126,8 @@ private WebDriver driver;
     	
     	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getSearchfield())).sendKeys(bfo);
     	
+    	Thread.sleep(3000);
+    	
     	String actualText_7 = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getValidateBfoName())).getText();
     	if (actualText_7.length() > 9) {
     	    actualText_7 = actualText_7.substring(0, actualText_7.length() - 13);
@@ -143,6 +149,8 @@ private WebDriver driver;
     	
     	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getSearchfield())).sendKeys(mcx);
     	
+    	Thread.sleep(3000);
+    	
     	String actualText_9 = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getValidateMcxName())).getText();
     	if (actualText_9.length() > 9) {
     	    actualText_9 = actualText_9.substring(0, actualText_9.length() - 13);
@@ -153,6 +161,9 @@ private WebDriver driver;
     	String actualText_10 = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getValidateMcxExchange())).getText();
     	Assert.assertEquals(actualText_10, McxExchange, "MCX Symbol Exchange Mismatch");
     	System.out.println("Verified MCX Symbol Exchange");
+    	
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getSearchfield())).sendKeys(Keys.CONTROL + "a");
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getSearchfield())).sendKeys(Keys.DELETE);
     	
     	System.out.println("Searching and Verifying MCX symbol completed");
     	

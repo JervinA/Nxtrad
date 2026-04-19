@@ -36,15 +36,17 @@ public class RiskDisclosure {
     	
     	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getOtp())).sendKeys(Otp);
     	
-    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getselectId())).click();
+    	Thread.sleep(2000);
+    	driver.findElement(xp.getselectId()).click();
+//    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getselectId())).click();
     	
     	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getokBtn())).click();
     	
-    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getPin())).sendKeys(pin);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getEnterPin())).sendKeys(pin);
     	
-    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getcontinueBtn2())).click();
+//    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getRiskclosure())).click();
     	
-    	String actualText = driver.findElement(xp.getriskdisclosuretitle()).getText();
+    	String actualText = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getriskdisclosuretitle())).getText();
     	Assert.assertEquals(actualText, VerifyLoginText.text, "Risk Disclosure text mismatch!");
     	System.out.println("Verified Riskdisclosure");
 

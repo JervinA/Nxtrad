@@ -15,7 +15,7 @@ public class Xpath {
     private By EnterPin = By.xpath("//*[@data-cy='login-pin']");
     private By EnterTotp = By.xpath("//*[@data-cy='validate-otp']");
     private By Proceed = By.xpath("//*[contains(text(),'Proceed')]");
-    private By LoginwithNo = By.xpath("//*[contains(text(),\"Don't know your User ID? Login with Mobile No\")]");
+    private By LoginwithNo = By.xpath("//span[text()='Login with Mobile No']");
     private By mobileno = By.id("MOBILE_NO");
     private By continueBtn1 = By.cssSelector("button[data-cy='login-submit-btn']");
     private By Otp = By.xpath("//*[@data-cy='validate-otp']");

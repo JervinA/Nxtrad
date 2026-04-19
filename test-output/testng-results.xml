@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="0" failed="6" skipped="0">
+<testng-results ignored="0" total="8" passed="0" failed="8" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-04-14T23:42:48 IST" name="RegressionSuite" finished-at="2026-04-14T23:45:57 IST" duration-ms="189714">
+  <suite started-at="2026-04-19T13:18:25 IST" name="SaniteChecklistSuite" finished-at="2026-04-19T13:20:50 IST" duration-ms="145540">
     <groups>
     </groups>
-    <test started-at="2026-04-14T23:42:48 IST" name="ChromeTests" finished-at="2026-04-14T23:45:57 IST" duration-ms="189714">
+    <test started-at="2026-04-19T13:18:25 IST" name="ChromeTests" finished-at="2026-04-19T13:20:50 IST" duration-ms="145540">
       <class name="Tests.LoginTest">
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:Tests.LoginTest@1f9f6368]" started-at="2026-04-14T23:42:48 IST" name="setUp" finished-at="2026-04-14T23:43:06 IST" duration-ms="18885" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:Tests.LoginTest@45385f75]" started-at="2026-04-19T13:18:25 IST" name="setUp" finished-at="2026-04-19T13:18:28 IST" duration-ms="3720" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,26 +18,50 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="validTraditionalLoginTest()[pri:1, instance:Tests.LoginTest@1f9f6368]" started-at="2026-04-14T23:43:06 IST" name="validTraditionalLoginTest" finished-at="2026-04-14T23:43:45 IST" duration-ms="38070" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
+        <test-method signature="validTraditionalLoginTest()[pri:1, instance:Tests.LoginTest@45385f75]" started-at="2026-04-19T13:18:28 IST" name="validTraditionalLoginTest" finished-at="2026-04-19T13:18:35 IST" duration-ms="6336" status="FAIL">
+          <exception class="org.openqa.selenium.StaleElementReferenceException">
             <message>
-              <![CDATA[Expected condition failed: waiting for visibility of element located by By.id: pin (tried for 20 second(s) with 500 milliseconds interval)
+              <![CDATA[stale element reference: stale element not found in the current frame
+  (Session info: chrome=147.0.7727.56)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception
 Build info: version: '4.38.0', revision: '6b412e825c*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
-Driver info: net.bytebuddy.renamed.java.lang.Object$ByteBuddy$DFNNHdfL
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.178, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\Jervin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57866}, goog:processID: 20216, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57866/devtoo..., se:cdpVersion: 146.0.7680.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 01be85d6b4370cba46de44a226a95ccd]]>
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8c81d4dddb47eac57c475de8e8e75086, clickElement {id=f.EF04FFE01FE387F4E3BA010B155A6E5C.d.DD792C6BD34F819BA7A16CE4ADEF2AA5.e.168}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.56, chrome: {chromedriverVersion: 147.0.7727.57 (b4f28b5637d0..., userDataDir: C:\Users\Jervin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54240}, goog:processID: 10188, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54240/devtoo..., se:cdpVersion: 147.0.7727.56, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (8c81d4dddb47eac57c475de8e8e75086)] -> css selector: button[data-cy='login-submit-btn']]
+Session ID: 8c81d4dddb47eac57c475de8e8e75086]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.id: pin (tried for 20 second(s) with 500 milliseconds interval)
+              <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
+  (Session info: chrome=147.0.7727.56)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception
 Build info: version: '4.38.0', revision: '6b412e825c*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
-Driver info: net.bytebuddy.renamed.java.lang.Object$ByteBuddy$DFNNHdfL
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.178, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\Jervin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57866}, goog:processID: 20216, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57866/devtoo..., se:cdpVersion: 146.0.7680.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 01be85d6b4370cba46de44a226a95ccd
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-at Pages.TraditionalLogin.login(TraditionalLogin.java:67)
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8c81d4dddb47eac57c475de8e8e75086, clickElement {id=f.EF04FFE01FE387F4E3BA010B155A6E5C.d.DD792C6BD34F819BA7A16CE4ADEF2AA5.e.168}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.56, chrome: {chromedriverVersion: 147.0.7727.57 (b4f28b5637d0..., userDataDir: C:\Users\Jervin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54240}, goog:processID: 10188, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54240/devtoo..., se:cdpVersion: 147.0.7727.56, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (8c81d4dddb47eac57c475de8e8e75086)] -> css selector: button[data-cy='login-submit-btn']]
+Session ID: 8c81d4dddb47eac57c475de8e8e75086
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.openqa.selenium.support.decorators.WebDriverDecorator.call(WebDriverDecorator.java:315)
+at org.openqa.selenium.support.decorators.DefaultDecorated.call(DefaultDecorated.java:48)
+at org.openqa.selenium.support.decorators.WebDriverDecorator.lambda$createProxyFactory$3(WebDriverDecorator.java:405)
+at net.bytebuddy.renamed.java.lang.Object$ByteBuddy$YhpoSUyk.click(Unknown Source)
+at Pages.TraditionalLogin.login(TraditionalLogin.java:57)
 at Tests.LoginTest.validTraditionalLoginTest(LoginTest.java:57)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
@@ -62,31 +86,31 @@ at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecut
 at java.base/java.lang.Thread.run(Thread.java:1583)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validTraditionalLoginTest -->
-        <test-method is-config="true" signature="afterEachTest()[pri:0, instance:Tests.LoginTest@1f9f6368]" started-at="2026-04-14T23:43:45 IST" name="afterEachTest" finished-at="2026-04-14T23:43:47 IST" duration-ms="2004" status="PASS">
+        <test-method is-config="true" signature="afterEachTest()[pri:0, instance:Tests.LoginTest@45385f75]" started-at="2026-04-19T13:18:35 IST" name="afterEachTest" finished-at="2026-04-19T13:18:37 IST" duration-ms="2009" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterEachTest -->
-        <test-method signature="validateSignUpPage()[pri:2, instance:Tests.LoginTest@1f9f6368]" started-at="2026-04-14T23:43:47 IST" name="validateSignUpPage" finished-at="2026-04-14T23:44:07 IST" duration-ms="20183" status="FAIL">
+        <test-method signature="validateSignUpPage()[pri:2, instance:Tests.LoginTest@45385f75]" started-at="2026-04-19T13:18:37 IST" name="validateSignUpPage" finished-at="2026-04-19T13:18:57 IST" duration-ms="20385" status="FAIL">
           <exception class="org.openqa.selenium.TimeoutException">
             <message>
               <![CDATA[Expected condition failed: waiting for visibility of element located by By.cssSelector: div[data-cy='profile-btn'] (tried for 20 second(s) with 500 milliseconds interval)
 Build info: version: '4.38.0', revision: '6b412e825c*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
-Driver info: net.bytebuddy.renamed.java.lang.Object$ByteBuddy$DFNNHdfL
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.178, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\Jervin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57866}, goog:processID: 20216, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57866/devtoo..., se:cdpVersion: 146.0.7680.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 01be85d6b4370cba46de44a226a95ccd]]>
+Driver info: net.bytebuddy.renamed.java.lang.Object$ByteBuddy$YpR7r5xu
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.56, chrome: {chromedriverVersion: 147.0.7727.57 (b4f28b5637d0..., userDataDir: C:\Users\Jervin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54240}, goog:processID: 10188, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54240/devtoo..., se:cdpVersion: 147.0.7727.56, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8c81d4dddb47eac57c475de8e8e75086]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.cssSelector: div[data-cy='profile-btn'] (tried for 20 second(s) with 500 milliseconds interval)
 Build info: version: '4.38.0', revision: '6b412e825c*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
-Driver info: net.bytebuddy.renamed.java.lang.Object$ByteBuddy$DFNNHdfL
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.178, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\Jervin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57866}, goog:processID: 20216, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57866/devtoo..., se:cdpVersion: 146.0.7680.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 01be85d6b4370cba46de44a226a95ccd
+Driver info: net.bytebuddy.renamed.java.lang.Object$ByteBuddy$YpR7r5xu
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.56, chrome: {chromedriverVersion: 147.0.7727.57 (b4f28b5637d0..., userDataDir: C:\Users\Jervin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54240}, goog:processID: 10188, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54240/devtoo..., se:cdpVersion: 147.0.7727.56, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8c81d4dddb47eac57c475de8e8e75086
 at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 at Pages.SignUpPage.signup(SignUpPage.java:24)
@@ -118,27 +142,27 @@ at java.base/java.lang.Thread.run(Thread.java:1583)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateSignUpPage -->
-        <test-method is-config="true" signature="afterEachTest()[pri:0, instance:Tests.LoginTest@1f9f6368]" started-at="2026-04-14T23:44:08 IST" name="afterEachTest" finished-at="2026-04-14T23:44:10 IST" duration-ms="2006" status="PASS">
+        <test-method is-config="true" signature="afterEachTest()[pri:0, instance:Tests.LoginTest@45385f75]" started-at="2026-04-19T13:18:58 IST" name="afterEachTest" finished-at="2026-04-19T13:19:00 IST" duration-ms="2006" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterEachTest -->
-        <test-method signature="validateRiskDisclosure()[pri:3, instance:Tests.LoginTest@1f9f6368]" started-at="2026-04-14T23:44:10 IST" name="validateRiskDisclosure" finished-at="2026-04-14T23:44:40 IST" duration-ms="30743" status="FAIL">
+        <test-method signature="validateRiskDisclosure()[pri:3, instance:Tests.LoginTest@45385f75]" started-at="2026-04-19T13:19:00 IST" name="validateRiskDisclosure" finished-at="2026-04-19T13:19:24 IST" duration-ms="24433" status="FAIL">
           <exception class="org.openqa.selenium.TimeoutException">
             <message>
               <![CDATA[Expected condition failed: waiting for visibility of element located by By.id: MOBILE_NO (tried for 20 second(s) with 500 milliseconds interval)
 Build info: version: '4.38.0', revision: '6b412e825c*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
-Driver info: net.bytebuddy.renamed.java.lang.Object$ByteBuddy$DFNNHdfL
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.178, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\Jervin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57866}, goog:processID: 20216, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57866/devtoo..., se:cdpVersion: 146.0.7680.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 01be85d6b4370cba46de44a226a95ccd]]>
+Driver info: net.bytebuddy.renamed.java.lang.Object$ByteBuddy$YpR7r5xu
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.56, chrome: {chromedriverVersion: 147.0.7727.57 (b4f28b5637d0..., userDataDir: C:\Users\Jervin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54240}, goog:processID: 10188, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54240/devtoo..., se:cdpVersion: 147.0.7727.56, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8c81d4dddb47eac57c475de8e8e75086]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.id: MOBILE_NO (tried for 20 second(s) with 500 milliseconds interval)
 Build info: version: '4.38.0', revision: '6b412e825c*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
-Driver info: net.bytebuddy.renamed.java.lang.Object$ByteBuddy$DFNNHdfL
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.178, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\Jervin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57866}, goog:processID: 20216, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57866/devtoo..., se:cdpVersion: 146.0.7680.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 01be85d6b4370cba46de44a226a95ccd
+Driver info: net.bytebuddy.renamed.java.lang.Object$ByteBuddy$YpR7r5xu
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.56, chrome: {chromedriverVersion: 147.0.7727.57 (b4f28b5637d0..., userDataDir: C:\Users\Jervin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54240}, goog:processID: 10188, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54240/devtoo..., se:cdpVersion: 147.0.7727.56, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8c81d4dddb47eac57c475de8e8e75086
 at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 at Pages.RiskDisclosure.riskdisclosure(RiskDisclosure.java:33)
@@ -170,31 +194,31 @@ at java.base/java.lang.Thread.run(Thread.java:1583)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateRiskDisclosure -->
-        <test-method is-config="true" signature="afterEachTest()[pri:0, instance:Tests.LoginTest@1f9f6368]" started-at="2026-04-14T23:44:41 IST" name="afterEachTest" finished-at="2026-04-14T23:44:43 IST" duration-ms="2012" status="PASS">
+        <test-method is-config="true" signature="afterEachTest()[pri:0, instance:Tests.LoginTest@45385f75]" started-at="2026-04-19T13:19:24 IST" name="afterEachTest" finished-at="2026-04-19T13:19:26 IST" duration-ms="2014" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterEachTest -->
-        <test-method signature="validateSearchStocks()[pri:4, instance:Tests.LoginTest@1f9f6368]" started-at="2026-04-14T23:44:43 IST" name="validateSearchStocks" finished-at="2026-04-14T23:45:03 IST" duration-ms="20392" status="FAIL">
+        <test-method signature="validateSearchStocks()[pri:4, instance:Tests.LoginTest@45385f75]" started-at="2026-04-19T13:19:26 IST" name="validateSearchStocks" finished-at="2026-04-19T13:19:47 IST" duration-ms="20511" status="FAIL">
           <exception class="org.openqa.selenium.TimeoutException">
             <message>
               <![CDATA[Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class='MuiTabs-scroller MuiTabs-hideScrollbar MuiTabs-scrollableX css-12qnib']//button[contains(.,'Automation')] (tried for 20 second(s) with 500 milliseconds interval)
 Build info: version: '4.38.0', revision: '6b412e825c*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
-Driver info: net.bytebuddy.renamed.java.lang.Object$ByteBuddy$DFNNHdfL
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.178, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\Jervin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57866}, goog:processID: 20216, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57866/devtoo..., se:cdpVersion: 146.0.7680.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 01be85d6b4370cba46de44a226a95ccd]]>
+Driver info: net.bytebuddy.renamed.java.lang.Object$ByteBuddy$YpR7r5xu
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.56, chrome: {chromedriverVersion: 147.0.7727.57 (b4f28b5637d0..., userDataDir: C:\Users\Jervin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54240}, goog:processID: 10188, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54240/devtoo..., se:cdpVersion: 147.0.7727.56, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8c81d4dddb47eac57c475de8e8e75086]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class='MuiTabs-scroller MuiTabs-hideScrollbar MuiTabs-scrollableX css-12qnib']//button[contains(.,'Automation')] (tried for 20 second(s) with 500 milliseconds interval)
 Build info: version: '4.38.0', revision: '6b412e825c*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
-Driver info: net.bytebuddy.renamed.java.lang.Object$ByteBuddy$DFNNHdfL
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.178, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\Jervin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57866}, goog:processID: 20216, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57866/devtoo..., se:cdpVersion: 146.0.7680.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 01be85d6b4370cba46de44a226a95ccd
+Driver info: net.bytebuddy.renamed.java.lang.Object$ByteBuddy$YpR7r5xu
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.56, chrome: {chromedriverVersion: 147.0.7727.57 (b4f28b5637d0..., userDataDir: C:\Users\Jervin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54240}, goog:processID: 10188, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54240/devtoo..., se:cdpVersion: 147.0.7727.56, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8c81d4dddb47eac57c475de8e8e75086
 at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 at Pages.SearchStocks.SearchStocks(SearchStocks.java:63)
-at Tests.LoginTest.validateSearchStocks(LoginTest.java:84)
+at Tests.LoginTest.validateSearchStocks(LoginTest.java:83)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
@@ -222,31 +246,31 @@ at java.base/java.lang.Thread.run(Thread.java:1583)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateSearchStocks -->
-        <test-method is-config="true" signature="afterEachTest()[pri:0, instance:Tests.LoginTest@1f9f6368]" started-at="2026-04-14T23:45:03 IST" name="afterEachTest" finished-at="2026-04-14T23:45:05 IST" duration-ms="2013" status="PASS">
+        <test-method is-config="true" signature="afterEachTest()[pri:0, instance:Tests.LoginTest@45385f75]" started-at="2026-04-19T13:19:47 IST" name="afterEachTest" finished-at="2026-04-19T13:19:49 IST" duration-ms="2013" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterEachTest -->
-        <test-method signature="ValidateSearchIndicesAndSpots()[pri:5, instance:Tests.LoginTest@1f9f6368]" started-at="2026-04-14T23:45:05 IST" name="ValidateSearchIndicesAndSpots" finished-at="2026-04-14T23:45:26 IST" duration-ms="20539" status="FAIL">
+        <test-method signature="ValidateSearchIndicesAndSpots()[pri:5, instance:Tests.LoginTest@45385f75]" started-at="2026-04-19T13:19:49 IST" name="ValidateSearchIndicesAndSpots" finished-at="2026-04-19T13:20:09 IST" duration-ms="20492" status="FAIL">
           <exception class="org.openqa.selenium.TimeoutException">
             <message>
               <![CDATA[Expected condition failed: waiting for visibility of element located by By.id: search-input (tried for 20 second(s) with 500 milliseconds interval)
 Build info: version: '4.38.0', revision: '6b412e825c*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
-Driver info: net.bytebuddy.renamed.java.lang.Object$ByteBuddy$DFNNHdfL
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.178, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\Jervin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57866}, goog:processID: 20216, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57866/devtoo..., se:cdpVersion: 146.0.7680.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 01be85d6b4370cba46de44a226a95ccd]]>
+Driver info: net.bytebuddy.renamed.java.lang.Object$ByteBuddy$YpR7r5xu
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.56, chrome: {chromedriverVersion: 147.0.7727.57 (b4f28b5637d0..., userDataDir: C:\Users\Jervin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54240}, goog:processID: 10188, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54240/devtoo..., se:cdpVersion: 147.0.7727.56, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8c81d4dddb47eac57c475de8e8e75086]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.id: search-input (tried for 20 second(s) with 500 milliseconds interval)
 Build info: version: '4.38.0', revision: '6b412e825c*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
-Driver info: net.bytebuddy.renamed.java.lang.Object$ByteBuddy$DFNNHdfL
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.178, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\Jervin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57866}, goog:processID: 20216, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57866/devtoo..., se:cdpVersion: 146.0.7680.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 01be85d6b4370cba46de44a226a95ccd
+Driver info: net.bytebuddy.renamed.java.lang.Object$ByteBuddy$YpR7r5xu
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.56, chrome: {chromedriverVersion: 147.0.7727.57 (b4f28b5637d0..., userDataDir: C:\Users\Jervin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54240}, goog:processID: 10188, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54240/devtoo..., se:cdpVersion: 147.0.7727.56, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8c81d4dddb47eac57c475de8e8e75086
 at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 at Pages.SearchIndicesSpots.SearchIndicesSpots(SearchIndicesSpots.java:35)
-at Tests.LoginTest.ValidateSearchIndicesAndSpots(LoginTest.java:92)
+at Tests.LoginTest.ValidateSearchIndicesAndSpots(LoginTest.java:91)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
@@ -274,31 +298,31 @@ at java.base/java.lang.Thread.run(Thread.java:1583)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ValidateSearchIndicesAndSpots -->
-        <test-method is-config="true" signature="afterEachTest()[pri:0, instance:Tests.LoginTest@1f9f6368]" started-at="2026-04-14T23:45:26 IST" name="afterEachTest" finished-at="2026-04-14T23:45:28 IST" duration-ms="2003" status="PASS">
+        <test-method is-config="true" signature="afterEachTest()[pri:0, instance:Tests.LoginTest@45385f75]" started-at="2026-04-19T13:20:10 IST" name="afterEachTest" finished-at="2026-04-19T13:20:12 IST" duration-ms="2000" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterEachTest -->
-        <test-method signature="ValidateChartOpening()[pri:6, instance:Tests.LoginTest@1f9f6368]" started-at="2026-04-14T23:45:28 IST" name="ValidateChartOpening" finished-at="2026-04-14T23:45:49 IST" duration-ms="20310" status="FAIL">
+        <test-method signature="ValidateChartOpening()[pri:6, instance:Tests.LoginTest@45385f75]" started-at="2026-04-19T13:20:12 IST" name="ValidateChartOpening" finished-at="2026-04-19T13:20:32 IST" duration-ms="20158" status="FAIL">
           <exception class="org.openqa.selenium.TimeoutException">
             <message>
               <![CDATA[Expected condition failed: waiting for visibility of element located by By.xpath: //*[contains(text(),'Market Scan')] (tried for 20 second(s) with 500 milliseconds interval)
 Build info: version: '4.38.0', revision: '6b412e825c*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
-Driver info: net.bytebuddy.renamed.java.lang.Object$ByteBuddy$DFNNHdfL
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.178, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\Jervin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57866}, goog:processID: 20216, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57866/devtoo..., se:cdpVersion: 146.0.7680.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 01be85d6b4370cba46de44a226a95ccd]]>
+Driver info: net.bytebuddy.renamed.java.lang.Object$ByteBuddy$YpR7r5xu
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.56, chrome: {chromedriverVersion: 147.0.7727.57 (b4f28b5637d0..., userDataDir: C:\Users\Jervin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54240}, goog:processID: 10188, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54240/devtoo..., se:cdpVersion: 147.0.7727.56, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8c81d4dddb47eac57c475de8e8e75086]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[contains(text(),'Market Scan')] (tried for 20 second(s) with 500 milliseconds interval)
 Build info: version: '4.38.0', revision: '6b412e825c*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
-Driver info: net.bytebuddy.renamed.java.lang.Object$ByteBuddy$DFNNHdfL
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.178, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\Jervin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57866}, goog:processID: 20216, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57866/devtoo..., se:cdpVersion: 146.0.7680.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 01be85d6b4370cba46de44a226a95ccd
+Driver info: net.bytebuddy.renamed.java.lang.Object$ByteBuddy$YpR7r5xu
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.56, chrome: {chromedriverVersion: 147.0.7727.57 (b4f28b5637d0..., userDataDir: C:\Users\Jervin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54240}, goog:processID: 10188, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54240/devtoo..., se:cdpVersion: 147.0.7727.56, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8c81d4dddb47eac57c475de8e8e75086
 at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 at Pages.ChartNavigation.chartnavigation(ChartNavigation.java:41)
-at Tests.LoginTest.ValidateChartOpening(LoginTest.java:100)
+at Tests.LoginTest.ValidateChartOpening(LoginTest.java:99)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
@@ -326,15 +350,169 @@ at java.base/java.lang.Thread.run(Thread.java:1583)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ValidateChartOpening -->
-        <test-method is-config="true" signature="afterEachTest()[pri:0, instance:Tests.LoginTest@1f9f6368]" started-at="2026-04-14T23:45:49 IST" name="afterEachTest" finished-at="2026-04-14T23:45:51 IST" duration-ms="2057" status="PASS">
+        <test-method is-config="true" signature="afterEachTest()[pri:0, instance:Tests.LoginTest@45385f75]" started-at="2026-04-19T13:20:32 IST" name="afterEachTest" finished-at="2026-04-19T13:20:34 IST" duration-ms="2012" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterEachTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Tests.LoginTest@1f9f6368]" started-at="2026-04-14T23:45:51 IST" name="tearDown" finished-at="2026-04-14T23:45:57 IST" duration-ms="6160" status="PASS">
+        <test-method signature="ValidateCreate_Edit_Delete_Basket()[pri:10, instance:Tests.LoginTest@45385f75]" started-at="2026-04-19T13:20:34 IST" name="ValidateCreate_Edit_Delete_Basket" finished-at="2026-04-19T13:20:44 IST" duration-ms="10075" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchSessionException">
+            <message>
+              <![CDATA[invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=147.0.7727.56)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8c81d4dddb47eac57c475de8e8e75086, findElement {value=//*[contains(text(),'Dashboard')], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.56, chrome: {chromedriverVersion: 147.0.7727.57 (b4f28b5637d0..., userDataDir: C:\Users\Jervin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54240}, goog:processID: 10188, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54240/devtoo..., se:cdpVersion: 147.0.7727.56, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8c81d4dddb47eac57c475de8e8e75086]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchSessionException: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=147.0.7727.56)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8c81d4dddb47eac57c475de8e8e75086, findElement {value=//*[contains(text(),'Dashboard')], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.56, chrome: {chromedriverVersion: 147.0.7727.57 (b4f28b5637d0..., userDataDir: C:\Users\Jervin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54240}, goog:processID: 10188, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54240/devtoo..., se:cdpVersion: 147.0.7727.56, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8c81d4dddb47eac57c475de8e8e75086
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.openqa.selenium.support.decorators.WebDriverDecorator.call(WebDriverDecorator.java:315)
+at org.openqa.selenium.support.decorators.DefaultDecorated.call(DefaultDecorated.java:48)
+at org.openqa.selenium.support.decorators.WebDriverDecorator.lambda$createProxyFactory$3(WebDriverDecorator.java:405)
+at net.bytebuddy.renamed.java.lang.Object$ByteBuddy$YpR7r5xu.findElement(Unknown Source)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:198)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+at Pages.Create_Edit_Delete_Basket.Create_Edit_Delete_Basket(Create_Edit_Delete_Basket.java:42)
+at Tests.LoginTest.ValidateCreate_Edit_Delete_Basket(LoginTest.java:131)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidateCreate_Edit_Delete_Basket -->
+        <test-method is-config="true" signature="afterEachTest()[pri:0, instance:Tests.LoginTest@45385f75]" started-at="2026-04-19T13:20:45 IST" name="afterEachTest" finished-at="2026-04-19T13:20:47 IST" duration-ms="2013" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterEachTest -->
+        <test-method signature="ValidateAdd_Delete_Rearrange_Invert_Symbols()[pri:11, instance:Tests.LoginTest@45385f75]" started-at="2026-04-19T13:20:47 IST" name="ValidateAdd_Delete_Rearrange_Invert_Symbols" finished-at="2026-04-19T13:20:47 IST" duration-ms="5" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchSessionException">
+            <message>
+              <![CDATA[invalid session id
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8c81d4dddb47eac57c475de8e8e75086, findElement {value=//*[contains(text(),'Add New Basket')], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.56, chrome: {chromedriverVersion: 147.0.7727.57 (b4f28b5637d0..., userDataDir: C:\Users\Jervin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54240}, goog:processID: 10188, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54240/devtoo..., se:cdpVersion: 147.0.7727.56, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8c81d4dddb47eac57c475de8e8e75086]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchSessionException: invalid session id
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8c81d4dddb47eac57c475de8e8e75086, findElement {value=//*[contains(text(),'Add New Basket')], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.56, chrome: {chromedriverVersion: 147.0.7727.57 (b4f28b5637d0..., userDataDir: C:\Users\Jervin\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54240}, goog:processID: 10188, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54240/devtoo..., se:cdpVersion: 147.0.7727.56, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8c81d4dddb47eac57c475de8e8e75086
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.openqa.selenium.support.decorators.WebDriverDecorator.call(WebDriverDecorator.java:315)
+at org.openqa.selenium.support.decorators.DefaultDecorated.call(DefaultDecorated.java:48)
+at org.openqa.selenium.support.decorators.WebDriverDecorator.lambda$createProxyFactory$3(WebDriverDecorator.java:405)
+at net.bytebuddy.renamed.java.lang.Object$ByteBuddy$YpR7r5xu.findElement(Unknown Source)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:198)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+at Pages.Add_Delete_Reaarange_Invert_symbols.Add_Delete_Reaarange_Invert_symbols(Add_Delete_Reaarange_Invert_symbols.java:40)
+at Tests.LoginTest.ValidateAdd_Delete_Rearrange_Invert_Symbols(LoginTest.java:139)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidateAdd_Delete_Rearrange_Invert_Symbols -->
+        <test-method is-config="true" signature="afterEachTest()[pri:0, instance:Tests.LoginTest@45385f75]" started-at="2026-04-19T13:20:47 IST" name="afterEachTest" finished-at="2026-04-19T13:20:49 IST" duration-ms="2014" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterEachTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Tests.LoginTest@45385f75]" started-at="2026-04-19T13:20:49 IST" name="tearDown" finished-at="2026-04-19T13:20:50 IST" duration-ms="1062" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- Tests.LoginTest -->
     </test> <!-- ChromeTests -->
-  </suite> <!-- RegressionSuite -->
+  </suite> <!-- SaniteChecklistSuite -->
 </testng-results>

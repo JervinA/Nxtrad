@@ -1,0 +1,4 @@
+2026-04-19 13:13:30 INFO  LoginTest:100 - Logger initialized. Logs will be saved in: logs/testlog_20260419_131330.log
+2026-04-19 13:13:30 INFO  LoginTest:30 - ===== Starting Test: LoginTest =====
+2026-04-19 13:13:36 INFO  LoginTest:35 - firefox driver initialized.
+2026-04-19 13:13:41 INFO  LoginTest:40 - Navigated to URL: https://nxtrade-qa-api.iouring.in/webapp/auth/login
