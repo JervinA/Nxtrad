@@ -18,30 +18,6 @@ public class Add_Delete_Reaarange_Invert_symbols {
 	
 	private WebDriver driver;
 	private Actions actions;
-	
-	
-	// Global wait method
-    private void waitOneSecond() throws InterruptedException {
-        Thread.sleep(2000);
-    }
-    
-    private By SearchSymbol = By.xpath("(//input[@placeholder='Search by Stock Name'])[2]");
-    private By SelectNSEsymbol = By.xpath("(//div[@class='search-row search-row-selected'])[2]");
-    private By ClickAdd = By.id("place-order");
-    private By TringConfirmation = By.xpath("//div[@class='cancel-order-title cancel-sip-title']");
-    private By HoverSymbol = By.xpath("(//div[@class='side-circle pointer buy-circle'])[1]");
-    private By HoverSymbol2 = By.xpath("(//div[@class='side-circle pointer buy-circle'])[2]");
-    private By DeleteSymbol = By.xpath("//button[contains(@class,'delete-icon')]");
-    private By InvertSymbol = By.xpath("//span[@class='reverse-order']");
-    private By HoverSymbol3 = By.xpath("//div[@class='side-circle pointer sell-circle']");
-    
-//Resue Xpath
-    
-    public By getHoverSymbol3() {
-        return HoverSymbol3;
-    }
-    
-    
     
     String SearchNSESymbol = ConfigReader.getProperty("SearchNSESymbol");
     String BasketSearch = ConfigReader.getProperty("BasketSearch");
@@ -57,25 +33,23 @@ public class Add_Delete_Reaarange_Invert_symbols {
     
     
     //Actions 
-    public void Add_Delete_Reaarange_Invert_symbols(Create_Edit_Delete_Basket cb, String basketname, String SearchNSESymbol, String BasketSearch) throws InterruptedException {
-    	
-    	Thread.sleep(2000);
+    public void Add_Delete_Reaarange_Invert_symbols(Xpath xp, String basketname, String SearchNSESymbol, String BasketSearch) throws InterruptedException {
     	
     	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     	
-    	wait.until(ExpectedConditions.visibilityOfElementLocated(cb.getCreatebasket())).click();    	
-    	wait.until(ExpectedConditions.visibilityOfElementLocated(cb.getBasketNameField())).sendKeys(basketname);    	
-    	wait.until(ExpectedConditions.visibilityOfElementLocated(cb.getCreateButton())).click();   	
-    	wait.until(ExpectedConditions.visibilityOfElementLocated(cb.getOpenBasket())).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getCreatebasket())).click();    	
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getBasketNameField())).sendKeys(basketname);    	
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getCreateButton())).click();   	
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getOpenBasket())).click();
     	
     	//NSE symbols
     	
     	//Adding symbols
-    	wait.until(ExpectedConditions.visibilityOfElementLocated(SearchSymbol)).sendKeys(SearchNSESymbol);
-    	wait.until(ExpectedConditions.visibilityOfElementLocated(SelectNSEsymbol)).click();
-    	wait.until(ExpectedConditions.visibilityOfElementLocated(ClickAdd)).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getSearchSymbol())).sendKeys(SearchNSESymbol);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getSelectNSEsymbol())).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getClickAdd())).click();
     	
-    	if(wait.until(ExpectedConditions.visibilityOfElementLocated(TringConfirmation)).isDisplayed()) {
+    	if(wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getTringConfirmation())).isDisplayed()) {
     	    actions.sendKeys(Keys.ENTER).perform();
     	} else {
     	    System.out.println("No confirmation is shown");
@@ -84,17 +58,17 @@ public class Add_Delete_Reaarange_Invert_symbols {
     	System.out.println("Added  IDEA NSE symbol to basket");
     	
     	//Deleting symbols
-    	actions.moveToElement(driver.findElement(HoverSymbol)).perform();
-    	wait.until(ExpectedConditions.visibilityOfElementLocated(DeleteSymbol)).click();
+    	actions.moveToElement(wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getHoverSymbol()))).perform();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getDeleteSymbol())).click();
     	
     	System.out.println("Deleted IDEA NSE symbol to basket");
     	
     	//Rearranging symbols
-    	wait.until(ExpectedConditions.visibilityOfElementLocated(SearchSymbol)).sendKeys(SearchNSESymbol);
-    	wait.until(ExpectedConditions.visibilityOfElementLocated(SelectNSEsymbol)).click();
-    	wait.until(ExpectedConditions.visibilityOfElementLocated(ClickAdd)).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getSearchSymbol())).sendKeys(SearchNSESymbol);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getSelectNSEsymbol())).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getClickAdd())).click();
     	
-    	if(wait.until(ExpectedConditions.visibilityOfElementLocated(TringConfirmation)).isDisplayed()) {
+    	if(wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getTringConfirmation())).isDisplayed()) {
     	    actions.sendKeys(Keys.ENTER).perform();
     	} else {
     	    System.out.println("No confirmation is shown");
@@ -103,9 +77,9 @@ public class Add_Delete_Reaarange_Invert_symbols {
     	System.out.println("Added IDEA NSE symbol to basket for rearranging");
     	
     	
-    	wait.until(ExpectedConditions.visibilityOfElementLocated(SearchSymbol)).sendKeys(BasketSearch);
-    	wait.until(ExpectedConditions.visibilityOfElementLocated(SelectNSEsymbol)).click();
-    	wait.until(ExpectedConditions.visibilityOfElementLocated(ClickAdd)).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getSearchSymbol())).sendKeys(BasketSearch);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getSelectNSEsymbol())).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getClickAdd())).click();
     	
 //    	if(wait.until(ExpectedConditions.visibilityOfElementLocated(TringConfirmation)).isDisplayed()) {
 //    	    actions.sendKeys(Keys.ENTER).perform();
@@ -115,7 +89,7 @@ public class Add_Delete_Reaarange_Invert_symbols {
     	
     	System.out.println("Added TCS NSE symbol to basket for rearranging");
     	
-    	WebElement source = wait.until(ExpectedConditions.visibilityOfElementLocated(HoverSymbol));
+    	WebElement source = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getHoverSymbol()));
 
     	actions.clickAndHold(source)
     	       .pause(Duration.ofMillis(500))
@@ -128,20 +102,20 @@ public class Add_Delete_Reaarange_Invert_symbols {
     	
     	//Invert Actions
     	
-    	actions.moveToElement(driver.findElement(HoverSymbol)).perform();
-    	wait.until(ExpectedConditions.visibilityOfElementLocated(DeleteSymbol)).click();
+    	actions.moveToElement(wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getHoverSymbol()))).perform();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getDeleteSymbol())).click();
     	
     	//Confirming Buy icon is there
-    	String actualText_1 = driver.findElement(HoverSymbol).getText();
+    	String actualText_1 = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getHoverSymbol())).getText();
     	Assert.assertEquals(actualText_1, BuyIcon, "Buy icon mismatch");
     	System.out.println(actualText_1);
     	
     	//Inverting
-    	wait.until(ExpectedConditions.visibilityOfElementLocated(InvertSymbol)).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getInvertSymbol())).click();
     	
     	//Confirming sell icon is there after invert
     	Thread.sleep(2000);
-    	String actualText_2 = driver.findElement(HoverSymbol3).getText();
+    	String actualText_2 = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getHoverSymbol3())).getText();
     	Assert.assertEquals(actualText_2, SellIcon, "Sell icon mismatch");
     	System.out.println(actualText_2);
     	

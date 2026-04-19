@@ -16,24 +16,10 @@ public class OrderCancellation {
 	
 	private WebDriver driver;
 	private Actions actions;
-	
-	// Global wait method
-    private void waitOneSecond() throws InterruptedException {
-        Thread.sleep(1000);
-    }
-    
-    
-    private By OrderCheckBox = By.xpath("(//input[@class='PrivateSwitchBase-input css-1m9pwf3'])[2]");
-    private By Cancelbutton = By.xpath("//*[contains(text(),'Cancel')]");
-    private By CancelConfirmation = By.cssSelector("button[data-cy='orderbook-cancel']");
-    private By CancelToast = By.xpath("//div[contains(text(),'Cancellation request submitted')]");
-    
     
     String SearcOpenNseOrder = ConfigReader.getProperty("SearcOpenNseOrder");
     String CancelToastMessage = ConfigReader.getProperty("CancelToastMessage");
     String SearcOpenBseOrder = ConfigReader.getProperty("SearcOpenBseOrder");
-    
-    
     
     // Constructor
     public OrderCancellation(WebDriver driver) {
@@ -43,28 +29,26 @@ public class OrderCancellation {
     
     
   //Actions
-    public void OrderCancellation(OrderModification om, String SearcOpenNseOrder, String SearcOpenBseOrder) throws InterruptedException {
+    public void OrderCancellation(Xpath xp, String SearcOpenNseOrder, String SearcOpenBseOrder) throws InterruptedException {
+    	
+    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     	
     	driver.navigate().refresh();
     	Thread.sleep(3000);
     	
-    	driver.findElement(om.getSearchField()).sendKeys(SearcOpenNseOrder);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getSearchfield())).sendKeys(SearcOpenNseOrder);
     	
-    	driver.findElement(OrderCheckBox).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getOrderCheckBox())).click();
     	
-    	driver.findElement(Cancelbutton).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getCancelbutton())).click();
     	
-    	driver.findElement(CancelConfirmation).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getCancelConfirmation())).click();
     	
-    	
-    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-    	WebElement toastElement_1 = wait.until(ExpectedConditions.presenceOfElementLocated(CancelToast));        
+    	WebElement toastElement_1 = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getCancelToast()));        
     	String actualText_1 = toastElement_1.getText().trim();
     	String expectedText_1 = CancelToastMessage.trim();
     	Assert.assertEquals(actualText_1,expectedText_1,"Cancel Toast message mismatch for NSE Symbol. Actual Toast: " + actualText_1);
     	System.out.println("Verified NSE Symbol Cancel Order");
-    	
-    	
     	
     	driver.navigate().refresh();
     	Thread.sleep(3000);

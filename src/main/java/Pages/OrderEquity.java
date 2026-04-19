@@ -16,35 +16,11 @@ public class OrderEquity {
 	
 	private WebDriver driver;
 	private Actions actions;
-	
-	// Global wait method
-    private void waitOneSecond() throws InterruptedException {
-        Thread.sleep(2000);
-    }
-    
-    
-    private By HoverEquitySymbol = By.xpath("//div[@class='search-row search-row-selected']");
-    private By BuyIcon = By.cssSelector("button[data-cy='search-buy-icon']");
-    private By CheckLimit = By.cssSelector("input[data-cy='orderpad-limit']");
-    private By BuyButton = By.id("place-order");
-    private By NseConfirmation = By.xpath("(//button[contains(text(),'Yes')])[2]");
-    private By NseOrderToast = By.xpath("//*[contains(text(),'Submitted')]");
-    private By OrdersTab = By.xpath("//*[contains(text(),'Orders')]");
-    
-    
-    
     
     String NseOrder = ConfigReader.getProperty("NseOrder");
     String ToastMessage = ConfigReader.getProperty("ToastMessage");
-    String BseOrder = ConfigReader.getProperty("BseOrder");
-    
-    
-  //Reuse xpath
-    public By getBuyButton() {
-    	return BuyButton;
-    }
-    
-    
+    String BseOrder = ConfigReader.getProperty("BseOrder");  
+  
  // Constructor
     public OrderEquity(WebDriver driver) {
         this.driver = driver;
@@ -54,21 +30,21 @@ public class OrderEquity {
     
     
   //Actions
-    public void OrderEquity(SearchStocks ss, String NseOrder, String BseOrder) throws InterruptedException {
+    public void OrderEquity(Xpath xp, String NseOrder, String BseOrder) throws InterruptedException {
     	
-    	driver.findElement(ss.getSelectTab()).click();
+    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+    	
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getSelectTab())).click();
     	
     	//Placing NSE Order
     	
-    	waitOneSecond();
-    	driver.findElement(ss.getSearchfield()).sendKeys(NseOrder);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getSearchfield())).sendKeys(NseOrder);
     	
-    	waitOneSecond();
-    	actions.moveToElement(driver.findElement(HoverEquitySymbol)).perform();
+    	actions.moveToElement(wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getHoverEquitySymbol()))).perform();
     	
-    	driver.findElement(BuyIcon).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getBuyIcon())).click();
     	
-    	WebElement checkLimit_1 = driver.findElement(CheckLimit);
+    	WebElement checkLimit_1 = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getCheckLimit()));
     	if (checkLimit_1.isSelected()) {
     	    System.out.println("CheckLimit is already selected");
     	} else {
@@ -76,17 +52,15 @@ public class OrderEquity {
     	    System.out.println("CheckLimit was not selected, now clicked");
     	}
     	
-    	driver.findElement(BuyButton).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getBuyButton())).click();
     	
-    	waitOneSecond();
     	try {
-        	driver.findElement(NseConfirmation).click();
+    		wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getNseConfirmation())).click();
         } catch (Exception e) {
         	System.out.println("Confirmation not shown");
         }
     	
-    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-    	WebElement toastElement = wait.until(ExpectedConditions.presenceOfElementLocated(NseOrderToast));        
+    	WebElement toastElement = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getNseOrderToast()));        
     	String actualText_1 = toastElement.getText().trim();
     	String expectedText = ToastMessage.trim();
     	Assert.assertEquals(actualText_1,expectedText,"Toast message mismatch. Actual Toast: " + actualText_1);

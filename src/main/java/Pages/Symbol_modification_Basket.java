@@ -16,16 +16,6 @@ public class Symbol_modification_Basket {
 	private WebDriver driver;
 	private Actions actions;
 	
-	
-	// Global wait method
-    private void waitOneSecond() throws InterruptedException {
-        Thread.sleep(2000);
-    }
-    
-    private By EditIcon = By.xpath("(//button[contains(@class,'edit-icon')])[3]");
-    private By GetPrice = By.xpath("//*[@data-cy='BASKET_SCRIPS-body']/tr[1]/td[7]");
-    
-    
     String SearchNSESymbol = ConfigReader.getProperty("SearchNSESymbol");
     
     
@@ -37,18 +27,18 @@ public class Symbol_modification_Basket {
     }
     
     
-    public void Symbol_modification_Basket(Add_Delete_Reaarange_Invert_symbols ad) throws InterruptedException {
+    public void Symbol_modification_Basket(Xpath xp) throws InterruptedException {
     	
     	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     	
     	Thread.sleep(2000);
     	
     	//getting price before modification
-    	String actualText_1 = driver.findElement(GetPrice).getText();
+    	String actualText_1 = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getGetPrice())).getText();
     	System.out.println(actualText_1);
     	
-    	actions.moveToElement(driver.findElement(ad.getHoverSymbol3())).perform();
-    	wait.until(ExpectedConditions.visibilityOfElementLocated(EditIcon)).click();
+    	actions.moveToElement(wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getHoverSymbol3()))).perform();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getEditIcon2())).click();
     }
     
 

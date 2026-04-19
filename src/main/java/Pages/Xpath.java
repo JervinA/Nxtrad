@@ -79,6 +79,60 @@ public class Xpath {
     private By McxDropdown = By.xpath("//button[contains(text(),'FUTURES')]");
     private By ChangeOptionMcx = By.xpath("//span[contains(text(),'Options')]");
     
+    //Orders Equity
+    private By HoverEquitySymbol = By.xpath("//div[@class='search-row search-row-selected']");
+    private By BuyIcon = By.cssSelector("button[data-cy='search-buy-icon']");
+    private By CheckLimit = By.cssSelector("input[data-cy='orderpad-limit']");
+    private By BuyButton = By.id("place-order");
+    private By NseConfirmation = By.xpath("(//button[contains(text(),'Yes')])[2]");
+    private By NseOrderToast = By.xpath("//*[contains(text(),'Submitted')]");
+    private By OrdersTab = By.xpath("//*[contains(text(),'Orders')]");
+    
+    //Order Modification
+    private By SearchField = By.xpath("(//input[@placeholder='Search'])[1]");
+    private By HoverEquityOrder = By.xpath("(//div[@class='side-circle pointer buy-circle'])[1]");
+    private By EquityThreeDots = By.cssSelector("button[data-cy='OPEN_ORDERS-more']");
+    private By EquityModify = By.xpath("(//span[contains(text(),'Modify')])[1]");
+    private By EquityModifyPrice = By.cssSelector("div[data-cy='orderpad-down-arrow-price']");
+    private By EquityOrderModifyToast = By.xpath("//div[contains(text(),'Modification request submitted')]");
+    
+    //Order Cancellation
+    private By OrderCheckBox = By.xpath("(//input[@class='PrivateSwitchBase-input css-1m9pwf3'])[2]");
+    private By Cancelbutton = By.xpath("//*[contains(text(),'Cancel')]");
+    private By CancelConfirmation = By.cssSelector("button[data-cy='orderbook-cancel']");
+    private By CancelToast = By.xpath("//div[contains(text(),'Cancellation request submitted')]");
+    
+    //Create_Edit_Delete_Basket
+    private By Dashboard = By.xpath("//*[contains(text(),'Dashboard')]");
+    private By BasketTab = By.xpath("//*[contains(text(),'Baskets')]");
+    private By AllCheckbox = By.xpath("//span[@class='MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-root MuiCheckbox-colorPrimary css-clw93t']");
+    private By DeleteBasket = By.xpath("//*[contains(text(),'Delete')]");
+    private By DeleteConfirmation = By.xpath("(//button[contains(text(),'Yes')])[2]");
+    private By Createbasket = By.xpath("//*[contains(text(),'Add New Basket')]");
+    private By BasketNameField = By.xpath("//input[@placeholder='Basket name']");
+    private By CreateButton = By.xpath("//button[contains(text(),'Create')]");
+    private By CreationMsg = By.xpath("//div[@class='MuiAlert-message css-1xsto0d']");
+    private By OpenBasket = By.xpath("//span[normalize-space()='Automation']");
+    private By EditIcon = By.xpath("//span[normalize-space()='Automation']/parent::div//button");
+    private By EditField = By.xpath("//input[@placeholder='Basket name']");
+    private By ModifyMessage = By.xpath("//*[contains(text(),'Basket name updated successfully.')]");
+    private By CloseBasket = By.xpath("//span[@class='basket-btn-container']//button");
+    private By DeleteMessage = By.xpath("//div[contains(text(),'Basket deleted successfully.')]");
+    
+  //Add_Delete_Reaarange_Invert symbol
+    private By SearchSymbol = By.xpath("(//input[@placeholder='Search by Stock Name'])[2]");
+    private By SelectNSEsymbol = By.xpath("(//div[@class='search-row search-row-selected'])[2]");
+    private By ClickAdd = By.id("place-order");
+    private By TringConfirmation = By.xpath("//div[@class='cancel-order-title cancel-sip-title']");
+    private By HoverSymbol = By.xpath("(//div[@class='side-circle pointer buy-circle'])[1]");
+    private By HoverSymbol2 = By.xpath("(//div[@class='side-circle pointer buy-circle'])[2]");
+    private By DeleteSymbol = By.xpath("//button[contains(@class,'delete-icon')]");
+    private By InvertSymbol = By.xpath("//span[@class='reverse-order']");
+    private By HoverSymbol3 = By.xpath("//div[@class='side-circle pointer sell-circle']");
+    
+    //Symbol modification in basket
+    private By EditIcon2 = By.xpath("(//button[contains(@class,'edit-icon')])[3]");
+    private By GetPrice = By.xpath("//*[@data-cy='BASKET_SCRIPS-body']/tr[1]/td[7]");
     
  // Constructor
   public Xpath(WebDriver driver) {
@@ -346,4 +400,182 @@ public class Xpath {
     	return ChangeOptionMcx;
     }
     
+    //Orders Equity
+    
+    public By getHoverEquitySymbol() {
+    	return HoverEquitySymbol;
+    }
+    
+    public By getBuyIcon() {
+    	return BuyIcon;
+    }
+    
+    public By getCheckLimit() {
+    	return CheckLimit;
+    }
+    
+    public By getBuyButton() {
+    	return BuyButton;
+    }
+    
+    public By getNseConfirmation() {
+    	return NseConfirmation;
+    }
+    
+    public By getNseOrderToast() {
+    	return NseOrderToast;
+    }
+    
+    public By getOrdersTab() {
+    	return OrdersTab;
+    }
+    
+    //Order Modification
+    public By getSearchField() {
+    	return SearchField;
+    }
+    
+    public By getHoverEquityOrder() {
+    	return HoverEquityOrder;
+    }
+    
+    public By getEquityThreeDots() {
+    	return EquityThreeDots;
+    }
+    
+    public By getEquityModify() {
+    	return EquityModify;
+    }
+    
+    public By getEquityModifyPrice() {
+    	return EquityModifyPrice;
+    }
+    
+    public By getEquityOrderModifyToast() {
+    	return EquityOrderModifyToast;
+    }
+    
+    //Order Cancellation
+    public By getOrderCheckBox() {
+    	return OrderCheckBox;
+    }
+    
+    public By getCancelbutton() {
+    	return Cancelbutton;
+    }
+    
+    public By getCancelConfirmation() {
+    	return CancelConfirmation;
+    }
+    
+    public By getCancelToast() {
+    	return CancelToast;
+    }
+    
+  //Create_Edit_Delete_Basket
+    public By getDashboard() {
+    	return Dashboard;
+    }
+    
+    public By getBasketTab() {
+    	return BasketTab;
+    }
+    
+    public By getAllCheckbox() {
+    	return AllCheckbox;
+    }
+    
+    public By getDeleteBasket() {
+    	return DeleteBasket;
+    }
+    
+    public By getDeleteConfirmation() {
+    	return DeleteConfirmation;
+    }
+    
+    public By getCreatebasket() {
+    	return Createbasket;
+    }
+    
+    public By getBasketNameField() {
+    	return BasketNameField;
+    }
+    
+    public By getCreateButton() {
+    	return CreateButton;
+    }
+    
+    public By getCreationMsg() {
+    	return CreationMsg;
+    }
+    
+    public By getOpenBasket() {
+    	return OpenBasket;
+    }
+    
+    public By getEditIcon() {
+    	return EditIcon;
+    }
+    
+    public By getEditField() {
+    	return EditField;
+    }
+    
+    public By getModifyMessage() {
+    	return ModifyMessage;
+    }
+    
+    public By getCloseBasket() {
+    	return CloseBasket;
+    }
+    
+    public By getDeleteMessage() {
+    	return DeleteMessage;
+    }
+    
+  //Add_Delete_Reaarange_Invert symbol
+    public By getSearchSymbol() {
+    	return SearchSymbol;
+    }
+    
+    public By getSelectNSEsymbol() {
+    	return SelectNSEsymbol;
+    }
+    
+    public By getClickAdd() {
+    	return ClickAdd;
+    }
+    
+    public By getTringConfirmation() {
+    	return TringConfirmation;
+    }
+    
+    public By getHoverSymbol() {
+    	return HoverSymbol;
+    }
+    
+    public By getHoverSymbol2() {
+    	return HoverSymbol2;
+    }
+    
+    public By getDeleteSymbol() {
+    	return DeleteSymbol;
+    }
+    
+    public By getInvertSymbol() {
+    	return InvertSymbol;
+    }
+    
+    public By getHoverSymbol3() {
+    	return HoverSymbol3;
+    }
+    
+  //Symbol modification in basket
+    public By getEditIcon2() {
+    	return EditIcon2;
+    }
+    
+    public By getGetPrice() {
+    	return GetPrice;
+    }
 }

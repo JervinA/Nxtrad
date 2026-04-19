@@ -20,47 +20,6 @@ public class Create_Edit_Delete_Basket {
 	
 	private WebDriver driver;
 	private Actions actions;
-	
-	
-	// Global wait method
-    private void waitOneSecond() throws InterruptedException {
-        Thread.sleep(2000);
-    }
-    
-    
-    private By Dashboard = By.xpath("//*[contains(text(),'Dashboard')]");
-    private By BasketTab = By.xpath("//*[contains(text(),'Baskets')]");
-    private By AllCheckbox = By.xpath("//span[@class='MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-root MuiCheckbox-colorPrimary css-clw93t']");
-    private By DeleteBasket = By.xpath("//*[contains(text(),'Delete')]");
-    private By DeleteConfirmation = By.xpath("(//button[contains(text(),'Yes')])[2]");
-    private By Createbasket = By.xpath("//*[contains(text(),'Add New Basket')]");
-    private By BasketNameField = By.xpath("//input[@placeholder='Basket name']");
-    private By CreateButton = By.xpath("//button[contains(text(),'Create')]");
-    private By CreationMsg = By.xpath("//div[@class='MuiAlert-message css-1xsto0d']");
-    private By OpenBasket = By.xpath("//span[normalize-space()='Automation']");
-    private By EditIcon = By.xpath("//span[normalize-space()='Automation']/parent::div//button");
-    private By EditField = By.xpath("//input[@placeholder='Basket name']");
-    private By ModifyMessage = By.xpath("//*[contains(text(),'Basket name updated successfully.')]");
-    private By CloseBasket = By.xpath("//span[@class='basket-btn-container']//button");
-    private By DeleteMessage = By.xpath("//div[contains(text(),'Basket deleted successfully.')]");
-    
-    //Resue Xpath
-    
-    public By getCreatebasket() {
-        return Createbasket;
-    }
-    
-    public By getBasketNameField() {
-        return BasketNameField;
-    }
-    
-    public By getCreateButton() {
-    	return CreateButton;
-    }
-    
-    public By getOpenBasket() {
-    	return OpenBasket;
-    }
     
     String BasketCreation = ConfigReader.getProperty("BasketCreation");
     String BasketModification = ConfigReader.getProperty("BasketModification");
@@ -76,29 +35,28 @@ public class Create_Edit_Delete_Basket {
     
     
   //Actions
-    public void Create_Edit_Delete_Basket(OrderModification om, String basketname, String BasketCreation, String Editname, String BasketModification, String BasketDeletion) throws InterruptedException {
+    public void Create_Edit_Delete_Basket(Xpath xp, String basketname, String BasketCreation, String Editname, String BasketModification, String BasketDeletion) throws InterruptedException {
     	
-    	driver.findElement(Dashboard).click();
+    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     	
-    	driver.findElement(om.getOrdersTab()).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getDashboard())).click();
     	
-    	driver.findElement(BasketTab).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getOrdersTab())).click();
     	
-    	waitOneSecond();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getBasketTab())).click();
     	
     	//Checking basket screen is empty
     	
     	System.out.println("Checking basket screen is empty or clearing the baskets");
     	
-    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-
-    	List<WebElement> checkboxes = driver.findElements(AllCheckbox);
+    	Thread.sleep(2000);
+    	List<WebElement> checkboxes = driver.findElements(xp.getAllCheckbox());
 
     	if (!checkboxes.isEmpty()) {
 
-    	    wait.until(ExpectedConditions.visibilityOfElementLocated(AllCheckbox)).click();
-    	    wait.until(ExpectedConditions.elementToBeClickable(DeleteBasket)).click();
-    	    wait.until(ExpectedConditions.elementToBeClickable(DeleteConfirmation)).click();
+    		wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getAllCheckbox())).click();
+    		wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getDeleteBasket())).click();
+    		wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getDeleteConfirmation())).click();
 
     	} else {
     	    System.out.println("Basket is empty");
@@ -107,11 +65,11 @@ public class Create_Edit_Delete_Basket {
     	Thread.sleep(5000);
     	
     	//Creating baskets
-    	wait.until(ExpectedConditions.elementToBeClickable(Createbasket)).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getCreatebasket())).click();
     	
-    	wait.until(ExpectedConditions.elementToBeClickable(BasketNameField)).sendKeys(basketname);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getBasketNameField())).sendKeys(basketname);
     	
-    	wait.until(ExpectedConditions.elementToBeClickable(CreateButton)).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getCreateButton())).click();
     	
     	//WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(5));
 //    	WebElement toastElement_1 = wait.until(ExpectedConditions.presenceOfElementLocated(CreationMsg));        
@@ -122,31 +80,31 @@ public class Create_Edit_Delete_Basket {
 //    	System.out.println("Verified basket creation");
     	
     	//Editing Basket
-    	wait.until(ExpectedConditions.elementToBeClickable(OpenBasket)).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getOpenBasket())).click();
     	
-    	wait.until(ExpectedConditions.elementToBeClickable(EditIcon)).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getEditIcon())).click();
     	
-    	wait.until(ExpectedConditions.elementToBeClickable(EditField)).sendKeys(Editname);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getEditField())).sendKeys(Editname);
     	
     	actions.sendKeys(Keys.TAB).sendKeys(Keys.ENTER).perform();
     	
-    	WebElement toastElement_2 = wait.until(ExpectedConditions.presenceOfElementLocated(ModifyMessage));        
+    	WebElement toastElement_2 = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getModifyMessage()));        
     	String actualText_2 = toastElement_2.getText().trim();
     	String expectedText_2 = BasketModification.trim();
     	Thread.sleep(2000);
     	Assert.assertEquals(actualText_2,expectedText_2,"Modification Toast message not match. Actual Toast: " + actualText_2);
     	System.out.println("Verified basket modification");
     	
-    	driver.findElement(CloseBasket).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getCloseBasket())).click();
     	
     	//Deleting basket
-    	wait.until(ExpectedConditions.visibilityOfElementLocated(AllCheckbox)).click();
-	    wait.until(ExpectedConditions.elementToBeClickable(DeleteBasket)).click();
-	    wait.until(ExpectedConditions.elementToBeClickable(DeleteConfirmation)).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getAllCheckbox())).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getDeleteBasket())).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getDeleteConfirmation())).click();
 	    
 	    Thread.sleep(2000);
 	    
-	    WebElement toastElement_3 = wait.until(ExpectedConditions.presenceOfElementLocated(DeleteMessage));        
+	    WebElement toastElement_3 = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getDeleteMessage()));        
     	String actualText_3 = toastElement_3.getText().trim();
     	String expectedText_3 = BasketDeletion.trim();
     	Thread.sleep(2000);

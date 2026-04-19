@@ -16,37 +16,10 @@ public class OrderModification {
 	private WebDriver driver;
 	private Actions actions;
 	
-	// Global wait method
-    private void waitOneSecond() throws InterruptedException {
-        Thread.sleep(1000);
-    }
-    
-    
-    
-    private By OrdersTab = By.xpath("//*[contains(text(),'Orders')]");
-    private By SearchField = By.xpath("(//input[@placeholder='Search'])[1]");
-    private By HoverEquityOrder = By.xpath("(//div[@class='side-circle pointer buy-circle'])[1]");
-    private By EquityThreeDots = By.cssSelector("button[data-cy='OPEN_ORDERS-more']");
-    private By EquityModify = By.xpath("(//span[contains(text(),'Modify')])[1]");
-    private By EquityModifyPrice = By.cssSelector("div[data-cy='orderpad-down-arrow-price']");
-    private By EquityOrderModifyToast = By.xpath("//div[contains(text(),'Modification request submitted')]");
-    
-    
     String NseOrder = ConfigReader.getProperty("NseOrder");
     String SearcOpenNseOrder = ConfigReader.getProperty("SearcOpenNseOrder");
     String ModifyToastMessage = ConfigReader.getProperty("ModifyToastMessage");
     String SearcOpenBseOrder = ConfigReader.getProperty("SearcOpenBseOrder");
-    
-    
-  //Reuse xpath
-    public By getSearchField() {
-    	return SearchField;
-    }
-    
-    public By getOrdersTab() {
-    	return OrdersTab;
-    }
-    
     
  // Constructor
     public OrderModification(WebDriver driver) {
@@ -56,32 +29,29 @@ public class OrderModification {
     
     
   //Actions
-    public void OrderModification(SearchStocks ss, OrderEquity oe, String SearcOpenNseOrder, String SearcOpenBseOrder ) throws InterruptedException {
+    public void OrderModification(Xpath xp, OrderEquity oe, String SearcOpenNseOrder, String SearcOpenBseOrder ) throws InterruptedException {
     	
+    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     	
-    	driver.findElement(ss.getSelectTab()).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getSelectTab())).click();
     	
-    	driver.findElement(OrdersTab).click();
-    	
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getOrdersTab())).click();
     	
     	//Verifying NSE Order Modification
     	
-    	driver.findElement(SearchField).sendKeys(SearcOpenNseOrder);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getSearchfield())).sendKeys(SearcOpenNseOrder);
     	
-    	waitOneSecond();
-    	actions.moveToElement(driver.findElement(HoverEquityOrder)).perform();
+    	actions.moveToElement(wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getHoverEquityOrder()))).perform();
     	
-    	driver.findElement(EquityThreeDots).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getEquityThreeDots())).click();
     	
-    	driver.findElement(EquityModify).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getEquityModify())).click();
     	
-    	waitOneSecond();
-    	driver.findElement(EquityModifyPrice).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getEquityModifyPrice())).click();
     	
-    	driver.findElement(oe.getBuyButton()).click();
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getBuyButton())).click();
     	
-    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-    	WebElement toastElement_1 = wait.until(ExpectedConditions.presenceOfElementLocated(EquityOrderModifyToast));        
+    	WebElement toastElement_1 = wait.until(ExpectedConditions.visibilityOfElementLocated(xp.getEquityOrderModifyToast()));        
     	String actualText_1 = toastElement_1.getText().trim();
     	String expectedText_1 = ModifyToastMessage.trim();
     	Assert.assertEquals(actualText_1,expectedText_1,"Modify Toast message mismatch. Actual Toast: " + actualText_1);

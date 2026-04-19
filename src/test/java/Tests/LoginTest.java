@@ -59,91 +59,90 @@ public class LoginTest extends BaseTest {
 	    }
 	 
 	
-	 @Test(priority = 2)
-	    public void validateSignUpPage() throws InterruptedException {
-		 Xpath xp = new Xpath(driver);
-		 SignUpPage sp = new SignUpPage(driver);
-	       sp.signup(xp, mobileno_2, otp);  
-	    }
+//	 @Test(priority = 2)
+//	    public void validateSignUpPage() throws InterruptedException {
+//		 Xpath xp = new Xpath(driver);
+//		 SignUpPage sp = new SignUpPage(driver);
+//	       sp.signup(xp, mobileno_2, otp);  
+//	    }
 	 
 
-	 @Test(priority = 3) 
-	 public void validateRiskDisclosure() throws InterruptedException {
-		 Xpath xp = new Xpath(driver);
-		 RiskDisclosure rd = new RiskDisclosure(driver);
-			rd.riskdisclosure(xp, mobileno_1, otp, pin);
-		
-	 }
+//	 @Test(priority = 3) 
+//	 public void validateRiskDisclosure() throws InterruptedException {
+//		 Xpath xp = new Xpath(driver);
+//		 RiskDisclosure rd = new RiskDisclosure(driver);
+//			rd.riskdisclosure(xp, mobileno_1, otp, pin);
+//		
+//	 }
 	 
 	 
  
-	 @Test(priority = 4)
-	 public void validateSearchStocks() throws InterruptedException {
-		 Xpath xp = new Xpath(driver);
-		 SearchStocks ss = new SearchStocks(driver);
-		 ss.SearchStocks(xp, nse, bse, nfo, bfo, mcx);
-	 }
+//	 @Test(priority = 4)
+//	 public void validateSearchStocks() throws InterruptedException {
+//		 Xpath xp = new Xpath(driver);
+//		 SearchStocks ss = new SearchStocks(driver);
+//		 ss.SearchStocks(xp, nse, bse, nfo, bfo, mcx);
+//	 }
 	
 	 
-	 @Test(priority = 5)
-	 public void ValidateSearchIndicesAndSpots() throws InterruptedException {
-		 Xpath xp = new Xpath(driver);
-		 SearchIndicesSpots is = new SearchIndicesSpots(driver);
-		 is.SearchIndicesSpots(xp, indices, spots);
-	 }
+//	 @Test(priority = 5)
+//	 public void ValidateSearchIndicesAndSpots() throws InterruptedException {
+//		 Xpath xp = new Xpath(driver);
+//		 SearchIndicesSpots is = new SearchIndicesSpots(driver);
+//		 is.SearchIndicesSpots(xp, indices, spots);
+//	 }
 	
 	 
-	 @Test(priority = 6)
-	 public void ValidateChartOpening() throws InterruptedException {
-		 Xpath xp = new Xpath(driver);
-		 ChartNavigation cn = new ChartNavigation(driver);
-		 cn.chartnavigation(xp);
-	 }
+//	 @Test(priority = 6)
+//	 public void ValidateChartOpening() throws InterruptedException {
+//		 Xpath xp = new Xpath(driver);
+//		 ChartNavigation cn = new ChartNavigation(driver);
+//		 cn.chartnavigation(xp);
+//	 }
 	
 	 
 //	 @Test(priority = 7)
 //	 public void ValidateOrderPlacement() throws InterruptedException {
-//		 SearchStocks ss = new SearchStocks(driver);
+//		 Xpath xp = new Xpath(driver);
 //		 OrderEquity oe = new OrderEquity(driver);
-//		 oe.OrderEquity(ss, NseOrder, BseOrder);	 
+//		 oe.OrderEquity(xp, NseOrder, BseOrder);	 
 //	 }
 	 
 	 
 //	 @Test(priority = 8)
 //	 public void ValidateOrderModification() throws InterruptedException {
-//		 SearchStocks ss = new SearchStocks(driver);
-//		 OrderEquity oe = new OrderEquity(driver);
+//		 Xpath xp = new Xpath(driver);
 //		 OrderModification om = new OrderModification(driver);
-//		 om.OrderModification(ss, oe, SearcOpenNseOrder, SearcOpenBseOrder);
+//		 om.OrderModification(xp, SearcOpenNseOrder, SearcOpenBseOrder);
 //	 }
 	 
 	 
 //	 @Test(priority = 9)
 //	 public void ValidateOrderCancellation() throws InterruptedException {
-//		 OrderModification om = new OrderModification(driver);
+//		 Xpath xp = new Xpath(driver);
 //		 OrderCancellation oc = new OrderCancellation(driver);
-//		 oc.OrderCancellation(om, SearcOpenNseOrder, SearcOpenBseOrder);
+//		 oc.OrderCancellation(xp, SearcOpenNseOrder, SearcOpenBseOrder);
 //	 }
 	 
 	 
 //	 @Test(priority = 10)
 //	 public void ValidateCreate_Edit_Delete_Basket() throws InterruptedException{
-//		 OrderModification om = new OrderModification(driver);
+//		 Xpath xp = new Xpath(driver);
 //		 Create_Edit_Delete_Basket cb = new Create_Edit_Delete_Basket(driver);
-//		 cb.Create_Edit_Delete_Basket(om, basketname, BasketCreation, Editname, BasketModification, BasketDeletion);
+//		 cb.Create_Edit_Delete_Basket(xp, basketname, BasketCreation, Editname, BasketModification, BasketDeletion);
 //	 }
 	 
 	 
 //	 @Test(priority = 11)
 //	 public void ValidateAdd_Delete_Rearrange_Invert_Symbols() throws InterruptedException {
-//		 Create_Edit_Delete_Basket cb = new Create_Edit_Delete_Basket(driver);
+//		 Xpath xp = new Xpath(driver);
 //		 Add_Delete_Reaarange_Invert_symbols ad = new Add_Delete_Reaarange_Invert_symbols(driver);
-//		 ad.Add_Delete_Reaarange_Invert_symbols(cb, basketname, SearchNSESymbol, BasketSearch);
+//		 ad.Add_Delete_Reaarange_Invert_symbols(xp, basketname, SearchNSESymbol, BasketSearch);
 //	 }
 	 
 //	 @Test(priority = 12)
 //	 public void ValidateSymbol_modification_Basket() throws InterruptedException {
-//		 Add_Delete_Reaarange_Invert_symbols ad = new Add_Delete_Reaarange_Invert_symbols(driver);
+//		 Xpath xp = new Xpath(driver);
 //		 Symbol_modification_Basket sm = new Symbol_modification_Basket(driver);
 //		 sm.Symbol_modification_Basket(ad);
 //	 }
